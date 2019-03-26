@@ -91,11 +91,147 @@ python answers/answer_@@.py
 |   9   | 高斯滤波（Gaussian Filter） | [✓](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10/answers/answer_9.py)  | [✓](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10/answers_cpp/answer_9.cpp)  |
 |  10   |  中值滤波（Median filter）  | [✓](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10/answers/answer_10.py) | [✓](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10/answers_cpp/answer_10.cpp) |
 
+## [问题11 - 20](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question1120)
+
+| 序号 |      内容      |
+| :--: | :------------: |
+|  11  |    均值滤波    |
+|  12  | Motion Filter  |
+|  13  |  MAX-MIN 滤波  |
+|  14  |    微分滤波    |
+|  15  |   Sobel 滤波   |
+|  16  |  Prewitt 滤波  |
+|  17  | Laplacian 滤波 |
+|  18  |  Emboss 滤波   |
+|  19  |    LoG 滤波    |
+|  20  |   直方图表示   |
+
+## 问题21-30
+
+| 序号 |                     内容                     |
+| :--: | :------------------------------------------: |
+|  21  |   直方图归一化（Histogram Normalization）    |
+|  22  |                  直方图操作                  |
+|  23  |    直方图均衡化（Histogram Equalization）    |
+|  24  |         伽玛校正（Gamma Correction）         |
+|  25  | 最邻近插值（Nearest-neighbor Interpolation） |
+|  26  |     双线性插值（Bilinear Interpolation）     |
+|  27  |     双三次插值（Bicubic Interpolation）      |
+|  28  | 仿射变换（Afine Transformations）——平行移动  |
+|  29  | 仿射变换（Afine Transformations）——放大缩小  |
+|  30  |   仿射变换（Afine Transformations）——旋转    |
+
+## 问题31-40
+
+| 序号 |                             内容                             |
+| :--: | :----------------------------------------------------------: |
+|  31  |           仿射变换（Afine Transformations）——倾斜            |
+|  32  |               傅立叶变换（Fourier Transform）                |
+|  33  |                     傅立叶变换——低通滤波                     |
+|  34  |                     傅立叶变换——高通滤波                     |
+|  35  |                     傅立叶变换——带通滤波                     |
+|  36  | JPEG 压缩——第一步：离散余弦变换（Discrete Cosine Transformation） |
+|  37  |           峰值信噪比（Peak Signal to Noise Ratio）           |
+|  38  |             JPEG 压缩——第二步：离散余弦变换+量化             |
+|  39  |              JPEG 压缩——第三步：YCbCr 色彩空间               |
+|  40  |              JPEG 压缩——第四步：YCbCr+DCT+量化               |
+
+## 问题41-50
+
+| 序号 |                           内容                            |
+| :--: | :-------------------------------------------------------: |
+|  41  |             `Canny`边缘检测：第一步——边缘强度             |
+|  42  |             `Canny`边缘检测：第二步——边缘细化             |
+|  43  |             `Canny`边缘检测：第三步——滞后阈值             |
+|  44  |  霍夫变换（Hough Transform）／直线检测——第一步：霍夫变换  |
+|  45  |    霍夫变换（Hough Transform）／直线检测——第二步：NMS     |
+|  46  | 霍夫变换（Hough Transform）／直线检测——第三步：霍夫逆变换 |
+|  47  |                形态学处理：膨胀（Dilate）                 |
+|  48  |                 形态学处理：腐蚀（Erode）                 |
+|  49  |                开运算（Opening Operation）                |
+|  50  |                闭运算（Closing Operation）                |
+
+## 问题51-60
+
+| 序号 |                             内容                             |
+| :--: | :----------------------------------------------------------: |
+|  51  |              形态学梯度（Morphology Gradient）               |
+|  52  |                       顶帽（Top Hat）                        |
+|  53  |                      黑帽（Black Hat）                       |
+|  54  | 使用误差平方和算法（Sum of Squared Difference）进行模式匹配（Template Matching） |
+|  55  |  使用绝对值差和（Sum of Absolute Differences）进行模式匹配   |
+|  56  | 使用归一化交叉相关（Normalization Cross Correlation）进行模式匹配 |
+|  57  | 使用零均值归一化交叉相关（Zero-mean Normalization Cross Correlation）进行模式匹配 |
+|  58  |                       4-邻接连通域标记                       |
+|  59  |                       8-邻接连通域标记                       |
+|  60  |                  透明混合（Alpha Blending）                  |
+
+## 问题61-70
+
+| 序号 |                      内容                       |
+| :--: | :---------------------------------------------: |
+|  61  |                 4-邻接的连接数                  |
+|  62  |                 8-邻接的连接数                  |
+|  63  |                    细化处理                     |
+|  64  |                Hilditch 细化算法                |
+|  65  |               Zhang-Suen 细化算法               |
+|  66  | 方向梯度直方图（HOG）第一步：梯度幅值・梯度方向 |
+|  67  |     方向梯度直方图（HOG）第二步：梯度直方图     |
+|  68  |    方向梯度直方图（HOG）第三步：直方图归一化    |
+|  69  |    方向梯度直方图（HOG）第四步：可视化特征量    |
+|  70  |           色彩追踪（Color Tracking）            |
+
+## 问题71-80
+
+| 序号 |                     内容                      |
+| :--: | :-------------------------------------------: |
+|  71  |                掩膜（Masking）                |
+|  72  | 掩膜（色彩追踪（Color Tracking）+形态学处理） |
+|  73  |                  缩小和放大                   |
+|  74  |          使用差分金字塔提取高频成分           |
+|  75  |        高斯金字塔（Gaussian Pyramid）         |
+|  76  |            显著图（Saliency Map）             |
+|  77  |         Gabor 滤波器（Gabor Filter）          |
+|  78  |               旋转 Gabor 滤波器               |
+|  79  |         使用 Gabor 滤波器进行边缘检测         |
+|  80  |         使用 Gabor 滤波器进行特征提取         |
+
+## 问题81-90
+
+| 序号 |                           内容                            |
+| :--: | :-------------------------------------------------------: |
+|  81  |                     Hessian 角点检测                      |
+|  82  |          Harris 角点检测第一步：Sobel + Gausian           |
+|  83  |              Harris 角点检测第二步：角点检测              |
+|  84  |             简单图像识别第一步：减色化+直方图             |
+|  85  |               简单图像识别第二步：判别类别                |
+|  86  |                 简单图像识别第三步：评估                  |
+|  87  |                 简单图像识别第四步：k-NN                  |
+|  88  |   k-平均聚类算法（k -means Clustering）第一步：生成质心   |
+|  89  |     k-平均聚类算法（k -means Clustering）第二步：聚类     |
+|  90  | k-平均聚类算法（k -means Clustering）第三步：调整初期类别 |
+
+## 问题91-100
+
+| 序号 |                             内容                             |
+| :--: | :----------------------------------------------------------: |
+|  91  |    利用 k-平均聚类算法进行减色处理第一步：按颜色距离分类     |
+|  92  |       利用 k-平均聚类算法进行减色处理第二步：减色处理        |
+|  93  |            准备机器学习的训练数据第一步：计算 IoU            |
+|  94  |  准备机器学习的训练数据第一步：随机裁剪（Random Cropping）   |
+|  95  | 神经网络（Neural Network）第一步：深度学习（Deep Learning）  |
+|  96  |            神经网络（Neural Network）第二步：训练            |
+|  97  |     简单物体检测第一步----滑动窗口（Sliding Window）+HOG     |
+|  98  |     简单物体检测第二步----滑动窗口（Sliding Window）+ NN     |
+|  99  | 简单物体检测第三步----非极大值抑制（Non-Maximum Suppression） |
+| 100  |  简单物体检测第三步----评估 Precision, Recall, F-score, mAP  |
 
 ## TODO
 
 1. 问题47、48待翻译
 2. 问题81待翻译
+3. 问题100待翻译
+4. 链接修复
 
 ## Citation
 
