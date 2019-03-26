@@ -1,18 +1,17 @@
-# Tutorial -C++-
+# C++ Tutorial
 
-## C++のOpenCVのインストール
+## C++ 上`OpenCV的安装
 
-Pythonでやりたい人はこっち〜〜 
->> https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README.md
+> 想使用 Python 的人请点[这里](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README.md)。
 
-Ubuntu-16.04(18.04でも可)を想定してます。Dockerを使うと便利だと思います。
+假定使用 Ubuntu-16.04（18.04 也可以）。我认为使用 Docker 很方便。
 
-### パッケージインストール
+### 安装 Package
 
 ```bash
 $ apt install build-essential cmake checkinstall libgtk-3-dev libjpeg-dev libpng++-dev wget emacs vim sudo
 ```
-### OpenCVのダウンロード
+### 下载 `OpenCV`
 
 ```bash
 $ mkdir opencv
@@ -26,9 +25,9 @@ $ cmake ..
 $ make -j4
 $ make install
 ```
-### サンプルプログラム
+### 示例程序
 
-以下をsample.cppとして保存
+将下面的代码保存为 `sample.cpp`：
 
 ```cpp
 #include <opencv2/core.hpp>
@@ -48,50 +47,49 @@ int main(int argc, const char* argv[]){
 }
 ```
 
-次にコンパイル
+执行下面的命令：
 
 ```bash
 $ g++ sample.cpp -o sample -lopencv_core -lopencv_imgcodecs -lopencv_highgui
 ```
 
-これで、コンパイルが通れば、フォルダ内に *sample* というものができてます。
-あとは実行しましょう。
+如果通过编译的话，文件夹内会出现名为 `sample` 的文件。然后输入以下指令执行：
 
 ```bash
 $ ./sample
 ```
 
-んでこんなウィンドウが出たら成功です!!
+出现下面的窗口就表示成功了！！
 
 ![](assets/sample6.png)
 
-次に画像処理の基本操作を説明していきます。（もう知ってるという人はスキップして、問題に進んでください！）
+下面讲解图像处理的基本操作（已经了解的人请跳过，直接看问题）。
 
-## 画像読み込み
+## 读取图像
 
-C++でOepncvを使う時、必ずこれをincludeしなきゃいけません。
+在 C++ 上使用 `OpenCV`时，一定要 `include`下面的东西：
 
 ```cpp
 #include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
 ```
 
-画像を読み込むときはこうします。Mat型変数に入れる。opencv系の変数は全てcvという名前の名前空間にあります。
+读取图像时请将图像存入 `Mat` 类型的变量中。`OpenCV` 的变量全部在`cv` 命名空间（namespace）中。
 
 ```cpp
 cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
 ```
 
-画像の高さ、幅を読み取るには、
+读取图像的长宽：
 
 ```cpp
 int width = img.rows;
 int height = img.cols;
 ```
 
-## 画像表示
+## 显示图像
 
-画像の表示にはimshowとwaitKey()を使います。imshowの１つ目の引数は、表示のウィンドウの名前です。今は気にしなくていいです。２つ目の引数は表示したい画像です。なにかキーボードを押すとウィンドウが消えます。
+显示图像时请使用 `imshow` 和 `waitKey()`。`imshow`的第一个参数表示窗口的名称，现在不用管它。第二个参数是想显示的图像变量。按任意键窗口消失。
 
 ```cpp
 cv::imshow("sample", img);
@@ -101,15 +99,15 @@ cv::destroyAllWindows();
 
 ![](assets/sample7.png)
 
-## 画素をいじる
+## 操作像素
 
-画素をいじるにはatメソッドを用いる。これで画素にx=30, y=20の位置にアクセスできます。
+使用 `at` 方法来操作像素。下面可以读取 x=30, y=20 位置处的像素。
 
 ```cpp
 std::cout << img.at<cv::Vec3b>(30,20) << std::endl;
 ```
 
-例えば、画像の左上半分を赤にするには、
+比如说将图像左上半部分变成红色：
 
 ```cpp
 int i = 0, j = 0;
@@ -124,9 +122,7 @@ for (i = 0; i < width / 2; i++){
 
 ![](assets/sample8.png)
 
-ちなみにC++の方では[0, 255]を超える範囲の値を入れると、コンパイル時にオーバーフローのwarningをはいてくれます。
-
-例えば、
+顺便说一句，使用 C++ 时如果输入超过 [0, 255] 范围的值的话，编译时会有溢出（overflow）警告。例如：
 
 ```cpp
 for(i=0; i<width/2; i++){
@@ -137,32 +133,32 @@ for(i=0; i<width/2; i++){
   }
 }
 ```
-として、x=30, y=20の値をとると、
+x=30, y=20 处的值会变成下面的样子：
 
 ```bash
 [0, 144, 56]
 ```
-となる。144 = 400 - 256, 56 = 256 - 200から得られ、画像もあきらかに緑がかっています。
+因为144 = 400 - 256, 56 = 256 - 200，图像会变成绿色的。
 
 ![](assets/sample9.png)
 
-img.at<cv::Vec3b>(j, i)にはunsigned char型で値が入っているので、RGB値を取るには、こんな風にしなきゃいけない。
+由于 `img.at<cv::Vec3b>(j, i)` 处是`unsigned char`类型的值的话，所以如果你想读取 RGB 的值的话，必须像下面这样做：
 
 ```cpp
 unsigned char tmp = img.at<cv::Vec3b>(j,i);
 ```
 
-## 画像のコピー 
+## 拷贝图像
 
-画像を違う変数にコピーしたいときは、clone()メソッドを使います。
+如果想把图像保存到不同的变量中，请使用 `clone` 方法：
 
 ```cpp
 cv::Mat img2 = img.clone();
 ```
 
-## 複数の画像の表示
+## 显示多张图像
 
-Opencvで２つ並べた画像を作るにはこんな風に作ります。
+在 OpenCV 中想并排显示两张图像的话请像下面这样做：
 
 ```cpp
 cv::Mat disp;
@@ -176,21 +172,21 @@ cv::imshow("sample", disp);
 cv::waitKey(0);
 ```
 
-これでこんな表示になる。
+显示效果如下：
 
 ![](assets/sample10.png)
 
-## 画像の保存
+## 保存图像
 
-保存する時は、cv::imwrite()メソッドを使います。
+保存时，使用`cv::imwrite()`方法：
 
 ```cpp
 cv::imshow("out.jpg", disp);
 ```
 
-## 練習問題
+## 练习问题
 
-画像の左半分上のRとBを入れ替えて表示してみましょう。
+将图像的左半部分的红通道和蓝通道交换。
 
 ![](assets/out_practice.jpg)
 
@@ -226,8 +222,6 @@ int main(int argc, const char* argv[]){
 }
 ```
 
-答え >> https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/answer.cpp
+答案 >> https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/answer.cpp
 
-以上でチュートリアルは終了です。
-
-あとはばんばん問題を解いて下さい！！！！
+上面就是所有的 Tutorial 了。之后请一个一个地解决问题吧！
