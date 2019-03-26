@@ -94,7 +94,7 @@ python answers/answer_@@.py
 
 ## TODO
 
-adaptivebinalizatino, poison image blending
+1. 问题47、48待翻译
 
 ## Citation
 
