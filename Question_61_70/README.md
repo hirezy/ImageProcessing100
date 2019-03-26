@@ -27,11 +27,11 @@ S = [0,4]の範囲をとり、
 - S = 4 は交差点
 を示す。
 
-|入力 (renketsu.png) |出力(answers/answer_61.png)|
-|:---:|:---:|
-|<img src="renketsu.png" width="50px">|<img src="answers/answer_61.png" width="50px">|
+|          输入 (renketsu.png)          |          输出(answers/answer_61.png)           |
+| :-----------------------------------: | :--------------------------------------------: |
+| <img src="renketsu.png" width="50px"> | <img src="answers/answer_61.png" width="50px"> |
 
-答え >> [answers/answer_61.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_61.py)
+答案 >> [answers/answer_61.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_61.py)
 
 ## Q.62. 8-連結数
 
@@ -44,11 +44,11 @@ S = (x1 - x1 x2 x3) + (x3 - x3 x4 x5) + (x5 - x5 x6 x7) + (x7 - x7 x8 x1)
 ```
 において各x¥*の値の0と1を反転させた値を用いる。
 
-|入力 (renketsu.png) |出力(answers/answer_62.png)|
-|:---:|:---:|
-|<img src="renketsu.png" width="50px">|<img src="answers/answer_62.png" width="50px">|
+|          输入 (renketsu.png)          |          输出(answers/answer_62.png)           |
+| :-----------------------------------: | :--------------------------------------------: |
+| <img src="renketsu.png" width="50px"> | <img src="answers/answer_62.png" width="50px"> |
 
-答え >> [answers/answer_62.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_62.py)
+答案 >> [answers/answer_62.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_62.py)
 
 ## Q.63. 細線化処理
 
@@ -65,11 +65,11 @@ S = (x1 - x1 x2 x3) + (x3 - x3 x4 x5) + (x5 - x5 x6 x7) + (x7 - x7 x8 x1)
 
 細線化にはヒルディッチのアルゴリズム(Q.64)や、Zhang-Suenのアルゴリズム(Q.65)、田村のアルゴリズムなどが存在する。
 
-|入力 (gazo.png) |出力(answers/answer_63.png)|
-|:---:|:---:|
-|![](gazo.png)|![](answers/answer_63.png)|
+| 输入 (gazo.png) | 输出(answers/answer_63.png) |
+| :-------------: | :-------------------------: |
+|  ![](gazo.png)  | ![](answers/answer_63.png)  |
 
-答え >> [answers/answer_63.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_63.py)
+答案 >> [answers/answer_63.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_63.py)
 
 ## Q.64. ヒルディッチの細線化
 
@@ -113,11 +113,11 @@ Step.2
 
 Step1, 2で変更する点がなくなるまで交互に繰り返す。
 
-|入力 (gazo.png) |出力(answers/answer_65.png)|
-|:---:|:---:|
-|![](gazo.png)|![](answers/answer_65.png)|
+| 输入 (gazo.png) | 输出(answers/answer_65.png) |
+| :-------------: | :-------------------------: |
+|  ![](gazo.png)  | ![](answers/answer_65.png)  |
 
-答え >> [answers/answer_65.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_65.py)
+答案 >> [answers/answer_65.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_65.py)
 
 ## Q.66. HOG (Step.1) 勾配強度・勾配角度
 
@@ -159,11 +159,11 @@ h(t) = h(t) / sqrt(Sum h(t) + epsilon)
 
 解答例はみやすくするため、graは色付けしてある。またmagは[0, 255]に正規化してある。
 
-|入力 (imori.jpg) |勾配強度(answers/answer_66_mag.jpg)|勾配角度(answers/answer_66_gra.jpg)|
-|:---:|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_66_mag.jpg)|![](answers/answer_66_gra.jpg)|
+| 输入 (imori.jpg) | 勾配強度(answers/answer_66_mag.jpg) | 勾配角度(answers/answer_66_gra.jpg) |
+| :--------------: | :---------------------------------: | :---------------------------------: |
+|  ![](imori.jpg)  |   ![](answers/answer_66_mag.jpg)    |   ![](answers/answer_66_gra.jpg)    |
 
-答え >> [answers/answer_66.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_66.py)
+答案 >> [answers/answer_66.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_66.py)
 
 ## Q.67. HOG (Step.2) 勾配ヒストグラム
 
@@ -179,11 +179,11 @@ N=8として、8x8の領域を1セルとして、勾配角度のインデック�
 ```
 の順に量子化したインデックスに対応するヒストグラムを示す。
 
-|入力 (imori.jpg) |出力(answers/answer_67.png)|
-|:---:|:---:|
-|![](imori.jpg)|<img src="answers/answer_67.png" width="400px">|
+| 输入 (imori.jpg) |           输出(answers/answer_67.png)           |
+| :--------------: | :---------------------------------------------: |
+|  ![](imori.jpg)  | <img src="answers/answer_67.png" width="400px"> |
 
-答え >> [answers/answer_67.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_67.py)
+答案 >> [answers/answer_67.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_67.py)
 
 ## Q.68. HOG (Step.3) ヒストグラム正規化
 
@@ -198,11 +198,11 @@ h(t) = h(t) / sqrt(Sum h(t) + epsilon)
 
 これでHOG特徴量が得られた。
 
-|入力 (imori.jpg) |出力(answers/answer_68.png)|
-|:---:|:---:|
-|![](imori.jpg)|<img src="answers/answer_68.png" width="400px">|
+| 输入 (imori.jpg) |           输出(answers/answer_68.png)           |
+| :--------------: | :---------------------------------------------: |
+|  ![](imori.jpg)  | <img src="answers/answer_68.png" width="400px"> |
 
-答え >> [answers/answer_68.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_68.py)
+答案 >> [answers/answer_68.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_68.py)
 
 ## Q.69. HOG (Step.4) 特徴量の描画
 
@@ -214,11 +214,11 @@ h(t) = h(t) / sqrt(Sum h(t) + epsilon)
 
 解答例
 
-|入力 (imori.jpg) |出力(answers/answer_69.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_69.jpg)|
+| 输入 (imori.jpg) | 输出(answers/answer_69.jpg) |
+| :--------------: | :-------------------------: |
+|  ![](imori.jpg)  | ![](answers/answer_69.jpg)  |
 
-答え >> [answers/answer_69.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_69.py)
+答案 >> [answers/answer_69.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_69.py)
 
 ## Q.70. カラートラッキング
 
@@ -239,10 +239,10 @@ HSV変換とは Q.5で用いた処理であるが、RGBをH(色相)、S(彩度)�
 0  60  120  180 240 300 360
 ```
 
-つまり、青色のカラートラッキングを行うにはHSV変換を行い、180<=H<=260となる位置が255となるような二値画像を出力すればよい。
+つまり、青色のカラートラッキングを行うにはHSV変換を行い、180<=H<=260となる位置が255となるような二値画像を输出すればよい。
 
-|入力 (imori.jpg) |出力(answers/answer_70.png)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_70.png)|
+| 输入 (imori.jpg) | 输出(answers/answer_70.png) |
+| :--------------: | :-------------------------: |
+|  ![](imori.jpg)  | ![](answers/answer_70.png)  |
 
-答え >> [answers/answer_70.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_70.py)
+答案 >> [answers/answer_70.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_70.py)

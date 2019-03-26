@@ -36,11 +36,11 @@
 最初に選ばれた色との色の距離でクラスのインデックスをつけたもの(アルゴリズム2)。
 解答では0-4にインデックスの値をx50にして見やすいようにしている。
 
-|入力 (imori.jpg) |出力(answers/answer_91.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_91.jpg)|
+| 输入 (imori.jpg) | 输出(answers/answer_91.jpg) |
+| :--------------: | :-------------------------: |
+|  ![](imori.jpg)  | ![](answers/answer_91.jpg)  |
 
-答え >> [answers/answer_91.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_91.py)
+答案 >> [answers/answer_91.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_91.py)
 
 ## Q.92. K-meansによる減色処理 (Step.2) 減色処理
 
@@ -59,11 +59,11 @@
 
 また、k=5にして*madara.jpg*にも試してみよ。
 
-|入力 (imori.jpg) | 出力(answers/answer_92.jpg) | k=10(answers/answer_92_k10.jpg) |入力2 (madara.jpg) |出力(answers/answer_92_m.jpg) |
-|:---:|:---:|:---:|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_92.jpg)|![](answers/answer_92_k10.jpg)|![](madara.jpg)|![](answers/answer_92_m.jpg)|
+| 输入 (imori.jpg) | 输出(answers/answer_92.jpg) | k=10(answers/answer_92_k10.jpg) | 输入2 (madara.jpg) | 输出(answers/answer_92_m.jpg) |
+| :--------------: | :-------------------------: | :-----------------------------: | :----------------: | :---------------------------: |
+|  ![](imori.jpg)  | ![](answers/answer_92.jpg)  | ![](answers/answer_92_k10.jpg)  |  ![](madara.jpg)   | ![](answers/answer_92_m.jpg)  |
 
-答え >> [answers/answer_92.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_92.py)
+答案 >> [answers/answer_92.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_92.py)
 
 
 ## Q.93. 機械学習の学習データの用意 (Step.1) IoUの計算
@@ -91,12 +91,12 @@ a = np.array((50, 50, 150, 150), dtype=np.float32)
 b = np.array((60, 60, 170, 160), dtype=np.float32)
 ```
 
-答え
+答案
 
 ```bash
 0.627907
 ```
-答え >> [answers/answer_93.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_93.py)
+答案 >> [answers/answer_93.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_93.py)
 
 ## Q.94. 機械学習の学習データの用意 (Step.2) ランダムクラッピング
 
@@ -108,14 +108,14 @@ b = np.array((60, 60, 170, 160), dtype=np.float32)
 1. np.random.seed(0)として、切り抜く矩形の左上のx1 = np.random.randint(W-60), y1=np.random.randint(H-60)で求めよ。
 2. GT (gt = np.array((47, 41, 129, 103), dtype=np.float32))とのIoUが0.5以上の時はその矩形に教師ラベル1, 0.5未満の場合はラベル0を与えよ。
 
-答えは、ラベル1の矩形を赤、ラベル0の矩形を青、GTを緑にしている。
+答案は、ラベル1の矩形を赤、ラベル0の矩形を青、GTを緑にしている。
 これでイモリの顔の画像、それ以外の画像を簡易的に用意できた。
 
-|入力 (imori_1.jpg) |出力(answers/answer_94.jpg)|
-|:---:|:---:|
-|![](imori_1.jpg)|![](answers/answer_94.jpg)|
+| 输入 (imori_1.jpg) | 输出(answers/answer_94.jpg) |
+| :----------------: | :-------------------------: |
+|  ![](imori_1.jpg)  | ![](answers/answer_94.jpg)  |
 
-答え >> [answers/answer_94.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_94.py)
+答案 >> [answers/answer_94.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_94.py)
 
 ## Q.95. ニューラルネットワーク (Step.1) ディープラーニングにする
 
@@ -123,7 +123,7 @@ b = np.array((60, 60, 170, 160), dtype=np.float32)
 これは現在流行っているディープラーニングである。
 
 
-入力層、中間層(ユニット数:64)、出力層(1)のネットワークは次のようにプログラムできる。これは、排他的論理和を実現するネットワークである。プログラムに関しては https://towardsdatascience.com/how-to-build-your-own-neural-network-from-scratch-in-python-68998a08e4f6 を参照せよ。
+输入層、中間層(ユニット数:64)、输出層(1)のネットワークは次のようにプログラムできる。これは、排他的論理和を実現するネットワークである。プログラムに関しては https://towardsdatascience.com/how-to-build-your-own-neural-network-from-scratch-in-python-68998a08e4f6 を参照せよ。
 
 ```python
 import numpy as np
@@ -184,7 +184,7 @@ for j in range(4):
 ここでは、中間層(ユニット数:64)をもう一層増やし、学習・テストを行え。
 
 
-答え
+答案
 
 ```bash
 in: [0. 0.] pred: [0.03724313]
@@ -193,13 +193,13 @@ in: [1. 0.] pred: [0.9641076]
 in: [1. 1.] pred: [0.03937037]
 ```
 
-答え >> [answers/answer_95.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_95.py)
+答案 >> [answers/answer_95.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_95.py)
 
 ## Q.96. ニューラルネットワーク (Step.2) 学習
 
-ここでは、Q.94で用意した学習データ200のHOG特徴量を入力として、Q.95で作成したニューラルネットを学習せよ。
+ここでは、Q.94で用意した学習データ200のHOG特徴量を输入として、Q.95で作成したニューラルネットを学習せよ。
 
-ここでは、学習データに対してAccuracyを計算せよ。ただし、出力(予測確率)が0.5以上で予測ラベルが1、0.5未満で予測ラベルは0としてAccuracyを計算せよ。
+ここでは、学習データに対してAccuracyを計算せよ。ただし、输出(予測確率)が0.5以上で予測ラベルが1、0.5未満で予測ラベルは0としてAccuracyを計算せよ。
 学習のハイパーパラメータは、下記の通り。
 - 学習率 lr= 0.01
 - 学習回数 epch=10000
@@ -209,13 +209,13 @@ in: [1. 1.] pred: [0.03937037]
 Accuracy >> 1.0 (200.0 / 200)
 ```
 
-答え >> [answers/answer_96.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_96.py)
+答案 >> [answers/answer_96.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_96.py)
 
 ## Q.97. 簡単な物体検出 (Step.1) スライディングウィンドウ + HOG
 
 ここから物体検出を行う。
 
-物体検出とは、画像中でどこに何が写っているかを出力するタスクである。
+物体検出とは、画像中でどこに何が写っているかを输出するタスクである。
 例えば、画像の[x1, y1, x2, y2]の位置に犬がいるなど。
 このような物体を囲む矩形のことをBounding-box(バウンディングボックス)と呼ぶ。
 
@@ -242,15 +242,15 @@ recs = np.array(((42, 42), (56, 56), (70, 70)), dtype=np.float32)
 - 矩形部分を切り抜いたら、その部分を32x32にリサイズする。
 - HOG特徴量の取得は8x8を1セルとする。
 
-答え >> [answers/answer_97.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_97.py)
+答案 >> [answers/answer_97.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_97.py)
 
 ## Q.98. 簡単な物体検出 (Step.2) スライディングウィンドウ + NN
 
-*imori_many.jpg*に対して、ここではQ.97で求めた各矩形のHOG特徴量を入力として、Q.96で学習したニューラルネットでイモリの顔か否かを識別せよ。
+*imori_many.jpg*に対して、ここではQ.97で求めた各矩形のHOG特徴量を输入として、Q.96で学習したニューラルネットでイモリの顔か否かを識別せよ。
 
 ここでスコア(予測確率)が0.7以上の矩形を描画せよ。
 
-答え
+答案
 検出された矩形 [x1, y1, x2, y2, score]
 
 ```bash
@@ -285,9 +285,9 @@ recs = np.array(((42, 42), (56, 56), (70, 70)), dtype=np.float32)
 [ 97.          81.         167.         144.           0.70371708]]
 ```
 
-|入力 (imori_many.jpg) |出力(answers/answer_98.jpg)|
-|:---:|:---:|
-|![](imori_many.jpg)|![](answers/answer_98.jpg)|
+| 输入 (imori_many.jpg) | 输出(answers/answer_98.jpg) |
+| :-------------------: | :-------------------------: |
+|  ![](imori_many.jpg)  | ![](answers/answer_98.jpg)  |
 
 解答 >> [answers/answer_98.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_98.py)
 
@@ -300,19 +300,19 @@ NMSとはスコアの高いBounding-boxのみを残す手法であり、アル�
 
 1. Boundinb-boxの集合Bをスコアが高い順にソートする。
 2. スコアが最大のものをb0とする。
-3. b0と他のBounding-boxのIoUを計算する。IoUが閾値t以上のBounding-boxをBから削除する。B0は出力する集合Rに加え、Bから削除する。
+3. b0と他のBounding-boxのIoUを計算する。IoUが閾値t以上のBounding-boxをBから削除する。B0は输出する集合Rに加え、Bから削除する。
 4. 2-3をBがなくなるまで行う。
-5. Rを出力する。
+5. Rを输出する。
 
-Q.98にNMS(閾値t=0.25)を組み込み、出力を描画せよ。
+Q.98にNMS(閾値t=0.25)を組み込み、输出を描画せよ。
 解答では検出の左上にスコアも加えている。
 
 精度はともあれ、これで検出の一連の流れが完了した。
 ニューラルネットの学習を増やしたりすることで、検出の精度は更に向上ができる。
 
-|入力 (imori_many.jpg) |NMS前(answers/answer_98.jpg)|NMS後(answers/answer_99.jpg)|
-|:---:|:---:|:---:|
-|![](imori_many.jpg)|![](answers/answer_98.jpg)|![](answers/answer_99.jpg)|
+| 输入 (imori_many.jpg) | NMS前(answers/answer_98.jpg) | NMS後(answers/answer_99.jpg) |
+| :-------------------: | :--------------------------: | :--------------------------: |
+|  ![](imori_many.jpg)  |  ![](answers/answer_98.jpg)  |  ![](answers/answer_99.jpg)  |
 
 解答 >> [answers/answer_99.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_99.py)
 
@@ -387,8 +387,8 @@ F-score >>  0.4
 mAP >> 0.0625
 ```
 
-|入力 (imori_many.jpg) |GT(answers/answer_100_gt.jpg)|出力(answers/answer_100.jpg)|
-|:---:|:---:|:---:|
-|![](imori_many.jpg)|![](answers/answer_100_gt.jpg)|![](answers/answer_100.jpg)|
+| 输入 (imori_many.jpg) | GT(answers/answer_100_gt.jpg)  | 输出(answers/answer_100.jpg) |
+| :-------------------: | :----------------------------: | :--------------------------: |
+|  ![](imori_many.jpg)  | ![](answers/answer_100_gt.jpg) | ![](answers/answer_100.jpg)  |
 
 解答 >> [answers/answer_100.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_100.py)

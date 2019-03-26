@@ -12,9 +12,9 @@ img = cv2.imread("imori.jpg")
 red = img[:, :, 2].copy()
 ```
 
-|入力 (imori.jpg)|出力 (answers/answer_1.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_1.jpg)|
+| 输入 (imori.jpg) | 输出 (answers/answer_1.jpg) |
+| :--------------: | :-------------------------: |
+|  ![](imori.jpg)  |  ![](answers/answer_1.jpg)  |
 
 答案 
 Python >> [answers/answer_1.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_1.py)
@@ -26,9 +26,9 @@ C++ >> [answers_cpp/answer_1.py](https://github.com/yoyoyo-yo/Gasyori100knock/bl
 
 Y = 0.2126 R + 0.7152 G + 0.0722 B
 
-|入力 (imori.jpg)|出力 (answers/answer_2.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_2.jpg)|
+| 输入 (imori.jpg) | 输出 (answers/answer_2.jpg) |
+| :--------------: | :-------------------------: |
+|  ![](imori.jpg)  |  ![](answers/answer_2.jpg)  |
 
 答案
 Python >> [answers/answer_2.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_2.py)
@@ -42,9 +42,9 @@ y = { 0 (if y < 128)
      255 (else) 
 ```
 
-|入力 (imori.jpg)|出力 (answers/answer_3.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_3.jpg)|
+| 输入 (imori.jpg) | 输出 (answers/answer_3.jpg) |
+| :--------------: | :-------------------------: |
+|  ![](imori.jpg)  |  ![](answers/answer_3.jpg)  |
 
 答案 
 Python >> [answers/answer_3.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_3.py)
@@ -76,9 +76,9 @@ argmax_{t} X = argmax_{t} Sb^2
 ```
 换言之，如果使 Sb^2 =  w0 * w1 * (M0 - M1) ^2 最大，就可以得到最好的二值化阈值 t。
 
-|入力 (imori.jpg)|出力 (th = 127) (answers/answer_4.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_4.jpg)|
+| 输入 (imori.jpg) | 输出 (th = 127) (answers/answer_4.jpg) |
+| :--------------: | :------------------------------------: |
+|  ![](imori.jpg)  |       ![](answers/answer_4.jpg)        |
 
 答案
 Python >> [answers/answer_4.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_4.py)
@@ -92,9 +92,9 @@ HSV 即使用**色相（Hue）、饱和度（Saturation）、明度（Value）**
 
 - 色相：将颜色使用0到360度表示，就是平常所说的颜色名称，如红色、蓝色。色相与数值按下表对应：
 
-  | 红   | 黄   | 绿   | 青色 | 蓝色 | 品红 | 红   |
-  | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-  | 0    | 60   | 120  | 180  | 240  | 300  | 360  |
+  | 红  | 黄  | 绿  | 青色 | 蓝色 | 品红 | 红  |
+  | --- | --- | --- | ---- | ---- | ---- | --- |
+  | 0   | 60  | 120 | 180  | 240  | 300  | 360 |
 
 - 饱和度：是指色彩的纯度，饱和度越低则颜色越黯淡( 0<= S < 1)；
 - 明度：即颜色的明暗程度。数值越高越接近白色，数值越低越接近黑色 ( 0 <= V < 1)；
@@ -136,9 +136,9 @@ X = C (1 - |H' mod 2 - 1|)
 ```
 请将色相反转（色相值加180），然后再用 RGB 色彩空间表示图片。
 
-|入力 (imori.jpg)|出力 (answers/answer_5.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_5.jpg)|
+| 输入 (imori.jpg) | 输出 (answers/answer_5.jpg) |
+| :--------------: | :-------------------------: |
+|  ![](imori.jpg)  |  ![](answers/answer_5.jpg)  |
 
 答案 
 Python >> [answers/answer_5.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_5.py)
@@ -158,9 +158,9 @@ val = {  32  (  0 <= val <  64)
         160  (128 <= val < 192)
         224  (192 <= val < 256)
 ```
-|入力 (imori.jpg)|出力 (answers/answer_6.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_6.jpg)|
+| 输入 (imori.jpg) | 输出 (answers/answer_6.jpg) |
+| :--------------: | :-------------------------: |
+|  ![](imori.jpg)  |  ![](answers/answer_6.jpg)  |
 
 答案 
 Python >> [answers/answer_6.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_6.py)
@@ -176,9 +176,9 @@ v = 1/|R| * Sum_{i in R} v_i
 
 请把大小为 128x128 的`imori.jpg`使用 8x8 的网格做平均池化。
 
-|入力 (imori.jpg)|出力 (answers/answer_7.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_7.jpg)|
+| 输入 (imori.jpg) | 输出 (answers/answer_7.jpg) |
+| :--------------: | :-------------------------: |
+|  ![](imori.jpg)  |  ![](answers/answer_7.jpg)  |
 
 答案 
 Python >> [answers/answer_7.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_7.py)
@@ -188,9 +188,9 @@ C++ >> [answers_cpp/answer_7.py](https://github.com/yoyoyo-yo/Gasyori100knock/bl
 
 网格内的值不取平均值，而是取网格内的最大值进行池化操作。
 
-|入力 (imori.jpg)|出力 (answers/answer_8.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_8.jpg)|
+| 输入 (imori.jpg) | 输出 (answers/answer_8.jpg) |
+| :--------------: | :-------------------------: |
+|  ![](imori.jpg)  |  ![](answers/answer_8.jpg)  |
 
 答案
 Python >> [answers/answer_8.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_8.py)
@@ -214,9 +214,9 @@ K =  1/16 [ 2 4 2 ]
             1 2 1
 ```
 
-|入力 (imori_noise.jpg)|出力 (answers/answer_9.jpg)|
-|:---:|:---:|
-|![](imori_noise.jpg)|![](answers/answer_9.jpg)|
+| 输入 (imori_noise.jpg) | 输出 (answers/answer_9.jpg) |
+| :--------------------: | :-------------------------: |
+|  ![](imori_noise.jpg)  |  ![](answers/answer_9.jpg)  |
 
 答案 
 Python >> [answers/answer_9.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_9.py)
@@ -228,9 +228,9 @@ C++ >> [answers_cpp/answer_9.py](https://github.com/yoyoyo-yo/Gasyori100knock/bl
 
 中值滤波器是一种可以使图像平滑的滤波器。这种滤波器用滤波器范围内（在这里是3x3）像素点的中值进行滤波，在这里也采用 Zero Padding。
 
-|入力 (imori_noise.jpg)|出力 (answers/answer_10.jpg)|
-|:---:|:---:|
-|![](imori_noise.jpg)|![](answers/answer_10.jpg)|
+| 输入 (imori_noise.jpg) | 输出 (answers/answer_10.jpg) |
+| :--------------------: | :--------------------------: |
+|  ![](imori_noise.jpg)  |  ![](answers/answer_10.jpg)  |
 
 答案 
 Python >> [answers/answer_10.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_10.py)

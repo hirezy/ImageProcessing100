@@ -6,9 +6,9 @@
 
 均值滤波器使用网格内像素的平均值。
 
-|入力 (imori.jpg)|出力 (answers/answer_11.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_11.jpg)|
+| 输入 (imori.jpg) | 输出 (answers/answer_11.jpg) |
+| :--------------: | :--------------------------: |
+|  ![](imori.jpg)  |  ![](answers/answer_11.jpg)  |
 
 答案 >> [answers/answer_11.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_11.py)
 
@@ -25,9 +25,9 @@ Motion Filter 取对角线方向的像素的平均值，像下式这样定义：
    0   0  1/3
 ```
 
-|入力 (imori.jpg)|出力 (answers/answer_12.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_12.jpg)|
+| 输入 (imori.jpg) | 输出 (answers/answer_12.jpg) |
+| :--------------: | :--------------------------: |
+|  ![](imori.jpg)  |  ![](answers/answer_12.jpg)  |
 
 答案 >> [answers/answer_12.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_12.py)
 
@@ -37,9 +37,9 @@ Motion Filter 取对角线方向的像素的平均值，像下式这样定义：
 
 MAX-MIN 滤波器使用网格内像素的最大值和最小值的差值对网格内像素重新赋值。通常用于**边缘检测**。边缘检测用于检测图像中的线。像这样提取图像中的信息的操作被称为**特征提取**。边缘检测通常在灰度图像上进行。
 
-|入力 (imori.jpg)|出力 (answers/answer_13.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_13.jpg)|
+| 输入 (imori.jpg) | 输出 (answers/answer_13.jpg) |
+| :--------------: | :--------------------------: |
+|  ![](imori.jpg)  |  ![](answers/answer_13.jpg)  |
 
 答案 >> [answers/answer_13.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_13.py)
 
@@ -57,9 +57,9 @@ K = [ 0  1  0 ]   K = [ -1 1 0 ]
       0  0  0            0 0 0
 ```
 
-|输入 (imori.jpg)|输出・纵向 (answers/answer_14_v.jpg)|输出・横向 (answers/answer_14_h.jpg)|
-|:---:|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_14_v.jpg)|![](answers/answer_14_h.jpg)|
+| 输入 (imori.jpg) | 输出・纵向 (answers/answer_14_v.jpg) | 输出・横向 (answers/answer_14_h.jpg) |
+| :--------------: | :----------------------------------: | :----------------------------------: |
+|  ![](imori.jpg)  |     ![](answers/answer_14_v.jpg)     |     ![](answers/answer_14_h.jpg)     |
 
 答案 >>[ answers/answer_14.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_14.py)
 
@@ -76,9 +76,9 @@ K = [ 2 0 -2 ]   K = [  0  0  0 ]
       1 0 -1           -1 -2 -1
 ```
 
-|输入 (imori.jpg)|输出・纵向 (answers/answer_15_v.jpg)|输出・横向 (answers/answer_15_h.jpg)|
-|:---:|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_15_v.jpg)|![](answers/answer_15_h.jpg)|
+| 输入 (imori.jpg) | 输出・纵向 (answers/answer_15_v.jpg) | 输出・横向 (answers/answer_15_h.jpg) |
+| :--------------: | :----------------------------------: | :----------------------------------: |
+|  ![](imori.jpg)  |     ![](answers/answer_15_v.jpg)     |     ![](answers/answer_15_h.jpg)     |
 
 答案 >> [answers/answer_15.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_15.py)
 
@@ -95,9 +95,9 @@ K = [  0  0  0 ]  K = [ -1 0 1 ]
        1  1  1          -1 0 1
 ```
 
-|输入 (imori.jpg)|输出・纵向 (answers/answer_16_v.jpg)|输出・横向 (answers/answer_16_h.jpg)|
-|:---:|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_16_v.jpg)|![](answers/answer_16_h.jpg)|
+| 输入 (imori.jpg) | 输出・纵向 (answers/answer_16_v.jpg) | 输出・横向 (answers/answer_16_h.jpg) |
+| :--------------: | :----------------------------------: | :----------------------------------: |
+|  ![](imori.jpg)  |     ![](answers/answer_16_v.jpg)     |     ![](answers/answer_16_h.jpg)     |
 
 答案 >> [answers/answer_16.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_16.py)
 
@@ -137,9 +137,9 @@ K = [ 1 -4  1 ]
       0  1  0
 ```
 
-|入力 (imori.jpg)|出力(answers/answer_17.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_17.jpg)||
+| 输入 (imori.jpg) | 输出(answers/answer_17.jpg) |
+| :--------------: | :-------------------------: |
+|  ![](imori.jpg)  | ![](answers/answer_17.jpg)  |  |
 
 答案 >> [answers/answer_17.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_17.py)
 
@@ -155,9 +155,9 @@ K = [ -1  1  1 ]
        0  1  2
 ```
 
-|入力 (imori.jpg)|出力(answers/answer_18.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_18.jpg)|
+| 输入 (imori.jpg) | 输出(answers/answer_18.jpg) |
+| :--------------: | :-------------------------: |
+|  ![](imori.jpg)  | ![](answers/answer_18.jpg)  |
 
 答案 >> [answers/answer_18.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_18.py)
 
@@ -175,9 +175,9 @@ K = [ -1  1  1 ]
 LoG(x,y) = (x^2 + y^2 - s^2) / (2 * pi * s^6) * exp(-(x^2+y^2) / (2*s^2))
 ```
 
-|入力 (imori_noise.jpg)|出力 (answers/answer_19.jpg) |
-|:---:|:---:|
-|![](imori_noise.jpg)|![](answers/answer_19.jpg)|
+| 输入 (imori_noise.jpg) | 输出 (answers/answer_19.jpg) |
+| :--------------------: | :--------------------------: |
+|  ![](imori_noise.jpg)  |  ![](answers/answer_19.jpg)  |
 
 答案 >> [answers/answer_19.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_19.py)
 
@@ -187,9 +187,9 @@ LoG(x,y) = (x^2 + y^2 - s^2) / (2 * pi * s^6) * exp(-(x^2+y^2) / (2*s^2))
 
 直方图显示了不同数值的像素出现的次数。在`Matplotlib`中有`hist()`函数提供绘制直方图的接口。
 
-|入力 (imori_dark.jpg)|出力 (answers/answer_20.png) |
-|:---:|:---:|
-|![](imori_dark.jpg)|![](answers/answer_20.png)|
+| 输入 (imori_dark.jpg) | 输出 (answers/answer_20.png) |
+| :-------------------: | :--------------------------: |
+|  ![](imori_dark.jpg)  |  ![](answers/answer_20.png)  |
 
 答案 >> [answers/answer_20.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_20.py)
 

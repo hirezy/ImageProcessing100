@@ -2,17 +2,17 @@
 
 ## Q.31. アフィン変換(スキュー)
 
-(1)アフィン変換を用いて、出力(1)のようなX-sharing(dx = 30)画像を作成せよ。
+(1)アフィン変換を用いて、输出(1)のようなX-sharing(dx = 30)画像を作成せよ。
 
-(2)アフィン変換を用いて、出力2のようなY-sharing(dy = 30)画像を作成せよ。
+(2)アフィン変換を用いて、输出2のようなY-sharing(dy = 30)画像を作成せよ。
 
-(3)アフィン変換を用いて、出力3のような幾何変換した(dx = 30, dy = 30)画像を作成せよ。
+(3)アフィン変換を用いて、输出3のような幾何変換した(dx = 30, dy = 30)画像を作成せよ。
 
 このような画像はスキュー画像と呼ばれ、画像を斜め方向に伸ばした画像である。
 
-出力(1)の場合、x方向にdxだけ引き伸ばした画像はX-sharingと呼ばれる。
+输出(1)の場合、x方向にdxだけ引き伸ばした画像はX-sharingと呼ばれる。
 
-出力(2)の場合、y方向にdyだけ引き伸ばした画像はY-sharingと呼ばれる。
+输出(2)の場合、y方向にdyだけ引き伸ばした画像はY-sharingと呼ばれる。
 
 それぞれ次式のアフィン変換で実現できる。
 ただし、元画像のサイズがh x wとする。
@@ -26,11 +26,11 @@
   1        0 0  1    1           1        0 0  1    1
 ```
 
-|入力 (imori.jpg)|出力 (1) (answers/answer_31_1.jpg)|出力 (2) (answers/answer_31_2.jpg)|出力 (3) (answers/answer_31_3.jpg)|
-|:---:|:---:|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_31_1.jpg)|![](answers/answer_31_2.jpg)|![](answers/answer_31_3.jpg)|
+| 输入 (imori.jpg) | 输出 (1) (answers/answer_31_1.jpg) | 输出 (2) (answers/answer_31_2.jpg) | 输出 (3) (answers/answer_31_3.jpg) |
+| :--------------: | :--------------------------------: | :--------------------------------: | :--------------------------------: |
+|  ![](imori.jpg)  |    ![](answers/answer_31_1.jpg)    |    ![](answers/answer_31_2.jpg)    |    ![](answers/answer_31_3.jpg)    |
 
-答え >> [answers/answer_31.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_31.py)
+答案 >> [answers/answer_31.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_31.py)
 
 ## Q.32. フーリエ変換
 
@@ -46,7 +46,7 @@
 二次元離散フーリエ変換(DFT)は次式で計算される。
 
 ```bash
-K = 0:W, l = 0:H, 入力画像をI として
+K = 0:W, l = 0:H, 输入画像をI として
 G(k,l) = Sum_{y=0:H-1, x=0:W-1} I(x,y) exp( -2pi * j * (kx/W + ly/H)) / sqrt(H * W)
 ```
 
@@ -62,11 +62,11 @@ x = 0:W, y = 0:H  として
 I(x,y) = Sum_{l=0:H-1, k=0:W-1} G(k,l) exp( 2pi * j * (kx/W + ly/H)) / sqrt(H * W)
 ```
 
-|入力 (imori.jpg)|グレースケール (imori_gray.jpg)|出力 (answers/answer_32.jpg)|パワースペクトル (answers/answer_32_ps.py)
-|:---:|:---:|:---:|:---:|
-|![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_32.jpg)|![](answers/answer_32_ps.jpg)|
+| 输入 (imori.jpg) | グレースケール (imori_gray.jpg) | 输出 (answers/answer_32.jpg) | パワースペクトル (answers/answer_32_ps.py) |
+| :--------------: | :-----------------------------: | :--------------------------: | :----------------------------------------: |
+|  ![](imori.jpg)  |       ![](imori_gray.jpg)       |  ![](answers/answer_32.jpg)  |       ![](answers/answer_32_ps.jpg)        |
 
-答え >> [answers/answer_32.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_32.py)
+答案 >> [answers/answer_32.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_32.py)
 
 ## Q.33. フーリエ変換　ローパスフィルタ
 
@@ -79,11 +79,11 @@ DFTによって得られた周波数成分は左上、右上、左下、右下�
 
 ここでは低周波数の中心から高周波までの距離をrとすると0.5rまでの成分を通すとする。
 
-|入力 (imori.jpg)|グレースケール (imori_gray.jpg)|出力 (answers/answer_33.jpg)|
-|:---:|:---:|:---:|
-|![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_33.jpg)|
+| 输入 (imori.jpg) | グレースケール (imori_gray.jpg) | 输出 (answers/answer_33.jpg) |
+| :--------------: | :-----------------------------: | :--------------------------: |
+|  ![](imori.jpg)  |       ![](imori_gray.jpg)       |  ![](answers/answer_33.jpg)  |
 
-答え >> [answers/answer_33.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_33.py)
+答案 >> [answers/answer_33.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_33.py)
 
 ## Q.34. フーリエ変換　ハイパスフィルタ
 
@@ -93,11 +93,11 @@ DFTによって得られた周波数成分は左上、右上、左下、右下�
 
 ここでは低周波数の中心から高周波までの距離をrとすると0.2rからの成分を通すとする。
 
-|入力 (imori.jpg)|グレースケール (imori_gray.jpg)|出力 (answers/answer_34.jpg)|
-|:---:|:---:|:---:|
-|![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_34.jpg)|
+| 输入 (imori.jpg) | グレースケール (imori_gray.jpg) | 输出 (answers/answer_34.jpg) |
+| :--------------: | :-----------------------------: | :--------------------------: |
+|  ![](imori.jpg)  |       ![](imori_gray.jpg)       |  ![](answers/answer_34.jpg)  |
 
-答え >> [answers/answer_34.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_34.py)
+答案 >> [answers/answer_34.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_34.py)
 
 ## Q.35. フーリエ変換　バンドパスフィルタ
 
@@ -107,11 +107,11 @@ DFTによって得られた周波数成分は左上、右上、左下、右下�
 
 ここでは低周波数の中心から高周波までの距離をrとすると0.1rから0.5rまでの成分を通すとする。
 
-|入力 (imori.jpg)|グレースケール (imori_gray.jpg)|出力 (answers/answer_35.jpg)|
-|:---:|:---:|:---:|
-|![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_35.jpg)|
+| 输入 (imori.jpg) | グレースケール (imori_gray.jpg) | 输出 (answers/answer_35.jpg) |
+| :--------------: | :-----------------------------: | :--------------------------: |
+|  ![](imori.jpg)  |       ![](imori_gray.jpg)       |  ![](answers/answer_35.jpg)  |
 
-答え >> [answers/answer_35.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_35.py)
+答案 >> [answers/answer_35.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_35.py)
 
 ## Q.36. JPEG圧縮 (Step.1)離散コサイン変換
 
@@ -133,16 +133,16 @@ f(x,y) = 1 / T * C(x)C(y) * Sum_{u=0:T-1} Sum_{v=0:T-1} F(u,v) cos((2x+1)u*pi/2T
 ここでは画像を8x8ずつの領域に分割して、各領域で以上のDCT, IDCTを繰り返すことで、jpeg符号に応用される。
 今回も同様に8x8の領域に分割して、DCT, IDCTを行え。
 
-|入力 (imori.jpg)|グレースケール (imori_gray.jpg)|出力 (1) (answers/answer_36.jpg)|
-|:---:|:---:|:---:|
-|![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_36.jpg)|
+| 输入 (imori.jpg) | グレースケール (imori_gray.jpg) | 输出 (1) (answers/answer_36.jpg) |
+| :--------------: | :-----------------------------: | :------------------------------: |
+|  ![](imori.jpg)  |       ![](imori_gray.jpg)       |    ![](answers/answer_36.jpg)    |
 
-答え >> [answers/answer_36.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_36.py)
+答案 >> [answers/answer_36.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_36.py)
 
 ## Q.37. PSNR
 
 IDCTで用いるDCT係数を8でなく、4にすると画像の劣化が生じる。
-入力画像とIDCT画像のPSNRを求めよ。また、IDCTによるビットレートを求めよ。
+输入画像とIDCT画像のPSNRを求めよ。また、IDCTによるビットレートを求めよ。
 
 PSNR(Peak Signal to Noise Ratio)とは信号対雑音比と呼ばれ、画像がどれだけ劣化したかを示す。
 
@@ -162,11 +162,11 @@ MSE = Sum_{y=0:H-1} Sum_{x=0:W-1} (I1(x,y) - I2(x,y))^2 / (HW)
 bitrate = 8 * K^2 / 8^2
 ```
 
-|入力 (imori.jpg)|グレースケール|出力 (answers/answer_37.jpg) (PSNR = 27.62, Bitrate=2.0)|
-|:---:|:---:|:---:|
-|![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_37.jpg)|
+| 输入 (imori.jpg) |   グレースケール    | 输出 (answers/answer_37.jpg) (PSNR = 27.62, Bitrate=2.0) |
+| :--------------: | :-----------------: | :------------------------------------------------------: |
+|  ![](imori.jpg)  | ![](imori_gray.jpg) |                ![](answers/answer_37.jpg)                |
 
-答え >> [answers/answer_37.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_37.py)
+答案 >> [answers/answer_37.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_37.py)
 
 ## Q.38. JPEG圧縮 (Step.2)DCT+量子化|
 
@@ -194,11 +194,11 @@ Q = np.array(((16, 11, 10, 16, 24, 40, 51, 61),
 
 量子化を行うと画像の容量が減っていることから、データ量が削減されたことが伺える。
 
-|入力 (imori.jpg)|グレースケール(9kb)|出力 (answers/answer_38.jpg) (7kb)|
-|:---:|:---:|:---:|
-|![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_38.jpg)|
+| 输入 (imori.jpg) | グレースケール(9kb) | 输出 (answers/answer_38.jpg) (7kb) |
+| :--------------: | :-----------------: | :--------------------------------: |
+|  ![](imori.jpg)  | ![](imori_gray.jpg) |     ![](answers/answer_38.jpg)     |
 
-答え >> [answers/answer_38.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_38.py)
+答案 >> [answers/answer_38.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_38.py)
 
 ## Q.39. JPEG圧縮 (Step.3)YCbCr表色系
 
@@ -224,11 +224,11 @@ G = Y - (Cb - 128) * 0.3441 - (Cr - 128) * 0.7139
 B = Y + (Cb - 128) * 1.7718
 ```
 
-|入力 (imori.jpg)|出力 (answers/answer_39.jpg) |
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_39.jpg)|
+| 输入 (imori.jpg) | 输出 (answers/answer_39.jpg) |
+| :--------------: | :--------------------------: |
+|  ![](imori.jpg)  |  ![](answers/answer_39.jpg)  |
 
-答え >> [answers/answer_39.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_39.py)
+答案 >> [answers/answer_39.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_39.py)
 
 ## Q.40. JPEG圧縮 (Step.4)YCbCr+DCT+量子化
 
@@ -257,9 +257,9 @@ Q2 = np.array(((17, 18, 24, 47, 99, 99, 99, 99),
                (99, 99, 99, 99, 99, 99, 99, 99)), dtype=np.float32)
 ```
 
-|入力 (imori.jpg) (13kb)|出力 (answers/answer_40.jpg) (8kb)|
-|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_40.jpg)|
+| 输入 (imori.jpg) (13kb) | 输出 (answers/answer_40.jpg) (8kb) |
+| :---------------------: | :--------------------------------: |
+|     ![](imori.jpg)      |     ![](answers/answer_40.jpg)     |
 
-答え >> [answers/answer_40.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_40.py)
+答案 >> [answers/answer_40.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_40.py)
 

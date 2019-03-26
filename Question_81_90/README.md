@@ -23,11 +23,11 @@ H = [ Ix^2  IxIy]
 
 解答ではdet(H)が極大点かつ、max(H)*0.1以上である点をコーナーとしている。
 
-|入力 (thorino.jpg) |出力(answers/answer_81.jpg)|
-|:---:|:---:|
-|![](thorino.jpg)|![](answers/answer_81.jpg)|
+| 输入 (thorino.jpg) | 输出(answers/answer_81.jpg) |
+| :----------------: | :-------------------------: |
+|  ![](thorino.jpg)  | ![](answers/answer_81.jpg)  |
 
-答え >> [answers/answer_81.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_81.py)
+答案 >> [answers/answer_81.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_81.py)
 
 ## Q.82. Harrisのコーナー検出 (Step.1) Sobel + Gauusian
 
@@ -50,11 +50,11 @@ Q.82-83においての各パラメータは以下の通り。
 
 ここでは1-3までを実装せよ。
 
-|入力 (thorino.jpg) |出力(answers/answer_82.png)|
-|:---:|:---:|
-|![](thorino.jpg)|![](answers/answer_82.png)|
+| 输入 (thorino.jpg) | 输出(answers/answer_82.png) |
+| :----------------: | :-------------------------: |
+|  ![](thorino.jpg)  | ![](answers/answer_82.png)  |
 
-答え >> [answers/answer_82.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_82.py)
+答案 >> [answers/answer_82.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_82.py)
 
 ## Q.83. Harrisのコーナー検出 (Step.2) コーナー検出
 
@@ -62,11 +62,11 @@ Q.82-83においての各パラメータは以下の通り。
 
 4における k = 0.04、5におけるth = 0.1
 
-|入力 (thorino.jpg) |出力(answers/answer_83.jpg)|
-|:---:|:---:|
-|![](thorino.jpg)|![](answers/answer_83.jpg)|
+| 输入 (thorino.jpg) | 输出(answers/answer_83.jpg) |
+| :----------------: | :-------------------------: |
+|  ![](thorino.jpg)  | ![](answers/answer_83.jpg)  |
 
-答え >> [answers/answer_83.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_83.py)
+答案 >> [answers/answer_83.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_83.py)
 
 ## Q.84. 簡単な画像認識 (Step.1) 減色化 + ヒストグラム
 
@@ -96,11 +96,11 @@ akaharaとはアカハライモリ、madaraはマダライモリである。
 このような予め特徴量を保存しておくデータベース型は人工知能第一世代の手法である。ようは、全部のパターンを暗記しておけばOKという考え方である。ただし、そうするとメモリを大量に消費するので使用が限られる手法である。
 
 
-|出力(answers/answer_84.png)|
+|输出(answers/answer_84.png)|
 |:---:|
 |![](answers/answer_84.png)|
 
-答え >> [answers/answer_84.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_84.py)
+答案 >> [answers/answer_84.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_84.py)
 
 ```bash
 格納されるヒストグラムの中身
@@ -121,11 +121,11 @@ akaharaとはアカハライモリ、madaraはマダライモリである。
 ここではアルゴリズム4-5を実装せよ。
 
 テストデータには test_akahara_@@@.jpgとtest_madara_@@@.jpgを用いよ。（計4枚）
-ただし、各画像と最もヒストグラム差分が小さい画像の名前と予測クラスの2つを出力せよ。
+ただし、各画像と最もヒストグラム差分が小さい画像の名前と予測クラスの2つを输出せよ。
 
 これはNearesetNeighbourと呼ばれる評価方法である。
 
-答え
+答案
 
 ```bash
 test_akahara_1.jpg is similar >> train_akahara_3.jpg  Pred >> akahara
@@ -133,7 +133,7 @@ test_akahara_2.jpg is similar >> train_akahara_1.jpg  Pred >> akahara
 test_madara_1.jpg is similar >> train_madara_2.jpg  Pred >> madara
 test_madara_2.jpg is similar >> train_akahara_2.jpg  Pred >> akahara
 ```
-答え >> [answers/answer_85.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_85.py)
+答案 >> [answers/answer_85.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_85.py)
 
 ## Q.86. 簡単な画像認識 (Step.3) 評価(Accuracy)
 
@@ -147,20 +147,20 @@ Accuracy = (正解した画像数) / (テストした画像の総数)
 以上を踏まえて、Q.85のAccuracyを求めよ。
 
 
-答え
+答案
 
 ```bash
 Accuracy >> 0.75 (3/4)
 ```
-答え >> [answers/answer_86.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_86.py)
+答案 >> [answers/answer_86.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_86.py)
 
 ## Q.87. 簡単な画像認識 (Step.4) k-NN
 
 Q.85では最も色が近い画像が予測クラスであるとしたが、そこで*test_madara_2.jpg*が*train_akahara_2.jpg*と最も色が近いと判断された。
 
-|test_marada_2.jpg|train_akahara_2.jpg|
-|:---:|:---:|
-|![](test_madara_2.jpg)|![](train_akahara_2.jpg)|
+|   test_marada_2.jpg    |   train_akahara_2.jpg    |
+| :--------------------: | :----------------------: |
+| ![](test_madara_2.jpg) | ![](train_akahara_2.jpg) |
 
 2つの画像を見比べるとたしかに両方とも緑の割合と黒の割合が近く見えるので、画像全体に対しての画像の色味が同じ様に見えてしまう。これは認識時のサンプルを一つにしたことによって、例外的な画像が選ばれてしまったためである。このように学習データの特徴は常にきれいに分離されているわけではなく、時に特徴の分布から逸しているサンプルも含まれる。
 
@@ -169,7 +169,7 @@ Q.85では最も色が近い画像が予測クラスであるとしたが、そ�
 このように特徴が近いものを学習データから3つ選んで判断する手法をk近傍(k-NN: k-Nearest Neighbor)という。Q.85.のNN法はk=1の場合とみれる。
 
 
-答え
+答案
 ```bash
 test_akahara_1.jpg is similar >> train_akahara_3.jpg, train_akahara_2.jpg, train_akahara_4.jpg, |Pred >> akahara
 test_akahara_2.jpg is similar >> train_akahara_1.jpg, train_akahara_2.jpg, train_akahara_4.jpg, |Pred >> akahara
@@ -178,7 +178,7 @@ test_madara_2.jpg is similar >> train_akahara_2.jpg, train_madara_3.jpg, train_m
 Accuracy >> 1.0 (4/4)
 ```
 
-答え >> [answers/answer_87.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_87.py)
+答案 >> [answers/answer_87.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_87.py)
 
 ## Q.88. K-means (Step.1) 重心作成
 
@@ -204,7 +204,7 @@ K-Meansアルゴリズムとしては、
 ここでは、1-3までを実装せよ(4,5のことを考えてループを作らなくてもよい)。分類する画像は*test_@@@.jpg*とする。
 
 
-答え
+答案
 
 ```bash
 assigned label
@@ -219,7 +219,7 @@ Grabity
 2247.      1338.       434.     10822.      4506.       622.    ]]
 ```
 
-答え >> [answers/answer_88.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_88.py)
+答案 >> [answers/answer_88.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_88.py)
 
 ## Q.89. K-means (Step.2) クラスタリング
 
@@ -229,10 +229,10 @@ Grabity
 なので、K-meansはあくまでカテゴリ別に分類する手法であり、それが具体的に何のクラスかまでは分からない。
 また、クラス数は予めこちらが知って置かなければいけない。
 
-**K-meansクラスタリングでは最初に割り当てるラベルの状態によって、最後の出力が大きく左右される**ので注意が必要である。
+**K-meansクラスタリングでは最初に割り当てるラベルの状態によって、最後の输出が大きく左右される**ので注意が必要である。
 また、データ数が少ないと失敗しやすい。これはデータ数が少ないことで、真のデータの分布をサンプリングしにくいことが原因である。つまり、データ数が多いほどデータの分布が精度良くえられることによる。
 
-答え
+答案
 
 ```bash
 test_akahara_1.jpg  Pred: 0
@@ -241,7 +241,7 @@ test_madara_1.jpg  Pred: 0
 test_madara_2.jpg  Pred: 0
 ```
 
-答え >> [answers/answer_89.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_89.py)
+答案 >> [answers/answer_89.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_89.py)
 
 ## Q.90. K-means (Step.3) 初期ラベルの変更
 
@@ -252,7 +252,7 @@ K-meansを用いて*train_@@@.jpg*の8枚を完璧にクラスタリングせよ
 
 これは試行錯誤するしかない。
 
-答え
+答案
 
 ```bash
 train_akahara_1.jpg  Pred: 1
@@ -267,4 +267,4 @@ train_madara_4.jpg  Pred: 0
 train_madara_5.jpg  Pred: 0
 ```
 
-答え >> [answers/answer_90.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_90.py)
+答案 >> [answers/answer_90.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_90.py)

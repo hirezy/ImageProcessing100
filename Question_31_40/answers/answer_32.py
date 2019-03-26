@@ -18,7 +18,7 @@ print(fimg.shape)
 # パワースペクトルの計算
 mag = 20*np.log(np.abs(fimg))
     
-# 入力画像とスペクトル画像をグラフ描画
+# 输入画像とスペクトル画像をグラフ描画
 plt.subplot(121)
 plt.imshow(gray, cmap = 'gray')
 plt.subplot(122)
