@@ -1,6 +1,6 @@
 # C++ Tutorial
 
-## C++ 上`OpenCV的安装
+## C++ 上OpenCV的安装
 
 > 想使用 Python 的人请点[这里](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README.md)。
 

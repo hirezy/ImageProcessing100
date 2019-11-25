@@ -220,4 +220,4 @@ out = img1 * alpha + img2 * (1 - alpha)
 | :--------------: | :-----------------: | :-------------------------: |
 |  ![](imori.jpg)  |  ![](thorino.jpg)   | ![](answers/answer_60.jpg)  |
 
-答案 >> [answers/answer_60.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_60.py)
+答案 >> [answers/answer_60.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_60.py6
