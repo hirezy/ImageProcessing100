@@ -98,7 +98,7 @@ b = np.array((60, 60, 170, 160), dtype=np.float32)
 ```
 答案 >> [answers/answer_93.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_93.py)
 
-## Q.94. 准备机器学习的训练数据第一步----随机裁剪（Random Cropping）
+## Q.94. 准备机器学习的训练数据第二步----随机裁剪（Random Cropping）
 
 下面，通过从`imori1.jpg`中随机裁剪图像制作训练数据。
 
@@ -314,16 +314,16 @@ NMS 是一种留下高分 Bounding-box 的方法，算法如下：
 
 在这里我们对检测效果作出评估。
 
-如果 Bounding-box 和其两个类不匹配，则无法评估检测的准确性。对于检测效果的评价指标，我们有Recal、Precision、F-score、mAP等。
+如果 Bounding-box 和其类别不匹配，则无法评估检测的准确性。对于检测效果，我们有Recal、Precision、F-score、mAP等评价指标。
 
-### Recall ... 正解の矩形がどれだけ検出できたか。正解をどれだけ網羅できたかを示す。[0,1]の範囲を取り、1が最高。
+### 召回率（Recall） ... 在多大程度上检测出了正解？显示出检出的正解占真实正解的比值。取值范围为[0,1]。
 
 ```bash
 G' ... Ground-truthの中で検出のどれかとIoUが閾値t以上となったGround-truthの数。
-G ... Ground-truthの矩形の数。
+G ... Ground-truth中矩形的数量。
 Recall = G' / G
 ```
-### Precision ... 検出がどれだけ正確に行われたかを示す。[0,1]の範囲を取り、1が最高。
+### 精度（Precision） ... 検出がどれだけ正確に行われたかを示す。取值范围为[0,1]。
 
 ```bash
 D' ... 検出の中で、Ground-truthのどれかとIoUが閾値t以上となった検出の数。
@@ -331,7 +331,7 @@ D ... 検出の数。
 Precision = D' / D
 ```
 
-### F-score ... RecallとPrecisonの調和平均。　２つのバランスを示すもので、[0,1]の範囲を取り、1が最高。
+### F-score ... 是召回率（Recall）和精度（Precision）的调和平均。可以表示两者的平均，取值范围为[0,1]。
 
 ```bash
 F-scoer = 2 * Recall * Precision / (Recall + Precision)
@@ -352,7 +352,7 @@ F-scoer = 2 * Recall * Precision / (Recall + Precision)
 2. mAP = 0として、上から順に見て、judgeが1の時は、見ているものの上すべてに関して、Precisionを計算し、mAPに加算する。
 3. 上から順に2を行い、全て行ったら、加算回数でmAPを割る。
 
-以上でmAPが求まる。上の例でいうと、
+上面就是求mAP的方法了。对于上面的例子来说：
 1. detect1 が1なので、Precisionを求める。Precision = 1/1 = 1なので、mAP = 1
 2. detect2 が0なので、無視。
 3. detect3 が1なので、Precisionを求める。Precision = 2/3 = 0.67 なので、 mAP = 1 + 0.67 = 1.67
