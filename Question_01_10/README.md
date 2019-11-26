@@ -22,8 +22,9 @@ C++ >> [answers_cpp/answer_1.py](answers_cpp/answer_1.py)
 ## Q.2. 灰度化（Grayscale）
 
 将图像灰度化吧！灰度是一种图像亮度的表示方法，通过下式计算：
-
+$$
 Y = 0.2126 R + 0.7152 G + 0.0722 B
+$$
 
 | 输入 (imori.jpg) | 输出 (answers/answer_2.jpg) |
 | :--------------: | :-------------------------: |
@@ -35,11 +36,13 @@ C++ >> [answers_cpp/answer_2.py](answers_cpp/answer_2.py)
 ## Q.3. 二值化（Thresholding）
 
 把图像进行二值化吧！二值化是将图像使用黑和白两种值表示的方法。这里我们将灰度的阈值设置为 128 来进行二值化，即：
-
-```bash
-y = { 0 (if y < 128)
-     255 (else) 
-```
+$$
+y=
+\begin{cases}
+0& (\text{if}\quad y < 128)\\
+255& (\text{else})
+\end{cases}
+$$
 
 | 输入 (imori.jpg) | 输出 (answers/answer_3.jpg) |
 | :--------------: | :-------------------------: |
