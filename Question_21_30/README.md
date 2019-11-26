@@ -1,4 +1,4 @@
-# Q. 21 - 30
+# 问题二十一至问题三十
 
 
 ## Q.21. 直方图归一化（ Histogram Normalization ）
