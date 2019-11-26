@@ -80,8 +80,8 @@ $$
 换言之，如果使${S_b}^2={w_0}\cdot{w_1}\cdot(M_0 - M_1)^2$最大，就可以得到最好的二值化阈值$t$。
 
 | 输入（imori.jpg) | 输出 (th = 127​) (answers/answer_4.jpg) |
-| :--------------: | :------------------------------------: |
-|  ![](imori.jpg)  |    ![](answers_image/answer_4.jpg)     |
+| :--------------: | :-------------------------------------: |
+|  ![](imori.jpg)  |     ![](answers_image/answer_4.jpg)     |
 
 > 答案
 > Python >> [answers/answer_4.py](answers/answer_4.py)
