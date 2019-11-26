@@ -39,16 +39,16 @@ $$
 
 这里并不是变更直方图的动态范围，而是让直方图变得平坦。
 
-可以使用下式将平均值为$m$标准差为s的直方图变成平均值为$m_0$标准差为$s_0$的直方图：
+可以使用下式将平均值为$m$标准差为$s$的直方图变成平均值为$m_0$标准差为$s_0$的直方图：
 $$
 x_{out}=\frac{s_0}{s}\cdot (x_{in}-m)+m_0
 $$
 
-| 输入 (imori_dark.jpg) |   输出 (answers/answer_22_1.jpg)   |  直方图(answers/answer_22_2.png)   |
-| :-------------------: | :--------------------------------: | :--------------------------------: |
-|  ![](imori_dark.jpg)  | ![](answers_image/answer_22_1.jpg) | ![](answers_image/answer_22_2.png) |
+| 输入 (imori_dark.jpg) | 输出 (answers_image/answer_22_1.jpg) | 直方图answers_image/answer_22_2.png) |
+| :-------------------: | :----------------------------------: | :----------------------------------: |
+|  ![](imori_dark.jpg)  |  ![](answers_image/answer_22_1.jpg)  |  ![](answers_image/answer_22_2.png)  |
 
-> 答え 
+> 答案 
 >
 > - Python >> [answers_py/answer_22.py](answers_py/answer_22.py)
 > - C++ >> [answers_cpp/answer_22.cpp](answers_cpp/answer_22.cpp)
@@ -68,7 +68,7 @@ $$
 | :--------------: | :--------------------------------: | :--------------------------------: |
 |  ![](imori.jpg)  | ![](answers_image/answer_23_1.jpg) | ![](answers_image/answer_23_2.png) |
 
-> 答え 
+> 答案 
 >
 > - Python >> [answers_py/answer_23.py](answers_py/answer_23.py)
 > - C++ >> [answers_cpp/answer_23.cpp](answers_cpp/answer_23.cpp)
@@ -92,13 +92,15 @@ $$
 $$
 I_{out} ={\frac{1}{c}\cdot I_{in}} ^ {\frac{1}{g}}
 $$
-![](question_24_1.jpg) ![](question_24_2.jpg)
+|   显示屏上的图像显示   |     $\gamma$修正值     |
+| :--------------------: | :--------------------: |
+| ![](question_24_1.jpg) | ![](question_24_2.jpg) |
 
 | 输入 (imori_gamma.jpg) |   输出 (answers/answer_24.jpg)   |
 | :--------------------: | :------------------------------: |
 |  ![](imori_gamma.jpg)  | ![](answers_image/answer_24.jpg) |
 
-> 答え 
+> 答案 
 >
 > Python >> answers_py/answer_24.py
 >
@@ -111,7 +113,7 @@ $$
 
 最近邻插值在图像放大时补充的像素取最临近的像素的值。由于方法简单，所以处理速度很快，但是放大图像画质劣化明显。
 
-使用下面的公式放大图像吧！$I'$为放大后图像，$I$为放大前图像，$a$为放大率，方括号为取整操作：
+使用下面的公式放大图像吧！$I'$为放大后图像，$I$为放大前图像，$a$为放大率，方括号是四舍五入取证操作：
 
 <img src="assets/nni_fig.png">
 $$
@@ -122,7 +124,7 @@ $$
 | :--------------: | :------------------------------: |
 |  ![](imori.jpg)  | ![](answers_image/answer_25.jpg) |
 
-> 答え 
+> 答案 
 >
 > - Python >> [answers_py/answer_25.py](answers_py/answer_25.py)
 > - C++ >> [answers_cpp/answer_25.cpp](answers_cpp/answer_25.cpp)
@@ -131,19 +133,13 @@ $$
 
 使用双线性插值将图像放大$1.5$倍吧！
 
-双线性插值考察$4$邻域的像素点，根据距离设置权值。虽然计算量增大使得处理时间变长，但是可以有效抑制画质劣化。
+双线性插值考察$4$邻域的像素点，并根据距离设置权值。虽然计算量增大使得处理时间变长，但是可以有效抑制画质劣化。
 
-1. 放大图像的座标$(x',y')$除以放大率$a$，得到对应原图像的座标$\text{floor}(\frac{x'}{a}, \frac{y'}{a})$。
+1. 放大后图像的座标$(x',y')$除以放大率$a$，可以得到对应原图像的座标$(\lfloor \frac{x'}{a}\rfloor , \lfloor \frac{y'}{a}\rfloor)$。
 
-2. 求原图像的座标$(\frac{x'}{a}, \frac{y'}{a})$周围$4$邻域的座标$I(x,y)$，$I(x+1,y)$，$I(x,y+1)$，$I(x+1, y+1)$：
-   $$
-   \begin{matrix}
-   I(x,y)&\quad &I(x+1,y)\\
-   \quad&I(\frac{x'}{a}, \frac{y'}{a})&\quad\\
-   I(x,y+1)&\quad&I(x+1,y+1)
-   \end{matrix}
-   $$
-<img src="assets/bli_fig.png">
+2. 求原图像的座标$(\lfloor \frac{x'}{a}\rfloor , \lfloor \frac{y'}{a}\rfloor)$周围$4$邻域的座标$I(x,y)$，$I(x+1,y)$，$I(x,y+1)$，$I(x+1, y+1)$：
+   
+   <img src="assets/bli_fig.png">
    
 3. 分别求这4个点与$(\frac{x'}{a}, \frac{y'}{a})$的距离，根据距离设置权重：$w = \frac{d}{\sum\ d}$
 
@@ -157,7 +153,10 @@ $$
 | :--------------: | :------------------------------: |
 |  ![](imori.jpg)  | ![](answers_image/answer_26.jpg) |
 
-答案 >> [answers/answer_26.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_26.py)
+> 答案 
+>
+> - Python >> [answers_py/answer_26.py](answers_py/answer_26.py)
+> - C++ >> [answers_cpp/answer_26.cpp](answers_cpp/answer_26.cpp)
 
 ## 问题二十七：双三次插值（ Bicubic Interpolation ）
 
@@ -166,14 +165,7 @@ $$
 双三次插值是双线性插值的扩展，使用邻域$16$像素进行插值。
 
 <img src="assets/bci_fig.png">
-$$
-\begin{matrix}
-I(x-1,y-1)&  I(x,y-1) & I(x+1,y-1)&  I(x+2,y-1)\\
-I(x-1,y)&    I(x,y)    &I(x+1,y)   & I(x+2,y)\\
-I(x-1,y+1)&  I(x,y+1)  &I(x+1,y+1)  &I(x+2,y+1)\\
-I(x-1,y+2) & I(x,y+2) & I(x+1,y+2)  &I(x+2,y+2)
-\end{matrix}
-$$
+
 各自像素间的距离由下式决定：
 $$
 \begin{align*}
@@ -187,12 +179,12 @@ d_{y_3} = |\frac{x'}{a\cdot y} - (y+1)| \quad
 d_{y_4} = |\frac{x'}{a\cdot y} - (y+2)|
 \end{align*}
 $$
-基于距离的权重函数由以下函数取得，$a$在大部分时候取$-1$，だいたい図の青色のピクセルは距離|t|<=1、緑色が1<|t|<=2の重みとなる。
+权重由基于距离的函数取得。$a$在大部分时候取$-1$。大体上说，图中蓝色像素的距离$|t|\leq 1$，绿色像素的距离$1<|t|\leq 2$：
 $$
 h(t)=
 \begin{cases}
-(a+2)|t|^3 - (a+3)|t|^2 + 1 &\text{when}\quad |t|\leq 1  \\
-a|t|^3 - 5a|t|^2 + 8a|t| - 4a&\text{when}\quad 1<|t|\leq 2\\
+(a+2)\cdot|t|^3 - (a+3)\cdot|t|^2 + 1 &\text{when}\quad |t|\leq 1  \\
+a\cdot|t|^3 - 5\cdot a\cdot|t|^2 + 8\cdot a\cdot |t| - 4\cdot a&\text{when}\quad 1<|t|\leq 2\\
 0&\text{else}
 \end{cases}
 $$
@@ -205,20 +197,20 @@ $$
 | :--------------: | :------------------------------: |
 |  ![](imori.jpg)  | ![](answers_image/answer_27.jpg) |
 
-> 答え 
+> 答案 
 >
 > - Python >> [answers_py/answer_27.py](answers_py/answer_27.py)
 > - C++ >> [answers_cpp/answer_27.cpp](answers_cpp/answer_27.cpp)
 
 ## 问题二十八：仿射变换（ Afine Transformations ）——平行移动
 
-利用仿射变换让图像在x方向上+30，在y方向上-30吧！
+利用仿射变换让图像在$x$方向上$+30$，在$y$方向上$-30$吧！
 
-仿射变换利用3x3的矩阵来进行图像变换。
+仿射变换利用$3\times3$的矩阵来进行图像变换。
 
-变换的方式有平行移动（问题28）、放大缩小（问题29）、旋转（问题30）、倾斜（问题31）等。
+变换的方式有平行移动（问题二十八）、放大缩小（问题二十九）、旋转（问题三十）、倾斜（问题三十一）等。
 
-原图像记为(x,y)，变换后的图像记为(x',y')。
+原图像记为$(x,y)$，变换后的图像记为$(x',y')$。
 
 图像放大缩小矩阵为下式：
 $$
@@ -286,7 +278,15 @@ y\\
 \end{matrix}
 \right)
 $$
-しかし実装する時は、元画像に対して１ピクセルずつ行うと、処理後の画像で値が割り当てられない可能性がでてきてしまう。よって、処理後画像の各ピクセルに対してAffine変換の逆変換を行い、値をあ割り当てる元画像の座標を取得する必要がある。Affine変換の逆操作は次式となる。
+但是在实际操作的过程中，如果一个一个地计算原图像的像素的话，处理后的像素可能没有在原图像中有对应的坐标。
+
+> 上面那句话原文是
+>
+> > 処理後の画像で値が割り当てられない可能性がでてきてしまう。
+>
+> 直译大概是”处理后的图像可能没有被分配到值。“我也不知道该怎么翻译才好……你们看输出图像左下角黑色的那一块，就是这种没有被”分配“到的情况。
+
+因此，我们有必要对处理后的图像中各个像素进行仿射变换逆变换，取得变换后图像中的像素在原图像中的坐标。仿射变换的逆变换如下：
 $$
 \left(
 \begin{matrix}
@@ -314,7 +314,7 @@ t\cdot y
 \end{matrix}
 \right)
 $$
-今回の平行移動では次式を用いる。tx, tyが平行移動のピクセルの移動距離となる。
+这回的平行移动操作使用下面的式子计算。$t_x$和$t_y$是像素移动的距离。
 $$
 \left(
 \begin{matrix}
@@ -325,8 +325,8 @@ y'\\
 \right)=
 \left(
 \begin{matrix}
-1&0&t\cdot x\\
-0&1&t\cdot y\\
+1&0&t_x\\
+0&1&t_y\\
 0&0&1
 \end{matrix}
 \right)\cdot 
@@ -343,28 +343,28 @@ $$
 | :--------------: | :------------------------------: |
 |  ![](imori.jpg)  | ![](answers_image/answer_28.jpg) |
 
-> 答え 
+> 答案 
 >
 > - Python >> [answers_py/answer_28.py](answers_py/answer_28.py)
 > - C++ >> [answers_cpp/answer_28.cpp](answers_cpp/answer_28.cpp)
 
 ## 问题二十九：仿射变换（ Afine Transformations ）——放大缩小
 
-1. 使用仿射变换，将图片在x方向上放大1.3倍，在y方向上缩小至0.8倍。
-2. 在上面的条件下，同时在x方向上像右平移30（+30），在y方向上向上平移30（-30）。
+1. 使用仿射变换，将图片在$x$方向上放大$1.3$倍，在$y$方向上缩小至原来的$\frac{4}{5}$。
+2. 在上面的条件下，同时在$x$方向上向右平移$30$（$+30$），在$y$方向上向上平移$30$（$-30$）。
 
 | 输入 (imori.jpg) | 输出 (1) (answers/answer_29_1.jpg) | 输出 (2) (answers/answer_29_2.jpg) |
 | :--------------: | :--------------------------------: | :--------------------------------: |
 |  ![](imori.jpg)  | ![](answers_image/answer_29_1.jpg) | ![](answers_image/answer_29_2.jpg) |
 
-> 答え 
+> 答案 
 >
 > - Python >> [answers_py/answer_29.py](answers_py/answer_29.py)
 > - C++ >> [answers_cpp/answer_29.cpp](answers_cpp/answer_29.cpp)
 
 ## 问题三十：仿射变换（ Afine Transformations ）——旋转
 
-1. 使用仿射变换，逆时针旋转30度。
+1. 使用仿射变换，逆时针旋转$30$度。
 2. 使用仿射变换，逆时针旋转30度并且能让全部图像显现（也就是说，单纯地做仿射变换会让图片边缘丢失，这一步中要让图像的边缘不丢失，需要耗费一些工夫）。
 
 使用下面的式子进行逆时针方向旋转$A$度的仿射变换：
@@ -392,11 +392,11 @@ y\\
 \right)
 $$
 
-| 输入 (imori.jpg) | 输出 (1) (answers/answer_30_1.jpg) | 输出 (2) (answers/answer_30_2.jpg) |
-| :--------------: | :--------------------------------: | :--------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_30_1.jpg) | ![](answers_image/answer_30_2.jpg) |
+| 输入 (imori.jpg) | 输出 (1) (answers_image/answer_30_1.jpg) | 输出 (2) (answers_image/answer_30_2.jpg) |
+| :--------------: | :--------------------------------------: | :--------------------------------------: |
+|  ![](imori.jpg)  |    ![](answers_image/answer_30_1.jpg)    |    ![](answers_image/answer_30_2.jpg)    |
 
-> 答え 
+> 答案 
 >
 > - Python >> [answers_py/answer_30.py](answers_py/answer_30.py) , 
 > - C++ >> [answers_cpp/answer_30.cpp](answers_cpp/answer_30.cpp)
