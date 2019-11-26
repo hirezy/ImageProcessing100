@@ -11,9 +11,9 @@ img = cv2.imread("imori.jpg")
 red = img[:, :, 2].copy()
 ```
 
-| 输入（imori.jpg) | 输出 (answers/answer_1.jpg) |
-| :--------------: | :-------------------------: |
-|  ![](imori.jpg)  |  ![](answers/answer_1.jpg)  |
+| 输入（imori.jpg) |   输出 (answers/answer_1.jpg)   |
+| :--------------: | :-----------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_1.jpg) |
 
 > 答案：
 > Python >> [answers/answer_1.py](answers/answer_1.py)
@@ -26,9 +26,9 @@ $$
 Y = 0.2126 R + 0.7152 G + 0.0722 B
 $$
 
-| 输入（imori.jpg) | 输出 (answers/answer_2.jpg) |
-| :--------------: | :-------------------------: |
-|  ![](imori.jpg)  |  ![](answers/answer_2.jpg)  |
+| 输入（imori.jpg) |   输出 (answers/answer_2.jpg)   |
+| :--------------: | :-----------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_2.jpg) |
 
 > 答案：
 > Python >> [answers/answer_2.py](answers/answer_2.py)
@@ -44,9 +44,9 @@ y=
 \end{cases}
 $$
 
-| 输入（imori.jpg) | 输出 (answers/answer_3.jpg) |
-| :--------------: | :-------------------------: |
-|  ![](imori.jpg)  |  ![](answers/answer_3.jpg)  |
+| 输入（imori.jpg) |   输出 (answers/answer_3.jpg)   |
+| :--------------: | :-----------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_3.jpg) |
 
 > 答案 
 > Python >> [answers/answer_3.py](answers/answer_3.py)
@@ -81,7 +81,7 @@ $$
 
 | 输入（imori.jpg) | 输出 (th = 127​) (answers/answer_4.jpg) |
 | :--------------: | :------------------------------------: |
-|  ![](imori.jpg)  |       ![](answers/answer_4.jpg)        |
+|  ![](imori.jpg)  |    ![](answers_image/answer_4.jpg)     |
 
 > 答案
 > Python >> [answers/answer_4.py](answers/answer_4.py)
@@ -143,9 +143,9 @@ X = C\cdot (1 - |H' \mod 2 - 1|)\\
 $$
 请将色相反转（色相值加$180$），然后再用RGB色彩空间表示图片。
 
-| 输入（imori.jpg) | 输出 (answers/answer_5.jpg) |
-| :--------------: | :-------------------------: |
-|  ![](imori.jpg)  |  ![](answers/answer_5.jpg)  |
+| 输入（imori.jpg) |   输出 (answers/answer_5.jpg)   |
+| :--------------: | :-----------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_5.jpg) |
 
 > 答案 
 > Python >> [answers/answer_5.py](answers/answer_5.py)
@@ -168,9 +168,9 @@ $$
 \end{cases}
 $$
 
-| 输入（imori.jpg) | 输出 (answers/answer_6.jpg) |
-| :--------------: | :-------------------------: |
-|  ![](imori.jpg)  |  ![](answers/answer_6.jpg)  |
+| 输入（imori.jpg) |   输出 (answers/answer_6.jpg)   |
+| :--------------: | :-----------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_6.jpg) |
 
 > 答案 
 > Python >> [answers/answer_6.py](answers/answer_6.py)
@@ -184,9 +184,9 @@ v=\frac{1}{|R|}\cdot \sum\limits_{i=1}^R\ v_i
 $$
 请把大小为 128x128 的`imori.jpg`使用 8x8 的网格做平均池化。
 
-| 输入（imori.jpg) | 输出 (answers/answer_7.jpg) |
-| :--------------: | :-------------------------: |
-|  ![](imori.jpg)  |  ![](answers/answer_7.jpg)  |
+| 输入（imori.jpg) |   输出 (answers/answer_7.jpg)   |
+| :--------------: | :-----------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_7.jpg) |
 
 > 答案 
 > Python >> [answers/answer_7.py](answers/answer_7.py)
@@ -196,9 +196,9 @@ $$
 
 网格内的值不取平均值，而是取网格内的最大值进行池化操作。
 
-| 输入（imori.jpg) | 输出 (answers/answer_8.jpg) |
-| :--------------: | :-------------------------: |
-|  ![](imori.jpg)  |  ![](answers/answer_8.jpg)  |
+| 输入（imori.jpg) |   输出 (answers/answer_8.jpg)   |
+| :--------------: | :-----------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_8.jpg) |
 
 > 答案
 > Python >> [answers/answer_8.py](answers/answer_8.py)
@@ -230,9 +230,9 @@ K=\frac{1}{16}\cdot \left[
   \right]
 $$
 
-| 输入（imori_noise.jpg) | 输出 (answers/answer_9.jpg) |
-| :--------------------: | :-------------------------: |
-|  ![](imori_noise.jpg)  |  ![](answers/answer_9.jpg)  |
+| 输入（imori_noise.jpg) |   输出 (answers/answer_9.jpg)   |
+| :--------------------: | :-----------------------------: |
+|  ![](imori_noise.jpg)  | ![](answers_image/answer_9.jpg) |
 
 > 答案 
 > Python >> [answers/answer_9.py](answers/answer_9.py)
@@ -244,9 +244,9 @@ $$
 
 中值滤波器是一种可以使图像平滑的滤波器。这种滤波器用滤波器范围内（在这里是$3\times3$）像素点的中值进行滤波，在这里也采用 Zero Padding。
 
-| 输入（imori_noise.jpg) | 输出 (answers/answer_10.jpg) |
-| :--------------------: | :--------------------------: |
-|  ![](imori_noise.jpg)  |  ![](answers/answer_10.jpg)  |
+| 输入（imori_noise.jpg) |   输出 (answers/answer_10.jpg)   |
+| :--------------------: | :------------------------------: |
+|  ![](imori_noise.jpg)  | ![](answers_image/answer_10.jpg) |
 
 > 答案 
 > Python >> [answers/answer_10.py](answers/answer_10.py)
