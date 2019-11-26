@@ -1,5 +1,4 @@
 # Q. 1 - 10
-
 ## Q.1. 通道交换
 
 读取图像，然后将 RGB 通道替换成 BGR 通道。
@@ -17,8 +16,8 @@ red = img[:, :, 2].copy()
 |  ![](imori.jpg)  |  ![](answers/answer_1.jpg)  |
 
 答案 
-Python >> [answers/answer_1.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_1.py)
-C++ >> [answers_cpp/answer_1.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_1.py)
+Python >> [answers/answer_1.py](answers/answer_1.py)
+C++ >> [answers_cpp/answer_1.py](answers_cpp/answer_1.py)
 
 ## Q.2. 灰度化（Grayscale）
 
@@ -31,8 +30,8 @@ Y = 0.2126 R + 0.7152 G + 0.0722 B
 |  ![](imori.jpg)  |  ![](answers/answer_2.jpg)  |
 
 答案
-Python >> [answers/answer_2.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_2.py)
-C++ >> [answers_cpp/answer_2.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_2.py)
+Python >> [answers/answer_2.py](answers/answer_2.py)
+C++ >> [answers_cpp/answer_2.py](answers_cpp/answer_2.py)
 ## Q.3. 二值化（Thresholding）
 
 把图像进行二值化吧！二值化是将图像使用黑和白两种值表示的方法。这里我们将灰度的阈值设置为 128 来进行二值化，即：
@@ -47,8 +46,8 @@ y = { 0 (if y < 128)
 |  ![](imori.jpg)  |  ![](answers/answer_3.jpg)  |
 
 答案 
-Python >> [answers/answer_3.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_3.py)
-C++ >> [answers_cpp/answer_3.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_3.py)
+Python >> [answers/answer_3.py](answers/answer_3.py)
+C++ >> [answers_cpp/answer_3.py](answers_cpp/answer_3.py)
 ## Q.4. 大津二值化算法（Otsu's Method）
 
 使用大津算法来二值化图像吧！大津算法，也被称作最大类间方差法，是一种可以自动确定二值化中阈值的算法，从类内[方差](https://ja.wikipedia.org/wiki/%E5%88%86%E6%95%A3_(%E7%A2%BA%E7%8E%87%E8%AB%96))和类间方差的比值计算得来：
@@ -81,8 +80,8 @@ argmax_{t} X = argmax_{t} Sb^2
 |  ![](imori.jpg)  |       ![](answers/answer_4.jpg)        |
 
 答案
-Python >> [answers/answer_4.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_4.py)
-C++ >> [answers_cpp/answer_4.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_4.py)
+Python >> [answers/answer_4.py](answers/answer_4.py)
+C++ >> [answers_cpp/answer_4.py](answers_cpp/answer_4.py)
 
 ## Q.5. HSV 变换
 
@@ -141,8 +140,8 @@ X = C (1 - |H' mod 2 - 1|)
 |  ![](imori.jpg)  |  ![](answers/answer_5.jpg)  |
 
 答案 
-Python >> [answers/answer_5.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_5.py)
-C++ >> [answers_cpp/answer_5.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_5.py)
+Python >> [answers/answer_5.py](answers/answer_5.py)
+C++ >> [answers_cpp/answer_5.py](answers_cpp/answer_5.py)
 
 ## Q.6. 减色处理
 
@@ -163,8 +162,8 @@ val = {  32  (  0 <= val <  64)
 |  ![](imori.jpg)  |  ![](answers/answer_6.jpg)  |
 
 答案 
-Python >> [answers/answer_6.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_6.py)
-C++ >> [answers_cpp/answer_6.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_6.py)
+Python >> [answers/answer_6.py](answers/answer_6.py)
+C++ >> [answers_cpp/answer_6.py](answers_cpp/answer_6.py)
 
 ## Q.7. 平均池化（Average Pooling）
 
@@ -181,8 +180,8 @@ v = 1/|R| * Sum_{i in R} v_i
 |  ![](imori.jpg)  |  ![](answers/answer_7.jpg)  |
 
 答案 
-Python >> [answers/answer_7.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_7.py)
-C++ >> [answers_cpp/answer_7.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_7.py)
+Python >> [answers/answer_7.py](answers/answer_7.py)
+C++ >> [answers_cpp/answer_7.py](answers_cpp/answer_7.py)
 
 ## Q.8. 最大池化（Max Pooling）
 
@@ -193,8 +192,8 @@ C++ >> [answers_cpp/answer_7.py](https://github.com/yoyoyo-yo/Gasyori100knock/bl
 |  ![](imori.jpg)  |  ![](answers/answer_8.jpg)  |
 
 答案
-Python >> [answers/answer_8.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_8.py)
-C++ >> [answers_cpp/answer_8.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_8.py)
+Python >> [answers/answer_8.py](answers/answer_8.py)
+C++ >> [answers_cpp/answer_8.py](answers_cpp/answer_8.py)
 
 ## Q.9. 高斯滤波（Gaussian Filter）
 
@@ -219,8 +218,8 @@ K =  1/16 [ 2 4 2 ]
 |  ![](imori_noise.jpg)  |  ![](answers/answer_9.jpg)  |
 
 答案 
-Python >> [answers/answer_9.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_9.py)
-C++ >> [answers_cpp/answer_9.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_9.py)
+Python >> [answers/answer_9.py](answers/answer_9.py)
+C++ >> [answers_cpp/answer_9.py](answers_cpp/answer_9.py)
 
 ## Q.10 中值滤波（Median filter）
 
@@ -233,5 +232,5 @@ C++ >> [answers_cpp/answer_9.py](https://github.com/yoyoyo-yo/Gasyori100knock/bl
 |  ![](imori_noise.jpg)  |  ![](answers/answer_10.jpg)  |
 
 答案 
-Python >> [answers/answer_10.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_10.py)
-C++ >> [answers_cpp/answer_10.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_10.py)
+Python >> [answers/answer_10.py](answers/answer_10.py)
+C++ >> [answers_cpp/answer_10.py](answers_cpp/answer_10.py)

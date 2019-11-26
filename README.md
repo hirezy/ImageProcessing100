@@ -1,8 +1,11 @@
 # 图像处理 100 问！！
 
-> 日本语本当苦手，翻译出错还请在 issue 指正。代码算法方面的问题请往原[ repo ](https://github.com/yoyoyo-yo/Gasyori100knock)提。现阶段我并没有做这些题目（捂脸……），只是翻译而已，因此算法细节可能没有翻译到位。不太好翻译的地方我也会在一定程度上意译~~自行发挥~~，请各位谅解。后续在写代码的途中会对翻译有所更正。
+> 日本语本当苦手，翻译出错还请在 issue 指正。代码算法方面的问题请往原[ repo ](https://github.com/yoyoyo-yo/Gasyori100knock)提。现阶段我并没有做这些题目（捂脸……），只是翻译而已，因此算法细节可能没有翻译到位。不太好翻译的地方我也会在一定程度上意译~~自行发挥~~，请各位谅解。后续在写代码的途中会对翻译有所更正。我会尽量附上英文术语，有翻译不清楚的地方还请参照原文、英语及代码。
 >
-> 我会尽量附上英文术语，有翻译不清楚的地方还请参照原文、英语及代码。
+> 关于LaTeX公式渲染问题：
+>
+> * 在线阅读建议安装[MathJax Plugin for Github](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima)插件获得良好的公式阅读体验；
+> * 离线阅读建议使用可以渲染LaTeX公式的Markdown编辑器/阅读器，如[Typora](https://www.typora.io/)和[MWeb](https://zh.mweb.im/)。VSCode使用者建议安装[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)插件渲染LaTeX公式。
 >
 > 感谢！
 >

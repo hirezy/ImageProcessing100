@@ -10,7 +10,7 @@
 | :--------------: | :--------------------------: |
 |  ![](imori.jpg)  |  ![](answers/answer_11.jpg)  |
 
-答案 >> [answers/answer_11.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_11.py)
+答案 >> [answers/answer_11.py](answers/answer_11.py)
 
 
 ## Q.12. Motion Filter
@@ -29,7 +29,7 @@ Motion Filter 取对角线方向的像素的平均值，像下式这样定义：
 | :--------------: | :--------------------------: |
 |  ![](imori.jpg)  |  ![](answers/answer_12.jpg)  |
 
-答案 >> [answers/answer_12.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_12.py)
+答案 >> [answers/answer_12.py](answers/answer_12.py)
 
 ## Q.13. MAX-MIN 滤波器
 
@@ -41,7 +41,7 @@ MAX-MIN 滤波器使用网格内像素的最大值和最小值的差值对网格
 | :--------------: | :--------------------------: |
 |  ![](imori.jpg)  |  ![](answers/answer_13.jpg)  |
 
-答案 >> [answers/answer_13.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_13.py)
+答案 >> [answers/answer_13.py](answers/answer_13.py)
 
 
 ## Q.14. 微分滤波器
@@ -61,7 +61,7 @@ K = [ 0  1  0 ]   K = [ -1 1 0 ]
 | :--------------: | :----------------------------------: | :----------------------------------: |
 |  ![](imori.jpg)  |     ![](answers/answer_14_v.jpg)     |     ![](answers/answer_14_h.jpg)     |
 
-答案 >>[ answers/answer_14.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_14.py)
+答案 >>[ answers/answer_14.py](answers/answer_14.py)
 
 ## Q.15. Sobel 滤波器
 
@@ -80,7 +80,7 @@ K = [ 2 0 -2 ]   K = [  0  0  0 ]
 | :--------------: | :----------------------------------: | :----------------------------------: |
 |  ![](imori.jpg)  |     ![](answers/answer_15_v.jpg)     |     ![](answers/answer_15_h.jpg)     |
 
-答案 >> [answers/answer_15.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_15.py)
+答案 >> [answers/answer_15.py](answers/answer_15.py)
 
 ## Q.16. Prewitt 滤波器
 
@@ -99,7 +99,7 @@ K = [  0  0  0 ]  K = [ -1 0 1 ]
 | :--------------: | :----------------------------------: | :----------------------------------: |
 |  ![](imori.jpg)  |     ![](answers/answer_16_v.jpg)     |     ![](answers/answer_16_h.jpg)     |
 
-答案 >> [answers/answer_16.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_16.py)
+答案 >> [answers/answer_16.py](answers/answer_16.py)
 
 
 ## Q.17. Laplacian 滤波器
@@ -141,7 +141,7 @@ K = [ 1 -4  1 ]
 | :--------------: | :-------------------------: |
 |  ![](imori.jpg)  | ![](answers/answer_17.jpg)  |  |
 
-答案 >> [answers/answer_17.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_17.py)
+答案 >> [answers/answer_17.py](answers/answer_17.py)
 
 ## Q.18. Emboss 滤波器
 
@@ -159,7 +159,7 @@ K = [ -1  1  1 ]
 | :--------------: | :-------------------------: |
 |  ![](imori.jpg)  | ![](answers/answer_18.jpg)  |
 
-答案 >> [answers/answer_18.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_18.py)
+答案 >> [answers/answer_18.py](answers/answer_18.py)
 
 ## Q.19. LoG 滤波器
 
@@ -179,7 +179,7 @@ LoG(x,y) = (x^2 + y^2 - s^2) / (2 * pi * s^6) * exp(-(x^2+y^2) / (2*s^2))
 | :--------------------: | :--------------------------: |
 |  ![](imori_noise.jpg)  |  ![](answers/answer_19.jpg)  |
 
-答案 >> [answers/answer_19.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_19.py)
+答案 >> [answers/answer_19.py](answers/answer_19.py)
 
 ## Q.20. 直方图
 
@@ -191,5 +191,5 @@ LoG(x,y) = (x^2 + y^2 - s^2) / (2 * pi * s^6) * exp(-(x^2+y^2) / (2*s^2))
 | :-------------------: | :--------------------------: |
 |  ![](imori_dark.jpg)  |  ![](answers/answer_20.png)  |
 
-答案 >> [answers/answer_20.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_20.py)
+答案 >> [answers/answer_20.py](answers/answer_20.py)
 

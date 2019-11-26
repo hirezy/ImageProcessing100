@@ -35,7 +35,7 @@ S的取值范围为[0,4]：
 | :-----------------------------------: | :--------------------------------------------: |
 | <img src="renketsu.png" width="50px"> | <img src="answers/answer_61.png" width="50px"> |
 
-答案 >> [answers/answer_61.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_61.py)
+答案 >> [answers/answer_61.py](answers/answer_61.py)
 
 ## Q.62. 8-邻接的连接数
 
@@ -52,7 +52,7 @@ S = (x1 - x1 x2 x3) + (x3 - x3 x4 x5) + (x5 - x5 x6 x7) + (x7 - x7 x8 x1)
 | :-----------------------------------: | :--------------------------------------------: |
 | <img src="renketsu.png" width="50px"> | <img src="answers/answer_62.png" width="50px"> |
 
-答案 >> [answers/answer_62.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_62.py)
+答案 >> [answers/answer_62.py](answers/answer_62.py)
 
 ## Q.63. 细化处理
 
@@ -73,7 +73,7 @@ S = (x1 - x1 x2 x3) + (x3 - x3 x4 x5) + (x5 - x5 x6 x7) + (x7 - x7 x8 x1)
 | :-------------: | :-------------------------: |
 |  ![](gazo.png)  | ![](answers/answer_63.png)  |
 
-答案 >> [answers/answer_63.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_63.py)
+答案 >> [answers/answer_63.py](answers/answer_63.py)
 
 ## Q.64. Hilditch 细化算法
 
@@ -121,7 +121,7 @@ x7 x6 x5
 | :-------------: | :-------------------------: |
 |  ![](gazo.png)  | ![](answers/answer_65.png)  |
 
-答案 >> [answers/answer_65.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_65.py)
+答案 >> [answers/answer_65.py](answers/answer_65.py)
 
 ## Q.66. 方向梯度直方图（HOG）第一步：梯度幅值・梯度方向
 
@@ -169,7 +169,7 @@ h(t) = h(t) / sqrt(Sum h(t) + epsilon)
 | :--------------: | :---------------------------------: | :---------------------------------: |
 |  ![](imori.jpg)  |   ![](answers/answer_66_mag.jpg)    |   ![](answers/answer_66_gra.jpg)    |
 
-答案 >> [answers/answer_66.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_66.py)
+答案 >> [answers/answer_66.py](answers/answer_66.py)
 
 ## Q.67. 方向梯度直方图（HOG）第二步：梯度直方图
 
@@ -193,7 +193,7 @@ h(t) = h(t) / sqrt(Sum h(t) + epsilon)
 | :--------------: | :---------------------------------------------: |
 |  ![](imori.jpg)  | <img src="answers/answer_67.png" width="400px"> |
 
-答案 >> [answers/answer_67.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_67.py)
+答案 >> [answers/answer_67.py](answers/answer_67.py)
 
 ## Q.68. 方向梯度直方图（HOG）第三步：直方图归一化
 
@@ -212,7 +212,7 @@ h(t) = h(t) / sqrt(Sum h(t) + epsilon)
 | :--------------: | :---------------------------------------------: |
 |  ![](imori.jpg)  | <img src="answers/answer_68.png" width="400px"> |
 
-答案 >> [answers/answer_68.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_68.py)
+答案 >> [answers/answer_68.py](answers/answer_68.py)
 
 ## Q.69. 方向梯度直方图（HOG）第四步：可视化特征量
 
@@ -228,7 +228,7 @@ h(t) = h(t) / sqrt(Sum h(t) + epsilon)
 | :--------------: | :-------------------------: |
 |  ![](imori.jpg)  | ![](answers/answer_69.jpg)  |
 
-答案 >> [answers/answer_69.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_69.py)
+答案 >> [answers/answer_69.py](answers/answer_69.py)
 
 ## Q.70. 色彩追踪（Color Tracking）
 
@@ -246,9 +246,9 @@ HSV 变换在问题5中提到过，是将 RGB 变换到色相（Hue）、饱和�
 
 - 色相：将颜色使用0到360度表示，具体色相与数值按下表对应：
 
-  |  红  |  黄  |  绿  | 青色 | 蓝色 | 品红 |  红  |
-  | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-  |  0°  | 60°  | 120° | 180° | 240° | 300° | 360° |
+  |  红   |  黄   |  绿   | 青色  | 蓝色  | 品红  |  红   |
+  | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+  |  0°   |  60°  | 120°  | 180°  | 240°  | 300°  | 360°  |
 
 也就是说，为了追踪蓝色，可以在进行 HSV 转换后提取其中180<=H<=260的位置，将其变为255。
 
@@ -256,4 +256,4 @@ HSV 变换在问题5中提到过，是将 RGB 变换到色相（Hue）、饱和�
 | :--------------: | :-------------------------: |
 |  ![](imori.jpg)  | ![](answers/answer_70.png)  |
 
-答案 >> [answers/answer_70.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_70.py)
+答案 >> [answers/answer_70.py](answers/answer_70.py)
