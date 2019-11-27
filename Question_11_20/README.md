@@ -6,9 +6,9 @@
 
 均值滤波器使用网格内像素的平均值。
 
-| 输入 (imori.jpg) |   输出 (answers/answer_11.jpg)   |
-| :--------------: | :------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_11.jpg) |
+| 输入 (imori.jpg) | 输出(answers_image/answer_11.jpg) |
+| :--------------: | :-------------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_11.jpg)  |
 
 > 答案
 >
@@ -31,24 +31,24 @@ $$
 \right]
 $$
 
-| 输入 (imori.jpg) |   输出 (answers/answer_12.jpg)   |
-| :--------------: | :------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_12.jpg) |
+| 输入 (imori.jpg) | 输出(answers_image/answer_12.jpg) |
+| :--------------: | :-------------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_12.jpg)  |
 
 > 答案
 >
 > - Python >> [answers_py/answer_12.py](answers_py/answer_12.py)
 > - C++ >> [answers_cpp/answer_12.cpp](answers_cpp/answer_12.cpp)
 
-## 问题十三：MAX-MIN 滤波器
+## 问题十三：MAX-MIN滤波器
 
-使用 MAX-MIN 滤波器来进行滤波吧。
+使用MAX-MIN滤波器来进行滤波吧。
 
-MAX-MIN 滤波器使用网格内像素的最大值和最小值的差值对网格内像素重新赋值。通常用于**边缘检测**。边缘检测用于检测图像中的线。像这样提取图像中的信息的操作被称为**特征提取**。边缘检测通常在灰度图像上进行。
+MAX-MIN滤波器使用网格内像素的最大值和最小值的差值对网格内像素重新赋值。通常用于**边缘检测**。边缘检测用于检测图像中的线。像这样提取图像中的信息的操作被称为**特征提取**。边缘检测通常在灰度图像上进行。
 
-| 输入 (imori.jpg) |   输出 (answers/answer_13.jpg)   |
-| :--------------: | :------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_13.jpg) |
+| 输入 (imori.jpg) | 输出(answers_image/answer_13.jpg) |
+| :--------------: | :-------------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_13.jpg)  |
 
 > 答案
 >
@@ -220,9 +220,9 @@ $$
 
 ## 问题十八：Emboss滤波器
 
-使用 Emboss 滤波器来进行滤波吧。
+使用Emboss滤波器来进行滤波吧。
 
-Emboss 滤波器可以使物体轮廓更加清晰，按照以下式子定义：
+Emboss滤波器可以使物体轮廓更加清晰，按照以下式子定义：
 $$
 K=
 \left[
@@ -247,7 +247,7 @@ $$
 
 使用LoG 滤波器，来对`imori_noise.jpg`检测边缘吧！
 
- LoG即高斯-拉普拉斯（ Laplacian of Gaussian ）的缩写，使用高斯滤波器使图像平滑化之后再使用拉普拉斯滤波器使图像的轮廓更加清晰。
+ LoG即高斯-拉普拉斯（Laplacian of Gaussian）的缩写，使用高斯滤波器使图像平滑化之后再使用拉普拉斯滤波器使图像的轮廓更加清晰。
 
 为了防止拉普拉斯滤波器计算二次微分会使得图像噪声更加明显，所以我们首先使用高斯滤波器来抑制噪声。
 
@@ -256,9 +256,9 @@ $$
 \text{LoG}(x,y)=\frac{x^2 + y^2 - s^2}{2 \cdot \pi \cdot s^6} \cdot e^{-\frac{x^2+y^2}{2\cdot s^2}}
 $$
 
-| 输入 (imori_noise.jpg) |   输出 (answers/answer_19.jpg)   |
-| :--------------------: | :------------------------------: |
-|  ![](imori_noise.jpg)  | ![](answers_image/answer_19.jpg) |
+| 输入 (imori_noise.jpg) | 输出(answers_image/answer_19.jpg) |
+| :--------------------: | :-------------------------------: |
+|  ![](imori_noise.jpg)  | ![](answers_image/answer_19.jpg)  |
 
 > 答案
 >
@@ -271,9 +271,9 @@ $$
 
 直方图显示了不同数值的像素出现的次数。在`Matplotlib`中有`hist()`函数提供绘制直方图的接口。
 
-| 输入 (imori_dark.jpg) |   输出 (answers/answer_20.png)   |
-| :-------------------: | :------------------------------: |
-|  ![](imori_dark.jpg)  | ![](answers_image/answer_20.png) |
+| 输入 (imori_dark.jpg) | 输出(answers_image/answer_20.png) |
+| :-------------------: | :-------------------------------: |
+|  ![](imori_dark.jpg)  | ![](answers_image/answer_20.png)  |
 
 > 答案
 >

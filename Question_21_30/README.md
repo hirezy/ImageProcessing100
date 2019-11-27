@@ -27,9 +27,9 @@ b&(\text{else})
 \end{cases}
 $$
 
-| 输入 (imori_dark.jpg) |   输出 (answers/answer_21_1.jpg)   |  直方图(answers/answer_21_2.png)   |
-| :-------------------: | :--------------------------------: | :--------------------------------: |
-|  ![](imori_dark.jpg)  | ![](answers_image/answer_21_1.jpg) | ![](answers_image/answer_21_2.png) |
+| 输入 (imori_dark.jpg) |   输出 (answers/answer_21_1.jpg)   | 直方图(answers_image/answer_21_2.png) |
+| :-------------------: | :--------------------------------: | :-----------------------------------: |
+|  ![](imori_dark.jpg)  | ![](answers_image/answer_21_1.jpg) |  ![](answers_image/answer_21_2.png)   |
 
 答案 >> [answers/answer_21.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_21.py)
 
@@ -44,9 +44,9 @@ $$
 x_{out}=\frac{s_0}{s}\cdot (x_{in}-m)+m_0
 $$
 
-| 输入 (imori_dark.jpg) | 输出 (answers_image/answer_22_1.jpg) | 直方图answers_image/answer_22_2.png) |
-| :-------------------: | :----------------------------------: | :----------------------------------: |
-|  ![](imori_dark.jpg)  |  ![](answers_image/answer_22_1.jpg)  |  ![](answers_image/answer_22_2.png)  |
+| 输入 (imori_dark.jpg) | 输出 (answers_image/answer_22_1.jpg) | 直方图(answers_image//answer_22_2.png) |
+| :-------------------: | :----------------------------------: | :------------------------------------: |
+|  ![](imori_dark.jpg)  |  ![](answers_image/answer_22_1.jpg)  |   ![](answers_image/answer_22_2.png)   |
 
 > 答案 
 >
@@ -59,14 +59,14 @@ $$
 
 直方图均衡化是使直方图变得平坦的操作，是不需要计算上面的问题中的平均值、标准差等数据使直方图的值变得均衡的操作。
 
-均衡化操作由以下式子定义。$S$是总的像素数；$Z_{max}$是像素点的最大取值（在这里是255）；$h(z)$表示取值为z的累积分布函数：
+均衡化操作由以下式子定义。$S$是总的像素数；$Z_{max}$是像素点的最大取值（在这里是$255$）；$h(z)$表示取值为z的累积分布函数：
 $$
 Z' = \frac{Z_{max}}{S} \cdot \sum\limits_{i=0}^z\ h(i)
 $$
 
-| 输入 (imori.jpg) |   输出 (answers/answer_23_1.jpg)   |  直方图(answers/answer_23_2.png)   |
-| :--------------: | :--------------------------------: | :--------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_23_1.jpg) | ![](answers_image/answer_23_2.png) |
+| 输入 (imori.jpg) |   输出 (answers/answer_23_1.jpg)   | 直方图(answers_image/answer_23_2.png) |
+| :--------------: | :--------------------------------: | :-----------------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_23_1.jpg) |  ![](answers_image/answer_23_2.png)   |
 
 > 答案 
 >
@@ -120,9 +120,9 @@ $$
 I'(x,y) = I([\frac{x}{a}], [\frac{y}{a}])
 $$
 
-| 输入 (imori.jpg) |   输出 (answers/answer_25.jpg)   |
-| :--------------: | :------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_25.jpg) |
+| 输入 (imori.jpg) | 输出 (answers_image/answer_25.jpg) |
+| :--------------: | :--------------------------------: |
+|  ![](imori.jpg)  |  ![](answers_image/answer_25.jpg)  |
 
 > 答案 
 >
@@ -144,14 +144,14 @@ $$
 3. 分别求这4个点与$(\frac{x'}{a}, \frac{y'}{a})$的距离，根据距离设置权重：$w = \frac{d}{\sum\ d}$
 
 4. 根据下式求得放大后图像$(x',y')$处的像素值：
-  $$
+$$
   d_x = \frac{x'}{a} - x\\
   d_y = \frac{y'}{a} - y\\
   I'(x',y') = (1-d_x)\cdot (1-d_y)\cdot I(x,y) + d_x\cdot (1-d_y)\cdot I(x+1,y) + (1-d_x)\cdot d_y\cdot I(x,y+1) + d_x\cdot d_y\cdot I(x+1,y+1)
-  $$
-| 输入 (imori.jpg) |   输出 (answers/answer_26.jpg)   |
-| :--------------: | :------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_26.jpg) |
+$$
+| 输入 (imori.jpg) | 输出(answers_image/answer_26.jpg) |
+| :--------------: | :-------------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_26.jpg)  |
 
 > 答案 
 >
@@ -193,9 +193,9 @@ $$
 I'(x', y')=\frac{1}{\sum\limits_{j=1}^4\ \sum\limits_{i=1}^4\ h(d_{xi})\ h(d_{yj})}\ \sum\limits_{j=1}^4\ \sum\limits_{i=1}^4\ I(x+i-2,y+j-2)\ h(d_{xi})\ h(d_{yj})
 $$
 
-| 输入 (imori.jpg) |   输出 (answers/answer_27.jpg)   |
-| :--------------: | :------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_27.jpg) |
+| 输入 (imori.jpg) | 输出 (answers_image/answer_27.jpg) |
+| :--------------: | :--------------------------------: |
+|  ![](imori.jpg)  |  ![](answers_image/answer_27.jpg)  |
 
 > 答案 
 >
@@ -339,9 +339,9 @@ y\\
 \right)
 $$
 
-| 输入 (imori.jpg) |   输出 (answers/answer_28.jpg)   |
-| :--------------: | :------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_28.jpg) |
+| 输入 (imori.jpg) | 输出 (answers_image/answer_28.jpg) |
+| :--------------: | :--------------------------------: |
+|  ![](imori.jpg)  |  ![](answers_image/answer_28.jpg)  |
 
 > 答案 
 >
@@ -353,9 +353,9 @@ $$
 1. 使用仿射变换，将图片在$x$方向上放大$1.3$倍，在$y$方向上缩小至原来的$\frac{4}{5}$。
 2. 在上面的条件下，同时在$x$方向上向右平移$30$（$+30$），在$y$方向上向上平移$30$（$-30$）。
 
-| 输入 (imori.jpg) | 输出 (1) (answers/answer_29_1.jpg) | 输出 (2) (answers/answer_29_2.jpg) |
-| :--------------: | :--------------------------------: | :--------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_29_1.jpg) | ![](answers_image/answer_29_2.jpg) |
+| 输入 (imori.jpg) | 输出 (1) (answers_image/answer_29_1.jpg) | 输出 (2) (answers_image/answer_29_2.jpg) |
+| :--------------: | :--------------------------------------: | :--------------------------------------: |
+|  ![](imori.jpg)  |    ![](answers_image/answer_29_1.jpg)    |    ![](answers_image/answer_29_2.jpg)    |
 
 > 答案 
 >
