@@ -50,10 +50,11 @@ MAX-MIN 滤波器使用网格内像素的最大值和最小值的差值对网格
 | :--------------: | :------------------------------: |
 |  ![](imori.jpg)  | ![](answers_image/answer_13.jpg) |
 
-答え 
-
-- Python >> [answers_py/answer_13.py](answers_py/answer_13.py)
-- C++ >> [answers_cpp/answer_13.cpp](answers_cpp/answer_13.cpp)
+> 答案
+>
+> - Python >> [answers_py/answer_13.py](answers_py/answer_13.py)
+> - C++ >> [answers_cpp/answer_13.cpp](answers_cpp/answer_13.cpp)
+>
 
 
 ## 问题十四：微分滤波器
@@ -87,7 +88,7 @@ $$
 | :--------------: | :----------------------------------: | :----------------------------------: |
 |  ![](imori.jpg)  |  ![](answers_image/answer_14_v.jpg)  |  ![](answers_image/answer_14_h.jpg)  |
 
-> 答え
+> 答案
 >
 > - Python >>[ answers_py/answer_14.py](answers_py/answer_14.py)
 > - C++ >> [answers_cpp/answer_14.cpp](answers_cpp/answer_14.cpp)
@@ -123,7 +124,7 @@ $$
 | :--------------: | :----------------------------------: | :----------------------------------: |
 |  ![](imori.jpg)  |  ![](answers_image/answer_15_v.jpg)  |  ![](answers_image/answer_15_h.jpg)  |
 
-> 答え
+> 答案
 >
 > - Python >> [answers_py/answer_15.py](answers_py/answer_15.py)
 > - C++ >> [answers_cpp/answer_15.cpp](answers_cpp/answer_15.cpp)
@@ -159,7 +160,7 @@ $$
 | :--------------: | :----------------------------------: | :----------------------------------: |
 |  ![](imori.jpg)  |  ![](answers_image/answer_16_v.jpg)  |  ![](answers_image/answer_16_h.jpg)  |
 
-> 答え
+> 答案
 >
 > - Python >> [answers_py/answer_16.py](answers_py/answer_16.py)
 > - C++ >> [answers_cpp/answer_16.cpp](answers_cpp/answer_16.cpp)
@@ -212,7 +213,7 @@ $$
 | :--------------: | :------------------------------: |
 |  ![](imori.jpg)  | ![](answers_image/answer_17.jpg) |
 
-> 答え
+> 答案
 >
 > - Python >> [answers_py/answer_17.py](answers_py/answer_17.py)
 > - C++ >> [answers_cpp/answer_17.cpp](answers_cpp/answer_17.cpp)
@@ -237,7 +238,7 @@ $$
 | :--------------: | :------------------------------: |
 |  ![](imori.jpg)  | ![](answers_image/answer_18.jpg) |
 
-> 答え
+> 答案
 >
 > - Python >> [answers_py/answer_18.py](answers_py/answer_18.py)
 > - C++ >> [answers_cpp/answer_18.cpp](answers_cpp/answer_18.cpp)
@@ -259,7 +260,7 @@ $$
 | :--------------------: | :------------------------------: |
 |  ![](imori_noise.jpg)  | ![](answers_image/answer_19.jpg) |
 
-> 答え 
+> 答案
 >
 > * Python >> [answers_py/answer_19.py](answers_py/answer_19.py)
 > * C++ >> [answers_cpp/answer_19.cpp](answers_cpp/answer_19.cpp)
@@ -274,6 +275,7 @@ $$
 | :-------------------: | :------------------------------: |
 |  ![](imori_dark.jpg)  | ![](answers_image/answer_20.png) |
 
-> 答案 >> [answers/answer_20.py](answers/answer_20.py)
+> 答案
 >
+> * Python >> [answers/answer_20.py](answers/answer_20.py)
 

@@ -1,8 +1,8 @@
-# Q. 41 - 50
+问题四十一至五十
 
-## Q.41. Canny 边缘检测：第一步——边缘强度
+## 问题四十一：Canny边缘检测：第一步——边缘强度
 
-问题41至问题43是边缘检测方法中的一种——Canny 边缘检测法的理论介绍。
+问题四十一至问题四十三是边缘检测方法中的一种——Canny边缘检测法的理论介绍。
 
 1. 使用高斯滤波；
 2. 在$x$方向和$y$方向上使用Sobel滤波器，在此之上求出边缘的强度和边缘的梯度；
@@ -11,22 +11,24 @@
 
 上面就是图像边缘检测的方法了。在这里我们先完成第一步和第二步。按照以下步骤进行处理：
 1. 将图像进行灰度化处理；
-2. 将图像进行高斯滤波（5x 5,s=1.4）；
-3. 在x方向和y方向上使用 Sobel 滤波器，在此之上求出边缘梯度fx和fy。边缘梯度可以按照下式求得：
 
-```bash
-梯度幅值 edge = sqrt(fx^2 + fy^2)
-梯度方向 tan = arctan(fy / fx)
-```
+2. 将图像进行高斯滤波（$5\times5$，$s=1.4$）；
+
+3. 在$x$方向和$y$方向上使用Sobel滤波器，在此之上求出边缘梯度$f_x$和$f_y$。边缘梯度可以按照下式求得：
+   $$
+   \text{edge}=\sqrt{{f_x}^2+{f_x}^2}\\
+   \text{tan}=\arctan(\frac{f_y}{f_x})
+   $$
 
 4. 使用下面的公式将梯度方向量化：
-
-```bash
-angle = {   0  (if -0.4142 < tan <= 0.4142)
-           45  (if  0.4142 < tan < 2.4142)
-           90  (if  |tan| >= 2.4142)
-          135  (if -2.4142 < tan <= -0.4142)
-```
+   $$
+   \text{angle}=\begin{cases}
+   0 & (\text{if}\quad -0.4142 < \tan \leq 0.4142)\\
+   45 & (\text{if}\quad 0.4142 < \tan < 2.4142)\\
+   90  &(\text{if}\quad |\tan| \geq 2.4142)\\
+   135  &(\text{if}\quad -2.4142 < \tan  \leq -0.4142)
+   \end{cases}
+   $$
 
 请使用`numpy.pad()`来设置滤波器的`padding`吧！
 
@@ -34,84 +36,86 @@ angle = {   0  (if -0.4142 < tan <= 0.4142)
 | :--------------: | :--------------------------------------: | :--------------------------------------: |
 |  ![](imori.jpg)  |       ![](answers/answer_41_1.jpg)       |       ![](answers/answer_41_2.jpg)       |
 
-答案 >> [answers/answer_41.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_41.py)
+答案 >> [answers/answer_41.py](answers/answer_41.py)
 
-## Q.42. Canny 边缘检测：第二步——边缘细化
+## 问题四十二：Canny边缘检测：第二步——边缘细化
 
-在这里我们完成 Canny 边缘检测的第三步。
+在这里我们完成Canny边缘检测的第三步。
 
-我们从在第42问中求出的边缘梯度进行非极大值抑制，来对边缘进行细化。
+我们从在第四十二问中求出的边缘梯度进行非极大值抑制，来对边缘进行细化。
 
 非极大值抑制是对除去非极大值以外的值的操作的总称（这个术语在其它的任务中也经常出现）。
 
 在这里，我们比较我们我们所关注的地方梯度的法线方向邻接的三个像素点的梯度幅值，如果该点的梯度值不比其它两个像素大，那么这个地方的值设置为0。
 
-也就是说，我们在注意梯度幅值edge(x,y)的时候，可以根据下式由梯度方向angle(x,y)来变换edge(x,y)：
+也就是说，我们在注意梯度幅值$\text{edge}(x,y)$的时候，可以根据下式由梯度方向$\text{angle}(x,y)$来变换$\text{edge}(x,y)$：
+[^TODO:]:这里感觉奇奇怪怪的……
+* $\text{angle}(x,y)  = 0$
 
-```bash
-if angle(x,y)  = 0
- if edge(x,y), edge(x-1,y), edge(x+1,y)で edge(x,y)が最大じゃない
-  then edge(x,y) = 0
-if angle(x,y)  = 45
- if edge(x,y), edge(x-1,y+1), edge(x+1,y-1)で edge(x,y)が最大じゃない
-  then edge(x,y) = 0
-if angle(x,y)  = 90
- if edge(x,y), edge(x,y-1), edge(x,y+1)で edge(x,y)が最大じゃない
-  then edge(x,y) = 0
-if angle(x,y)  = 135
- if edge(x,y), edge(x-1,y-1), edge(x+1,y+1)で edge(x,y)が最大じゃない
-  then edge(x,y) = 0
-```
+  如果在$\text{edge}(x,y)$、$\text{edge}(x-1,y)$、$\text{edge}(x+1,y)$中$\text{edge}(x,y)$不是最大的，那么$\text{edge}(x,y)=0$；
 
-| 输入 (imori.jpg) | 输出 (answers/answer_42.jpg) |
-| :--------------: | :--------------------------: |
-|  ![](imori.jpg)  |  ![](answers/answer_42.jpg)  |
+* $\text{angle}(x,y)  = 45$
 
-答案 >> [answers/answer_42.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_42.py)
+	如果在$\text{edge}(x,y)$、$\text{edge}(x-1,y)$、$\text{edge}(x+1,y)$中$\text{edge}(x,y)$不是最大的，那么$\text{edge}(x,y)=0$；
 
-## Q.43. Canny 边缘检测：第三步——滞后阈值
+* $\text{angle}(x,y)  = 90$
+
+	如果在$\text{edge}(x,y)$、$\text{edge}(x-1,y)$、$\text{edge}(x+1,y)$中$\text{edge}(x,y)$不是最大的，那么$\text{edge}(x,y)=0$；
+
+* $\text{angle}(x,y)  = 135$
+
+	如果在$\text{edge}(x,y)$、$\text{edge}(x-1,y)$、$\text{edge}(x+1,y)$中$\text{edge}(x,y)$不是最大的，那么$\text{edge}(x,y)=0$；
+
+| 输入 (imori.jpg) |   输出 (answers/answer_42.jpg)   |
+| :--------------: | :------------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_42.jpg) |
+
+答案 >> [answers/answer_42.py](answers/answer_42.py)
+
+## 问题四十三：Canny 边缘检测：第三步——滞后阈值
 
 在这里我们进行 Canny 边缘检测的最后一步。
 
-在这里我们将通过设置高阈值和低阈值来将梯度幅值二值化。
+[^TODO]: 这里原文中英文有错误
 
-1. 如果梯度幅值edge(x,y)大于高阈值的话，令edge(x,y)=255；
-2. 如果梯度幅值edge(x,y)小于低阈值的话，令edge(x,y)=0；
-3. 如果梯度幅值edge(x,y)介于高阈值和低阈值之间并且周围8邻域内有比高阈值高的像素点存在，令edge(x,y)=255；
+在这里我们将通过设置高阈值（HT：high threshold）和低阈值（LT：low threshold）来将梯度幅值二值化。
 
-在这里，我们使高阈值为100，低阈值为30。顺便说一句，我们只需要在查看结果时判断阈值。
+1. 如果梯度幅值$edge(x,y)$大于高阈值的话，令$edge(x,y)=255$；
+2. 如果梯度幅值$edge(x,y)$小于低阈值的话，令$edge(x,y)=0$；
+3. 如果梯度幅值$edge(x,y)$介于高阈值和低阈值之间并且周围8邻域内有比高阈值高的像素点存在，令$edge(x,y)=255$；
 
-上面的算法就是 Canny 边缘检测算法了。
+在这里，我们使高阈值为100，低阈值为20。顺便说一句，我们只需要在查看结果时判断阈值。
 
-| 输入 (imori.jpg) | 输出 (answers/answer_43.jpg) |
-| :--------------: | :--------------------------: |
-|  ![](imori.jpg)  |  ![](answers/answer_43.jpg)  |
+上面的算法就是Canny边缘检测算法了。
 
-答案 >> [answers/answer_43.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_43.py)
+| 输入 (imori.jpg) |   输出 (answers/answer_43.jpg)   |
+| :--------------: | :------------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_43.jpg) |
 
-## Q.44. 霍夫变换（Hough Transform）／直线检测——第一步：霍夫变换
+答案 >> [answers/answer_43.py](answers/answer_43.py)
 
-1. 第44问到第46问进行霍夫直线检测算法。
+## 问题四十四：霍夫变换（Hough Transform）／直线检测——第一步：霍夫变换
 
-   霍夫变换，是将座标由直角座标系变换到极座标系，然后再根据数学表达式检测某些形状（如直线和圆）的方法。当直线上的点变换到极座标中的时候，会交于一定的r,t的点。这个点即为要检测的直线的参数。通过对这个参数进行逆变换，我们就可以求出直线方程。
+第44问到第46问进行霍夫直线检测算法。
 
-   方法如下：
+霍夫变换，是将座标由直角座标系变换到极座标系，然后再根据数学表达式检测某些形状（如直线和圆）的方法。当直线上的点变换到极座标中的时候，会交于一定的r,t的点。这个点即为要检测的直线的参数。通过对这个参数进行逆变换，我们就可以求出直线方程。
 
-   1. 我们用边缘图像来对边缘像素进行霍夫变换。
-   2. 在霍夫变换后获取值的直方图并选择最大点。
-   3. 对极大点的r和t的值进行霍夫逆变换以获得检测到的直线的参数。
+方法如下：
 
-   在这里，进行一次霍夫变换之后，可以获得直方图。算法如下：
+1. 我们用边缘图像来对边缘像素进行霍夫变换。
+2. 在霍夫变换后获取值的直方图并选择最大点。
+3. 对极大点的r和t的值进行霍夫逆变换以获得检测到的直线的参数。
 
-   1. 求出图像的对角线长 rmax；
+在这里，进行一次霍夫变换之后，可以获得直方图。算法如下：
 
-   2. 在边缘点(x，y)处，t取遍[0,179]，根据下式执行霍夫变换：
+1. 求出图像的对角线长 rmax；
 
-      ```
-      r = x * cos(t) + y * sin(t)
-      ```
+2. 在边缘点$(x,y)$处，t取遍[0,179]，根据下式执行霍夫变换：
+   $$
+   r=x\cdot \cos(t)+y\cdot \sin(t)
+   $$
 
-   3. 做一个180x rmax大小的表，将每次按上式计算得到的表格(t,r)处的值加1。换句话说，这就是在进行投票，票数会在一定的地方集中。
+3. 做一个180x rmax大小的表，将每次按上式计算得到的表格(t,r)处的值加1。换句话说，这就是在进行投票，票数会在一定的地方集中。
 
 这一次，使用`torino.jpg`来计算投票之后的表。使用如下参数进行 Canny 边缘检测：高斯滤波器(5x 5,s = 1.4),HT = 100,LT = 30。
 
@@ -119,7 +123,7 @@ if angle(x,y)  = 135
 | :----------------: | :--------------------------: |
 |  ![](thorino.jpg)  |  ![](answers/answer_44.jpg)  |
 
-答案 >> [answers/answer_44.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_44.py)
+答案 >> [answers/answer_44.py](answers/answer_44.py)
 
 ## Q.45. 霍夫变换（Hough Transform）／直线检测——第二步：NMS
 
@@ -137,7 +141,7 @@ NMS 的算法如下：
 | :----------------: | :--------------------------: |
 |  ![](thorino.jpg)  |  ![](answers/answer_45.jpg)  |
 
-答案 >> [answers/answer_45.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_45.py)
+答案 >> [answers/answer_45.py](answers/answer_45.py)
 
 ## Q.46. 霍夫变换（Hough Transform）／直线检测——第三步：霍夫逆变换
 
@@ -157,7 +161,7 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 | :----------------: | :--------------------------: |
 |  ![](thorino.jpg)  |  ![](answers/answer_46.jpg)  |
 
-答案 >> [answers/answer_46.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_46.py)
+答案 >> [answers/answer_46.py](answers/answer_46.py)
 
 ## Q.47. 形态学处理：膨胀（Dilate）
 
@@ -179,7 +183,7 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 | :--------------: | :--------------------------------: | :--------------------------: |
 |  ![](imori.jpg)  |     ![](answers/answer_4.jpg)      |  ![](answers/answer_47.jpg)  |
 
-答案 >> [answers/answer_47.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_47.py)
+答案 >> [answers/answer_47.py](answers/answer_47.py)
 
 ## Q.48. 形态学处理：腐蚀（Erode）
 
@@ -194,7 +198,7 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 | :--------------: | :--------------------------------: | :--------------------------: |
 |  ![](imori.jpg)  |     ![](answers/answer_4.jpg)      |  ![](answers/answer_48.jpg)  |
 
-答案 >> [answers/answer_48.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_48.py)
+答案 >> [answers/answer_48.py](answers/answer_48.py)
 
 ## Q.49. 开运算（Opening Operation）
 
@@ -208,7 +212,7 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 | :--------------: | :--------------------------------: | :--------------------------: |
 |  ![](imori.jpg)  |     ![](answers/answer_4.jpg)      |  ![](answers/answer_49.jpg)  |
 
-答案 >> [answers/answer_49.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_49.py)
+答案 >> [answers/answer_49.py](answers/answer_49.py)
 
 ## Q.50. 闭运算（Closing Operation）
 
@@ -224,4 +228,4 @@ Canny边缘检测之后，进行$N=1$的闭处理吧。
 | :--------------: | :--------------------------: | :--------------------------: |
 |  ![](imori.jpg)  |  ![](answers/answer_43.jpg)  |  ![](answers/answer_50.jpg)  |
 
-答案 >> [answers/answer_50.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_50.py)
+答案 >> [answers/answer_50.py](answers/answer_50.py)

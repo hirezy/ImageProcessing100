@@ -1,9 +1,9 @@
 # 问题一至问题十
 ## 问题一：通道交换
 
-读取图像，然后将RGB通道替换成BGR通道。
+读取图像，然后将$\text{RGB}$通道替换成$\text{BGR}$通道。
 
-下面的代码用于提取图像的红色通道。注意，`cv2.imread()` 的系数是按BGR顺序排列的！其中的变量 `red` 表示的是仅有原图像红通道的 `imori.jpg`。
+下面的代码用于提取图像的红色通道。注意，`cv2.imread()` 的系数是按$\text{BGR}$顺序排列的！其中的变量 `red` 表示的是仅有原图像红通道的 `imori.jpg`。
 
 ```python
 import cv2
@@ -11,9 +11,9 @@ img = cv2.imread("imori.jpg")
 red = img[:, :, 2].copy()
 ```
 
-| 输入（imori.jpg) |   输出 (answers/answer_1.jpg)   |
-| :--------------: | :-----------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_1.jpg) |
+| 输入（imori.jpg) | 输出(answers_image/answer_1.jpg) |
+| :--------------: | :------------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_1.jpg)  |
 
 > 答案：
 > Python >> [answers/answer_1.py](answers/answer_1.py)
@@ -26,16 +26,16 @@ $$
 Y = 0.2126 R + 0.7152 G + 0.0722 B
 $$
 
-| 输入（imori.jpg) |   输出 (answers/answer_2.jpg)   |
-| :--------------: | :-----------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_2.jpg) |
+| 输入（imori.jpg) | 输出(answers_image/answer_2.jpg) |
+| :--------------: | :------------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_2.jpg)  |
 
 > 答案：
 > Python >> [answers/answer_2.py](answers/answer_2.py)
 > C++ >> [answers_cpp/answer_2.py](answers_cpp/answer_2.py)
 ## 问题三：二值化（Thresholding）
 
-把图像进行二值化吧！二值化是将图像使用黑和白两种值表示的方法。这里我们将灰度的阈值设置为 128 来进行二值化，即：
+把图像进行二值化吧！二值化是将图像使用黑和白两种值表示的方法。这里我们将灰度的阈值设置为$128$来进行二值化，即：
 $$
 y=
 \begin{cases}
@@ -44,9 +44,9 @@ y=
 \end{cases}
 $$
 
-| 输入（imori.jpg) |   输出 (answers/answer_3.jpg)   |
-| :--------------: | :-----------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_3.jpg) |
+| 输入（imori.jpg) | 输出(answers_image/answer_3.jpg) |
+| :--------------: | :------------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_3.jpg)  |
 
 > 答案 
 > Python >> [answers/answer_3.py](answers/answer_3.py)
@@ -79,7 +79,7 @@ $$
 $$
 换言之，如果使${S_b}^2={w_0}\cdot{w_1}\cdot(M_0 - M_1)^2$最大，就可以得到最好的二值化阈值$t$。
 
-| 输入（imori.jpg) | 输出 (th = 127​) (answers/answer_4.jpg) |
+| 输入（imori.jpg) | 输出 ($\text{th} = 127$​) (answers_image/answer_4.jpg) |
 | :--------------: | :-------------------------------------: |
 |  ![](imori.jpg)  |     ![](answers_image/answer_4.jpg)     |
 
@@ -87,11 +87,11 @@ $$
 > Python >> [answers/answer_4.py](answers/answer_4.py)
 > C++ >> [answers_cpp/answer_4.py](answers_cpp/answer_4.py)
 
-## 问题五：HSV变换
+## 问题五：$\text{HSV}$变换
 
-将使用HSV表示色彩的图像的色相反转吧！
+将使用$\text{HSV}$表示色彩的图像的色相反转吧！
 
-HSV即使用**色相（Hue）、饱和度（Saturation）、明度（Value）**来表示色彩的一种方式。
+$\text{HSV}$即使用**色相（Hue）、饱和度（Saturation）、明度（Value）**来表示色彩的一种方式。
 
 - 色相：将颜色使用$0^{\circ}$到$360^{\circ}$表示，就是平常所说的颜色名称，如红色、蓝色。色相与数值按下表对应：
 
@@ -102,9 +102,9 @@ HSV即使用**色相（Hue）、饱和度（Saturation）、明度（Value）**�
 - 饱和度：是指色彩的纯度，饱和度越低则颜色越黯淡（$0\leq S < 1$）；
 - 明度：即颜色的明暗程度。数值越高越接近白色，数值越低越接近黑色（$0\leq V < 1$）；
 
-从RGB色彩表示转换到HSV色彩表示通过以下方式计算：
+从$\text{RGB}$色彩表示转换到$\text{HSV}$色彩表示通过以下方式计算：
 
-R,G,B的取值范围为$[0, 1]$，令：
+$\text{RGB}$的取值范围为$[0, 1]$，令：
 $$
 \text{Max}=\max(R,G,B)\\
 \text{Min}=\min(R,G,B)
@@ -126,7 +126,7 @@ $$
 $$
 V=\text{Max}
 $$
-从HSV色彩表示转换到RGB色彩表示通过以下方式计算：
+从$\text{HSV}$色彩表示转换到$\text{RGB}$色彩表示通过以下方式计算：
 $$
 C = S\\
 H' = \frac{H}{60}\\
@@ -141,11 +141,11 @@ X = C\cdot (1 - |H' \mod 2 - 1|)\\
 (C, 0, X)&  (\text{if}\quad 5 \leq H' < 6)
 \end{cases}
 $$
-请将色相反转（色相值加$180$），然后再用RGB色彩空间表示图片。
+请将色相反转（色相值加$180$），然后再用$\text{RGB}$色彩空间表示图片。
 
-| 输入（imori.jpg) |   输出 (answers/answer_5.jpg)   |
-| :--------------: | :-----------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_5.jpg) |
+| 输入（imori.jpg) | 输出(answers_image/answer_5.jpg) |
+| :--------------: | :------------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_5.jpg)  |
 
 > 答案 
 > Python >> [answers/answer_5.py](answers/answer_5.py)
@@ -168,9 +168,9 @@ $$
 \end{cases}
 $$
 
-| 输入（imori.jpg) |   输出 (answers/answer_6.jpg)   |
-| :--------------: | :-----------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_6.jpg) |
+| 输入（imori.jpg) | 输出(answers_image/answer_6.jpg) |
+| :--------------: | :------------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_6.jpg)  |
 
 > 答案 
 > Python >> [answers/answer_6.py](answers/answer_6.py)
@@ -182,11 +182,11 @@ $$
 $$
 v=\frac{1}{|R|}\cdot \sum\limits_{i=1}^R\ v_i
 $$
-请把大小为 128x128 的`imori.jpg`使用 8x8 的网格做平均池化。
+请把大小为$128\times128$的`imori.jpg`使用$8\times8$的网格做平均池化。
 
-| 输入（imori.jpg) |   输出 (answers/answer_7.jpg)   |
-| :--------------: | :-----------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_7.jpg) |
+| 输入（imori.jpg) | 输出(answers_image/answer_7.jpg) |
+| :--------------: | :------------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_7.jpg)  |
 
 > 答案 
 > Python >> [answers/answer_7.py](answers/answer_7.py)
@@ -196,9 +196,9 @@ $$
 
 网格内的值不取平均值，而是取网格内的最大值进行池化操作。
 
-| 输入（imori.jpg) |   输出 (answers/answer_8.jpg)   |
-| :--------------: | :-----------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_8.jpg) |
+| 输入（imori.jpg) | 输出(answers_image/answer_8.jpg) |
+| :--------------: | :------------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_8.jpg)  |
 
 > 答案
 > Python >> [answers/answer_8.py](answers/answer_8.py)
@@ -208,11 +208,11 @@ $$
 
 使用高斯滤波器（$3\times3$大小，标准差$\sigma=1.3$）来对`imori_noise.jpg`进行降噪处理吧！
 
-高斯滤波器是一种可以使图像平滑的滤波器，用于去除噪声。可用于去除噪声的滤波器还有中值滤波器（参见问题10），平滑滤波器（参见问题11）、LoG 滤波器（参见问题19）。
+高斯滤波器是一种可以使图像平滑的滤波器，用于去除噪声。可用于去除噪声的滤波器还有中值滤波器（参见问题十），平滑滤波器（参见问题十一）、LoG滤波器（参见问题十九）。
 
 高斯滤波器将中心像素周围的像素按照高斯分布加权平均进行平滑化。这样的（二维）权值通常被称为卷积核或者滤波器。
 
-但是，由于图像的长宽可能不是滤波器大小的整数倍，因此我们需要在图像的边缘补0。这种方法称作 Zero Padding。并且权值$g$（卷积核）要进行[归一化操作](https://blog.csdn.net/lz0499/article/details/54015150)（$\sum\ g = 1$）。
+但是，由于图像的长宽可能不是滤波器大小的整数倍，因此我们需要在图像的边缘补$0$。这种方法称作`Zero Padding`。并且权值$g$（卷积核）要进行[归一化操作](https://blog.csdn.net/lz0499/article/details/54015150)（$\sum\ g = 1$）。
 
 按下面的高斯分布公式计算权值：
 $$
@@ -230,9 +230,9 @@ K=\frac{1}{16}\cdot \left[
   \right]
 $$
 
-| 输入（imori_noise.jpg) |   输出 (answers/answer_9.jpg)   |
-| :--------------------: | :-----------------------------: |
-|  ![](imori_noise.jpg)  | ![](answers_image/answer_9.jpg) |
+| 输入（imori_noise.jpg) | 输出(answers_image/answer_9.jpg) |
+| :--------------------: | :------------------------------: |
+|  ![](imori_noise.jpg)  | ![](answers_image/answer_9.jpg)  |
 
 > 答案 
 > Python >> [answers/answer_9.py](answers/answer_9.py)
@@ -242,11 +242,11 @@ $$
 
 使用中值滤波器（$3\times3$大小）来对`imori_noise.jpg`进行降噪处理吧！
 
-中值滤波器是一种可以使图像平滑的滤波器。这种滤波器用滤波器范围内（在这里是$3\times3$）像素点的中值进行滤波，在这里也采用 Zero Padding。
+中值滤波器是一种可以使图像平滑的滤波器。这种滤波器用滤波器范围内（在这里是$3\times3$）像素点的中值进行滤波，在这里也采用`Zero Padding`。
 
-| 输入（imori_noise.jpg) |   输出 (answers/answer_10.jpg)   |
-| :--------------------: | :------------------------------: |
-|  ![](imori_noise.jpg)  | ![](answers_image/answer_10.jpg) |
+| 输入（imori_noise.jpg) | 输出(answers_image/answer_10.jpg) |
+| :--------------------: | :-------------------------------: |
+|  ![](imori_noise.jpg)  | ![](answers_image/answer_10.jpg)  |
 
 > 答案 
 > Python >> [answers/answer_10.py](answers/answer_10.py)
