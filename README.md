@@ -4,8 +4,13 @@
 >
 > 关于LaTeX公式渲染问题：
 >
-> * 在线阅读建议安装[MathJax Plugin for Github](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima)插件获得良好的公式阅读体验；
-> * 离线阅读建议使用可以渲染LaTeX公式的Markdown编辑器/阅读器，如[Typora](https://www.typora.io/)和[MWeb](https://zh.mweb.im/)。VSCode使用者建议安装[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)插件渲染LaTeX公式。
+> * 在线阅读建议安装[MathJax Plugin for Github](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima)插件获得~~其实不太~~良好的公式阅读体验；
+>
+> * 离线阅读建议使用可以渲染LaTeX公式的Markdown编辑器/阅读器，如[Typora](https://www.typora.io/)和[MWeb](https://zh.mweb.im/)。VSCode使用者建议安装[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)插件渲染LaTeX公式；
+>
+> * 各个README文件在完成基本校对之后会转为PDF文件。PDF文件阅读效果最佳。当前进度：
+>
+>    ⣿⣿⣿⣿⣿⣀⣀⣀⣀⣀ 50% 
 >
 > 感谢！
 >
@@ -264,7 +269,6 @@ python answers/answer_@@.py
 | 100  | [简单物体检测第三步----评估 Precision, Recall, F-score, mAP](Question_91_100/README.md) | [✓](Question_91-100/answers/answer_10.py) |      |
 ## TODO
 
-1. 问题47、48待翻译
 2. 问题81待翻译
 3. 问题100待翻译
 4. 链接修复

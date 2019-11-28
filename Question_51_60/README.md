@@ -12,9 +12,9 @@
 | :--------------: | :-------------------------: |
 |  ![](imori.jpg)  | ![](answers/answer_51.jpg)  |
 
-答案 >> [answers/answer_51.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_51.py)
+答案 >> [answers/answer_51.py](answers/answer_51.py)
 
-## Q.52. 顶帽（Top Hat）
+## 问题五十二：顶帽（Top Hat）
 
 在进行大津二值化之后，进行顶帽运算吧。
 
@@ -28,9 +28,9 @@
 | :--------------: | :--------------------------------: | :-------------------------: |
 |  ![](imori.jpg)  |     ![](answers/answer_4.jpg)      | ![](answers/answer_52.jpg)  |
 
-答案 >> [answers/answer_52.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_52.py)
+答案 >> [answers/answer_52.py](answers/answer_52.py)
 
-## Q.53. 黑帽（Black Hat）
+## 问题五十三：黑帽（Black Hat）
 
 在进行大津二值化之后，进行黑帽运算吧。
 
@@ -44,27 +44,25 @@
 | :--------------: | :--------------------------------: | :-------------------------: |
 |  ![](imori.jpg)  |     ![](answers/answer_4.jpg)      | ![](answers/answer_53.jpg)  |
 
-答案 >> [answers/answer_53.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_53.py)
+答案 >> [answers/answer_53.py](answers/answer_53.py)
 
-## Q.54. 使用误差平方和算法（Sum of Squared Difference）进行模式匹配（Template Matching）
+## 问题五十四：使用误差平方和算法（Sum of Squared Difference）进行模式匹配（Template Matching）
 
 在这里我们使用误差平方和进行模式匹配。将`imoripart.jpg`在`imori.jpg`中匹配的图像使用红框框出来。
 
 模式匹配，即寻找待匹配图像和全体图像中最相似的部分，用于物体检测任务。现在虽然使用卷积神经网络（`CNN`）来检测物体，但是模式识别仍然是最基本的处理方法。
 
-下面介绍具体算法。原图像记为I（H x W），待匹配图像为T（h x w）：
+下面介绍具体算法。原图像记为$I(H\times W)$，待匹配图像为$T(h\times w)$：
 
-1. 对于图像I：、for ( j = 0, H-h)  for ( i = 0, W-w)在一次移动1像素的过程中，原图像I的一部分I(i:i+w, j:j+h)与待匹配图像计算相似度S。
+1. 对于图像$I$：，`for ( j = 0, H-h)  for ( i = 0, W-w)`在一次移动1像素的过程中，原图像I的一部分$I(i:i+w, j:j+h)$与待匹配图像计算相似度$S$。
 2. S最大或最小的地方即为匹配的位置。
 
 S的计算方法主要有 `SSD`、`SAD`（第55题）、`NCC`（第56题）、`ZNCC`（第57题）等。对于不同的方法，我们需要选择出最大值或者最小值。
 
 在这里我们使用误差平方和`SSD`（Sum of Squared Difference）。`SSD`计算像素值的差的平方和，S取误差平方和最小的地方。
-
-```bash
-S = Sum_{x=0:w, y=0:h} (I(i+x, j+y) - T(x, y) )^2
-```
-
+$$
+S=\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ [I(i+x,j+y)-T(x,y)]^2
+$$
 顺便说一句，像模式匹配这样，从图像的左上角开始往右进行顺序查找的操作一般称作光栅扫描（Raster Scan）或者滑动窗口扫描（原文是`スライディングウィンドウ`，没有找到确定的对应英文，我觉得是 `Sliding Window`）。这样的术语在图像处理邻域经常出现。
 
 可以使用`cv2.rectangle ()`来画矩形。另外，`imoripart.jpg`稍微改变了颜色。
@@ -77,37 +75,32 @@ S = Sum_{x=0:w, y=0:h} (I(i+x, j+y) - T(x, y) )^2
 | :--------------: | :--------------------------: | :-------------------------: |
 |  ![](imori.jpg)  |     ![](imori_part.jpg)      | ![](answers/answer_54.jpg)  |
 
-答案 >> [answers/answer_54.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_54.py)
+答案 >> [answers/answer_54.py](answers/answer_54.py)
 
-## Q.55. 使用绝对值差和（Sum of Absolute Differences）进行模式匹配
+## 问题五十五：使用绝对值差和（Sum of Absolute Differences）进行模式匹配
 
 在这里我们使用绝对值差和进行模式匹配。将`imoripart.jpg`在`imori.jpg`中匹配的图像使用红框框出来。
 
-绝对值差和（Sum of Absolute Differences）计算像素值差的绝对值之和，选取S**最小**的位置作为匹配。
-
-```bash
-S = Sum_{x=0:w, y=0:h} |I(i+x, j+y) - T(x, y)|
-```
+绝对值差和（Sum of Absolute Differences）计算像素值差的绝对值之和，选取$S$**最小**的位置作为匹配。
+$$
+S=\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ |I(i+x,j+y)-T(x,y)|
+$$
 
 | 输入 (imori.jpg) | template图像(imori_part.jpg) | 输出(answers/answer_55.jpg) |
 | :--------------: | :--------------------------: | :-------------------------: |
 |  ![](imori.jpg)  |     ![](imori_part.jpg)      | ![](answers/answer_55.jpg)  |
 
-答案 >> [answers/answer_55.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_55.py)
+答案 >> [answers/answer_55.py](answers/answer_55.py)
 
-## Q.56. 使用归一化交叉相关（Normalization Cross Correlation）进行模式匹配
+## 问题五十六：使用归一化交叉相关（Normalization Cross Correlation）进行模式匹配
 
 在这里我们使用归一化交叉相关进行模式匹配。将`imoripart.jpg`在`imori.jpg`中匹配的图像使用红框框出来。
 
 归一化交叉相关（Normalization Cross Correlation）求出两个图像的相似度，匹配S**最大**处的图像：
-
-```bash
-     Sum_{x=0:w, y=0:h} |I(i+x, j+y) T(x, y)|
-S = -----------------------------------------------------------------------------
-    Sqrt(Sum_{x=0:w, y=0:h} I(i+x, j+y)^2) * Sqrt(Sum_{x=0:w, y=0:h} T(x, y)^2)
-```
-
-S最后的范围在-1<=S<=1。`NCC`对变化十分敏感。
+$$
+S=\frac{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ |I(i+x,j+y)\cdot T(x,y)|}{\sqrt{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ I(i+x,j+y)^2}\cdot \sqrt{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ T(i,j)^2}}
+$$
+$S$最后的范围在$-1\leq S<=1$。`NCC`对变化十分敏感。
 
 > 原文是“`NCC`は証明変化に強いと言われる”，这句话我不知道怎么翻译为好。
 >
@@ -117,31 +110,27 @@ S最后的范围在-1<=S<=1。`NCC`对变化十分敏感。
 | :--------------: | :--------------------------: | :-------------------------: |
 |  ![](imori.jpg)  |     ![](imori_part.jpg)      | ![](answers/answer_56.jpg)  |
 
-答案 >> [answers/answer_56.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_56.py)
+答案 >> [answers/answer_56.py](answers/answer_56.py)
 
-## Q.57. 使用零均值归一化交叉相关（Zero-mean Normalization Cross Correlation）进行模式匹配
+## 问题五十七：使用零均值归一化交叉相关（Zero-mean Normalization Cross Correlation）进行模式匹配
 
 在这里我们使用零均值归一化交叉相关进行模式匹配。将`imoripart.jpg`在`imori.jpg`中匹配的图像使用红框框出来。
 
-零均值归一化交叉相关（Zero-mean Normalization Cross Correlation）求出两个图像的相似度，匹配S最大处的图像。
+零均值归一化交叉相关（Zero-mean Normalization Cross Correlation）求出两个图像的相似度，匹配$S$最大处的图像。
 
-图像I的平均值记为mi，图像T的平均值记为mt。使用下式计算S：
-
-```bash
-       Sum_{x=0:w, y=0:h} |(I(i+x, j+y)-mi) (T(x, y)-mt)|
-S = --------------------------------------------------------------------------------------
-    Sqrt(Sum_{x=0:w, y=0:h} (I(i+x, j+y)-mi)^2) * Sqrt(Sum_{x=0:w, y=0:h} (T(x, y)-mt)^2)
-```
-
-S最后的范围在-1<=S<=1。零均值归一化积相关去掉平均值的话就是归一化交叉相关，据说这比归一化交叉相关对变换更加敏感（但是这里匹配失败了）。
+图像$I$的平均值记为$m_i$，图像$T$的平均值记为$m_t$。使用下式计算$S$：
+$$
+S=\frac{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ |[I(i+x,j+y)-m_i]\cdot [T(x,y)-m_t]}{\sqrt{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ [I(i+x,j+y)-m_i]^2}\cdot \sqrt{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ [T(x,y)-m_t]^2}}
+$$
+S最后的范围在$-1\leq S\leq 1$。零均值归一化积相关去掉平均值的话就是归一化交叉相关，据说这比归一化交叉相关对变换更加敏感。
 
 | 输入 (imori.jpg) | template图像(imori_part.jpg) | 输出(answers/answer_57.jpg) |
 | :--------------: | :--------------------------: | :-------------------------: |
 |  ![](imori.jpg)  |     ![](imori_part.jpg)      | ![](answers/answer_57.jpg)  |
 
-答案 >> [answers/answer_57.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_57.py)
+答案 >> [answers/answer_57.py](answers/answer_57.py)
 
-## Q.58. 4邻接连通域标记
+## 问题五十八：4邻接连通域标记
 
 将`seg.png`进行4邻接连通域标记吧。
 
@@ -176,7 +165,7 @@ Lookup Table是这样的：
 算法如下：
 
 1. 从左上角开始进行光栅扫描。
-2. 如果当前遍历到的像素`i(x,y)`是黑像素的什么也不干。如果是白像素，考察该像素的上方像素`i(x,y-1)`和左边像素`i(x-1,y)`，如果两个的取值都为0，将该像素分配一个新的标签（在这里我们用数字做标签，即1,2,\cdots原文是说“最後に割り当てたラベル + 1 を割り当てる”，直译就是分配给该像素将最后分配的标签加1数值的标签）。
+2. 如果当前遍历到的像素`i(x,y)`是黑像素的什么也不干。如果是白像素，考察该像素的上方像素`i(x,y-1)`和左边像素`i(x-1,y)`，如果两个的取值都为0，将该像素分配一个新的标签（在这里我们用数字做标签，即1,2,原文是说“最後に割り当てたラベル + 1 を割り当てる”，直译就是分配给该像素将最后分配的标签加1数值的标签）。
 3. 如果两个像素中有一个不为0（也就是说已经分配了标签），将上方和左边的像素分配的标签中数值较小的那一个（0除外）分配给当前遍历到的像素`i(x,y)`。在这里，将上方像素和左边像素的标签写入`Lookup Table`的`Source`，将当前遍历的像素`i(x,y)`分配的标签写入`Distination`。
 4. 最后，对照`Lookup Table`，对像素分配的标签由`Source`变为`Distination`。
 
@@ -187,9 +176,9 @@ Lookup Table是这样的：
 | :------------: | :-------------------------: |
 |  ![](seg.png)  | ![](answers/answer_58.png)  |
 
-答案 >> [answers/answer_58.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_58.py)
+答案 >> [answers/answer_58.py](answers/answer_58.py)
 
-## Q.59. 8邻接连通域标记
+## 问题五十九：8邻接连通域标记
 
 在这里我们将问题58变为8邻接连通域标记。
 
@@ -199,9 +188,9 @@ Lookup Table是这样的：
 | :------------: | :-------------------------: |
 |  ![](seg.png)  | ![](answers/answer_59.png)  |
 
-答案 >> [answers/answer_59.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_59.py)
+答案 >> [answers/answer_59.py](answers/answer_59.py)
 
-## Q.60. 透明混合（Alpha Blending）
+## 问题六十： 透明混合（Alpha Blending）
 
 将`imori.jpg`和`thorino.jpg`按照6:4的比例透明混合吧。
 
@@ -220,4 +209,4 @@ out = img1 * alpha + img2 * (1 - alpha)
 | :--------------: | :-----------------: | :-------------------------: |
 |  ![](imori.jpg)  |  ![](thorino.jpg)   | ![](answers/answer_60.jpg)  |
 
-答案 >> [answers/answer_60.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_60.py6
+答案 >> [answers/answer_60.py](answers/answer_60.py)
