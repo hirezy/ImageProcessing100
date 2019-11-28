@@ -191,77 +191,77 @@ python answers/answer_@@.py
 
 ### [问题51-60](Question51_60)
 
-| 序号  |                                                     内容                                                      | Python                                  | C++ |
-| :---: | :-----------------------------------------------------------------------------------------------------------: | --------------------------------------- | --- |
-|  51   |                         [形态学梯度（Morphology Gradient）](Question_51_60/README.md)                         | [✓](Question_51-60/answers/answer_1.py) |     |
-|  52   |                                  [顶帽（Top Hat）](Question_51_60/README.md)                                  | [✓](Question_51-60/answers/answer_2.py) |     |
-|  53   |                                 [黑帽（Black Hat）](Question_51_60/README.md)                                 | [✓](Question_51-60/answers/answer_3.py) |     |
-|  54   | [使用误差平方和算法（Sum of Squared Difference）进行模式匹配（Template Matching）](Question_51_60/README.md)  | [✓](Question_51-60/answers/answer_4.py) |     |
-|  55   |             [使用绝对值差和（Sum of Absolute Differences）进行模式匹配](Question_51_60/README.md)             | [✓](Question_51-60/answers/answer_5.py) |     |
-|  56   |         [使用归一化交叉相关（Normalization Cross Correlation）进行模式匹配](Question_51_60/README.md)         | [✓](Question_51-60/answers/answer_6.py) |     |
-|  57   | [使用零均值归一化交叉相关（Zero-mean Normalization Cross Correlation）进行模式匹配](Question_51_60/README.md) | [✓](Question_51-60/answers/answer_7.py) |     |
-|  58   |                                 [4-邻接连通域标记](Question_51_60/README.md)                                  | [✓](Question_51-60/answers/answer_8.py) |     |
-|  59   |                                 [8-邻接连通域标记](Question_51_60/README.md)                                  | [✓](Question_51-60/answers/answer_9.py) |     |
-|  60   |                            [透明混合（Alpha Blending）](Question_51_60/README.md)                             | [✓](Question_51-60/answers/answer_10.py |     |
+| 序号 |                             内容                             | Python                                   | C++  |
+| :--: | :----------------------------------------------------------: | ---------------------------------------- | ---- |
+|  51  | [形态学梯度（Morphology Gradient）](Question_51_60/README.md) | [✓](Question_51-60/answers/answer_1.py)  |      |
+|  52  |         [顶帽（Top Hat）](Question_51_60/README.md)          | [✓](Question_51-60/answers/answer_2.py)  |      |
+|  53  |        [黑帽（Black Hat）](Question_51_60/README.md)         | [✓](Question_51-60/answers/answer_3.py)  |      |
+|  54  | [使用误差平方和算法（Sum of Squared Difference）进行模式匹配（Template Matching）](Question_51_60/README.md) | [✓](Question_51-60/answers/answer_4.py)  |      |
+|  55  | [使用绝对值差和（Sum of Absolute Differences）进行模式匹配](Question_51_60/README.md) | [✓](Question_51-60/answers/answer_5.py)  |      |
+|  56  | [使用归一化交叉相关（Normalization Cross Correlation）进行模式匹配](Question_51_60/README.md) | [✓](Question_51-60/answers/answer_6.py)  |      |
+|  57  | [使用零均值归一化交叉相关（Zero-mean Normalization Cross Correlation）进行模式匹配](Question_51_60/README.md) | [✓](Question_51-60/answers/answer_7.py)  |      |
+|  58  |         [4-邻接连通域标记](Question_51_60/README.md)         | [✓](Question_51-60/answers/answer_8.py)  |      |
+|  59  |         [8-邻接连通域标记](Question_51_60/README.md)         | [✓](Question_51-60/answers/answer_9.py)  |      |
+|  60  |    [透明混合（Alpha Blending）](Question_51_60/README.md)    | [✓](Question_51-60/answers/answer_10.py) |      |
 
 ### [问题61-70](Question61_70)
 
-| 序号  |                                    内容                                     | Python                                  | C++ |
-| :---: | :-------------------------------------------------------------------------: | --------------------------------------- | --- |
-|  61   |                 [4-邻接的连接数](Question_61_70/README.md)                  | [✓](Question_61-70/answers/answer_1.py) |     |
-|  62   |                 [8-邻接的连接数](Question_61_70/README.md)                  | [✓](Question_61-70/answers/answer_2.py) |     |
-|  63   |                    [细化处理](Question_61_70/README.md)                     | [✓](Question_61-70/answers/answer_3.py) |     |
-|  64   |                [Hilditch 细化算法](Question_61_70/README.md)                |                                         |     |
-|  65   |               [Zhang-Suen 细化算法](Question_61_70/README.md)               | [✓](Question_61-70/answers/answer_5.py) |     |
-|  66   | [方向梯度直方图（HOG）第一步：梯度幅值・梯度方向](Question_61_70/README.md) | [✓](Question_61-70/answers/answer_6.py) |     |
-|  67   |     [方向梯度直方图（HOG）第二步：梯度直方图](Question_61_70/README.md)     | [✓](Question_61-70/answers/answer_7.py) |     |
-|  68   |    [方向梯度直方图（HOG）第三步：直方图归一化](Question_61_70/README.md)    | [✓](Question_61-70/answers/answer_8.py) |     |
-|  69   |    [方向梯度直方图（HOG）第四步：可视化特征量](Question_61_70/README.md)    | [✓](Question_61-70/answers/answer_9.py) |     |
-|  70   |           [色彩追踪（Color Tracking）](Question_61_70/README.md)            | [✓](Question_61-70/answers/answer_10.py |     |
+| 序号 |                             内容                             | Python                                   | C++  |
+| :--: | :----------------------------------------------------------: | ---------------------------------------- | ---- |
+|  61  |          [4-邻接的连接数](Question_61_70/README.md)          | [✓](Question_61-70/answers/answer_1.py)  |      |
+|  62  |          [8-邻接的连接数](Question_61_70/README.md)          | [✓](Question_61-70/answers/answer_2.py)  |      |
+|  63  |             [细化处理](Question_61_70/README.md)             | [✓](Question_61-70/answers/answer_3.py)  |      |
+|  64  |        [Hilditch 细化算法](Question_61_70/README.md)         |                                          |      |
+|  65  |       [Zhang-Suen 细化算法](Question_61_70/README.md)        | [✓](Question_61-70/answers/answer_5.py)  |      |
+|  66  | [方向梯度直方图（HOG）第一步：梯度幅值・梯度方向](Question_61_70/README.md) | [✓](Question_61-70/answers/answer_6.py)  |      |
+|  67  | [方向梯度直方图（HOG）第二步：梯度直方图](Question_61_70/README.md) | [✓](Question_61-70/answers/answer_7.py)  |      |
+|  68  | [方向梯度直方图（HOG）第三步：直方图归一化](Question_61_70/README.md) | [✓](Question_61-70/answers/answer_8.py)  |      |
+|  69  | [方向梯度直方图（HOG）第四步：可视化特征量](Question_61_70/README.md) | [✓](Question_61-70/answers/answer_9.py)  |      |
+|  70  |    [色彩追踪（Color Tracking）](Question_61_70/README.md)    | [✓](Question_61-70/answers/answer_10.py) |      |
 ### [问题71-80](Question71_80)
 
-| 序号  |                                   内容                                    | Python                                  | C++ |
-| :---: | :-----------------------------------------------------------------------: | --------------------------------------- | --- |
-|  71   |                [掩膜（Masking）](Question_71_80/README.md)                | [✓](Question_71-80/answers/answer_1.py) |     |
-|  72   | [掩膜（色彩追踪（Color Tracking）+形态学处理）](Question_71_80/README.md) | [✓](Question_71-80/answers/answer_2.py) |     |
-|  73   |                  [缩小和放大](Question_71_80/README.md)                   | [✓](Question_71-80/answers/answer_3.py) |     |
-|  74   |          [使用差分金字塔提取高频成分](Question_71_80/README.md)           | [✓](Question_71-80/answers/answer_4.py) |     |
-|  75   |        [高斯金字塔（Gaussian Pyramid）](Question_71_80/README.md)         | [✓](Question_71-80/answers/answer_5.py) |     |
-|  76   |            [显著图（Saliency Map）](Question_71_80/README.md)             | [✓](Question_71-80/answers/answer_6.py) |     |
-|  77   |         [Gabor 滤波器（Gabor Filter）](Question_71_80/README.md)          | [✓](Question_71-80/answers/answer_7.py) |     |
-|  78   |               [旋转 Gabor 滤波器](Question_71_80/README.md)               | [✓](Question_71-80/answers/answer_8.py) |     |
-|  79   |         [使用 Gabor 滤波器进行边缘检测](Question_71_80/README.md)         | [✓](Question_71-80/answers/answer_9.py) |     |
-|  80   |         [使用 Gabor 滤波器进行特征提取](Question_71_80/README.md)         | [✓](Question_71-80/answers/answer_10.py |     |
+| 序号 |                             内容                             | Python                                   | C++  |
+| :--: | :----------------------------------------------------------: | ---------------------------------------- | ---- |
+|  71  |         [掩膜（Masking）](Question_71_80/README.md)          | [✓](Question_71-80/answers/answer_1.py)  |      |
+|  72  | [掩膜（色彩追踪（Color Tracking）+形态学处理）](Question_71_80/README.md) | [✓](Question_71-80/answers/answer_2.py)  |      |
+|  73  |            [缩小和放大](Question_71_80/README.md)            | [✓](Question_71-80/answers/answer_3.py)  |      |
+|  74  |    [使用差分金字塔提取高频成分](Question_71_80/README.md)    | [✓](Question_71-80/answers/answer_4.py)  |      |
+|  75  |  [高斯金字塔（Gaussian Pyramid）](Question_71_80/README.md)  | [✓](Question_71-80/answers/answer_5.py)  |      |
+|  76  |      [显著图（Saliency Map）](Question_71_80/README.md)      | [✓](Question_71-80/answers/answer_6.py)  |      |
+|  77  |   [Gabor 滤波器（Gabor Filter）](Question_71_80/README.md)   | [✓](Question_71-80/answers/answer_7.py)  |      |
+|  78  |        [旋转 Gabor 滤波器](Question_71_80/README.md)         | [✓](Question_71-80/answers/answer_8.py)  |      |
+|  79  |  [使用 Gabor 滤波器进行边缘检测](Question_71_80/README.md)   | [✓](Question_71-80/answers/answer_9.py)  |      |
+|  80  |  [使用 Gabor 滤波器进行特征提取](Question_71_80/README.md)   | [✓](Question_71-80/answers/answer_10.py) |      |
 
 ### [问题81-90](Question81_90)
 
-| 序号  |                                         内容                                          | Python                                  | C++ |
-| :---: | :-----------------------------------------------------------------------------------: | --------------------------------------- | --- |
-|  81   |                     [Hessian 角点检测](Question_81_90/README.md)                      | [✓](Question_81-90/answers/answer_1.py) |     |
-|  82   |          [Harris 角点检测第一步：Sobel + Gausian](Question_81_90/README.md)           | [✓](Question_81-90/answers/answer_2.py) |     |
-|  83   |              [Harris 角点检测第二步：角点检测](Question_81_90/README.md)              | [✓](Question_81-90/answers/answer_3.py) |     |
-|  84   |             [简单图像识别第一步：减色化+直方图](Question_81_90/README.md)             | [✓](Question_81-90/answers/answer_4.py) |     |
-|  85   |               [简单图像识别第二步：判别类别](Question_81_90/README.md)                | [✓](Question_81-90/answers/answer_5.py) |     |
-|  86   |                 [简单图像识别第三步：评估](Question_81_90/README.md)                  | [✓](Question_81-90/answers/answer_6.py) |     |
-|  87   |                 [简单图像识别第四步：k-NN](Question_81_90/README.md)                  | [✓](Question_81-90/answers/answer_7.py) |     |
-|  88   |   [k-平均聚类算法（k -means Clustering）第一步：生成质心](Question_81_90/README.md)   | [✓](Question_81-90/answers/answer_8.py) |     |
-|  89   |     [k-平均聚类算法（k -means Clustering）第二步：聚类](Question_81_90/README.md)     | [✓](Question_81-90/answers/answer_9.py) |     |
-|  90   | [k-平均聚类算法（k -means Clustering）第三步：调整初期类别](Question_81_90/README.md) | [✓](Question_81-90/answers/answer_10.py |     |
+| 序号 |                             内容                             | Python                                   | C++  |
+| :--: | :----------------------------------------------------------: | ---------------------------------------- | ---- |
+|  81  |         [Hessian 角点检测](Question_81_90/README.md)         | [✓](Question_81-90/answers/answer_1.py)  |      |
+|  82  | [Harris 角点检测第一步：Sobel + Gausian](Question_81_90/README.md) | [✓](Question_81-90/answers/answer_2.py)  |      |
+|  83  | [Harris 角点检测第二步：角点检测](Question_81_90/README.md)  | [✓](Question_81-90/answers/answer_3.py)  |      |
+|  84  | [简单图像识别第一步：减色化+直方图](Question_81_90/README.md) | [✓](Question_81-90/answers/answer_4.py)  |      |
+|  85  |   [简单图像识别第二步：判别类别](Question_81_90/README.md)   | [✓](Question_81-90/answers/answer_5.py)  |      |
+|  86  |     [简单图像识别第三步：评估](Question_81_90/README.md)     | [✓](Question_81-90/answers/answer_6.py)  |      |
+|  87  |     [简单图像识别第四步：k-NN](Question_81_90/README.md)     | [✓](Question_81-90/answers/answer_7.py)  |      |
+|  88  | [k-平均聚类算法（k -means Clustering）第一步：生成质心](Question_81_90/README.md) | [✓](Question_81-90/answers/answer_8.py)  |      |
+|  89  | [k-平均聚类算法（k -means Clustering）第二步：聚类](Question_81_90/README.md) | [✓](Question_81-90/answers/answer_9.py)  |      |
+|  90  | [k-平均聚类算法（k -means Clustering）第三步：调整初期类别](Question_81_90/README.md) | [✓](Question_81-90/answers/answer_10.py) |      |
 
 ### [问题91-100](Question91_100)
 
-| 序号  |                                            内容                                            |                  Python                  | C++ |
-| :---: | :----------------------------------------------------------------------------------------: | :--------------------------------------: | --- |
-|  91   |     [利用 k-平均聚类算法进行减色处理第一步：按颜色距离分类](Question_91_100/README.md)     | [✓](Question_91-100/answers/answer_1.py) |     |
-|  92   |        [利用 k-平均聚类算法进行减色处理第二步：减色处理](Question_91_100/README.md)        | [✓](Question_91-100/answers/answer_2.py) |     |
-|  93   |            [准备机器学习的训练数据第一步：计算 IoU](Question_91_100/README.md)             | [✓](Question_91-100/answers/answer_3.py) |     |
-|  94   |   [准备机器学习的训练数据第一步：随机裁剪（Random Cropping）](Question_91_100/README.md)   | [✓](Question_91-100/answers/answer_4.py) |     |
-|  95   |  [神经网络（Neural Network）第一步：深度学习（Deep Learning）](Question_91_100/README.md)  | [✓](Question_91-100/answers/answer_5.py) |     |
-|  96   |            [神经网络（Neural Network）第二步：训练](Question_91_100/README.md)             | [✓](Question_91-100/answers/answer_6.py) |     |
-|  97   |     [简单物体检测第一步----滑动窗口（Sliding Window）+HOG](Question_91_100/README.md)      | [✓](Question_91-100/answers/answer_7.py) |     |
-|  98   |     [简单物体检测第二步----滑动窗口（Sliding Window）+ NN](Question_91_100/README.md)      | [✓](Question_91-100/answers/answer_8.py) |     |
-|  99   | [简单物体检测第三步----非极大值抑制（Non-Maximum Suppression）](Question_91_100/README.md) | [✓](Question_91-100/answers/answer_9.py) |     |
-|  100  |  [简单物体检测第三步----评估 Precision, Recall, F-score, mAP](Question_91_100/README.md)   | [✓](Question_91-100/answers/answer_10.py |     |
+| 序号 |                             内容                             |                  Python                   | C++  |
+| :--: | :----------------------------------------------------------: | :---------------------------------------: | ---- |
+|  91  | [利用 k-平均聚类算法进行减色处理第一步：按颜色距离分类](Question_91_100/README.md) | [✓](Question_91-100/answers/answer_1.py)  |      |
+|  92  | [利用 k-平均聚类算法进行减色处理第二步：减色处理](Question_91_100/README.md) | [✓](Question_91-100/answers/answer_2.py)  |      |
+|  93  | [准备机器学习的训练数据第一步：计算 IoU](Question_91_100/README.md) | [✓](Question_91-100/answers/answer_3.py)  |      |
+|  94  | [准备机器学习的训练数据第一步：随机裁剪（Random Cropping）](Question_91_100/README.md) | [✓](Question_91-100/answers/answer_4.py)  |      |
+|  95  | [神经网络（Neural Network）第一步：深度学习（Deep Learning）](Question_91_100/README.md) | [✓](Question_91-100/answers/answer_5.py)  |      |
+|  96  | [神经网络（Neural Network）第二步：训练](Question_91_100/README.md) | [✓](Question_91-100/answers/answer_6.py)  |      |
+|  97  | [简单物体检测第一步----滑动窗口（Sliding Window）+HOG](Question_91_100/README.md) | [✓](Question_91-100/answers/answer_7.py)  |      |
+|  98  | [简单物体检测第二步----滑动窗口（Sliding Window）+ NN](Question_91_100/README.md) | [✓](Question_91-100/answers/answer_8.py)  |      |
+|  99  | [简单物体检测第三步----非极大值抑制（Non-Maximum Suppression）](Question_91_100/README.md) | [✓](Question_91-100/answers/answer_9.py)  |      |
+| 100  | [简单物体检测第三步----评估 Precision, Recall, F-score, mAP](Question_91_100/README.md) | [✓](Question_91-100/answers/answer_10.py) |      |
 ## TODO
 
 1. 问题47、48待翻译

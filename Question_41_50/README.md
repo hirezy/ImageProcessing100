@@ -1,4 +1,4 @@
-问题四十一至五十
+# 问题四十一至五十
 
 ## 问题四十一：Canny边缘检测：第一步——边缘强度
 
@@ -32,11 +32,14 @@
 
 请使用`numpy.pad()`来设置滤波器的`padding`吧！
 
-| 输入 (imori.jpg) | 输出(梯度幅值) (answers/answer_41_1.jpg) | 输出(梯度方向) (answers/answer_41_2.jpg) |
-| :--------------: | :--------------------------------------: | :--------------------------------------: |
-|  ![](imori.jpg)  |       ![](answers/answer_41_1.jpg)       |       ![](answers/answer_41_2.jpg)       |
+| 输入 (imori.jpg) | 输出(梯度幅值) (answers_image/answer_41_1.jpg) | 输出(梯度方向) (answers/answer_41_2.jpg) |
+| :--------------: | :--------------------------------------------: | :--------------------------------------: |
+|  ![](imori.jpg)  |       ![](answers_image/answer_41_1.jpg)       |    ![](answers_image/answer_41_2.jpg)    |
 
-答案 >> [answers/answer_41.py](answers/answer_41.py)
+> 答案 
+>
+> - Python >> [answers_py/answer_41.py](answers_py/answer_41.py)
+> - C++ >> [answers_cpp/answer_41.cpp](answers_cpp/answer_41.cpp)
 
 ## 问题四十二：Canny边缘检测：第二步——边缘细化
 
@@ -70,7 +73,10 @@
 | :--------------: | :------------------------------: |
 |  ![](imori.jpg)  | ![](answers_image/answer_42.jpg) |
 
-答案 >> [answers/answer_42.py](answers/answer_42.py)
+> 答案 
+>
+> - Python >> [answers_py/answer_42.py](answers_py/answer_42.py)
+> - Python >> [answers_cpp/answer_42.cpp](answers_cpp/answer_42.cpp)
 
 ## 问题四十三：Canny 边缘检测：第三步——滞后阈值
 
@@ -92,7 +98,9 @@
 | :--------------: | :------------------------------: |
 |  ![](imori.jpg)  | ![](answers_image/answer_43.jpg) |
 
-答案 >> [answers/answer_43.py](answers/answer_43.py)
+> - 答案 
+>   - Python >> [answers_py/answer_43.py](answers_py/answer_43.py)
+>   - C++ >> [answers_cpp/answer_43.cpp](answers_cpp/answer_43.cpp)
 
 ## 问题四十四：霍夫变换（Hough Transform）／直线检测——第一步：霍夫变换
 
@@ -119,13 +127,16 @@
 
 这一次，使用`torino.jpg`来计算投票之后的表。使用如下参数进行 Canny 边缘检测：高斯滤波器(5x 5,s = 1.4),HT = 100,LT = 30。
 
-| 输入 (thorino.jpg) | 输出 (answers/answer_44.jpg) |
-| :----------------: | :--------------------------: |
-|  ![](thorino.jpg)  |  ![](answers/answer_44.jpg)  |
+| 输入 (thorino.jpg) |   输出 (answers/answer_44.jpg)   |
+| :----------------: | :------------------------------: |
+|  ![](thorino.jpg)  | ![](answers_image/answer_44.jpg) |
 
-答案 >> [answers/answer_44.py](answers/answer_44.py)
+> 答案 
+>
+> - Python >> [answers_py/answer_44.py](answers_py/answer_44.py)
+> - C++ >> [answers_cpp/answer_44.cpp](answers_cpp/answer_44.cpp)
 
-## Q.45. 霍夫变换（Hough Transform）／直线检测——第二步：NMS
+## 问题四十五：霍夫变换（Hough Transform）／直线检测——第二步：NMS
 
 我们将在这里进行第2步。
 
@@ -137,13 +148,16 @@ NMS 的算法如下：
 1. 在该表中，如果遍历到的像素的投票数大于其8近邻的像素值，则它不变。
 2. 如果遍历到的像素的投票数小于其8近邻的像素值，则设置为0。
 
-| 输入 (thorino.jpg) | 输出 (answers/answer_45.jpg) |
-| :----------------: | :--------------------------: |
-|  ![](thorino.jpg)  |  ![](answers/answer_45.jpg)  |
+| 输入 (thorino.jpg) |   输出 (answers/answer_45.jpg)   |
+| :----------------: | :------------------------------: |
+|  ![](thorino.jpg)  | ![](answers_image/answer_45.jpg) |
 
-答案 >> [answers/answer_45.py](answers/answer_45.py)
+> 答案 
+>
+> - Python >> [answers_py/answer_45.py](answers_py/answer_45.py)
+> - C++ >> [answers_cpp/answer_45.cpp](answers_cpp/answer_45.cpp)
 
-## Q.46. 霍夫变换（Hough Transform）／直线检测——第三步：霍夫逆变换
+## 问题四十六：霍夫变换（Hough Transform）／直线检测——第三步：霍夫逆变换
 
 这里是将问题45中得到的极大值进行霍夫逆变换之后画出得到的直线。在这里，已经通过霍夫变换检测出了直线。
 
@@ -157,13 +171,16 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 
 2. 对于每个局部最大点，使y = 0-H -1，x = 0-W -1，然后执行1中的逆变换，并在输入图像中绘制检测到的直线。请将线的颜色设置为红色(R,G,B) = (255, 0, 0)。
 
-| 输入 (thorino.jpg) | 输出 (answers/answer_46.jpg) |
-| :----------------: | :--------------------------: |
-|  ![](thorino.jpg)  |  ![](answers/answer_46.jpg)  |
+| 输入 (thorino.jpg) |   输出 (answers/answer_46.jpg)   |
+| :----------------: | :------------------------------: |
+|  ![](thorino.jpg)  | ![](answers_image/answer_46.jpg) |
 
-答案 >> [answers/answer_46.py](answers/answer_46.py)
+> 答案 
+>
+> - Python >> [answers_py/answer_46.py](answers_py/answer_46.py)
+> - C++ >> [answers_cpp/answer_46.cpp](answers_cpp/answer_46.cpp)
 
-## Q.47. 形态学处理：膨胀（Dilate）
+## 问题四十七：膨胀（Dilate）
 
 *将`imori.jpg`大津二值化之后，进行两次形态学膨胀处理。
 
@@ -179,13 +196,16 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 
 例えば、[[0,1,0], [1,0,1], [0,1,0]] のフィルタを掛けた和が255を超えれば膨張である、と考える。
 
-| 输入 (imori.jpg) | 大津の二値化(answers/answer_4.jpg) | 输出 (answers/answer_47.jpg) |
-| :--------------: | :--------------------------------: | :--------------------------: |
-|  ![](imori.jpg)  |     ![](answers/answer_4.jpg)      |  ![](answers/answer_47.jpg)  |
+| 输入 (imori.jpg) | 大津の二値化(answers/answer_4.jpg) |   输出 (answers/answer_47.jpg)   |
+| :--------------: | :--------------------------------: | :------------------------------: |
+|  ![](imori.jpg)  |  ![](answers_image/answer_4.jpg)   | ![](answers_image/answer_47.jpg) |
 
-答案 >> [answers/answer_47.py](answers/answer_47.py)
+> 答案 
+>
+> - Python >> [answers_py/answer_47.py](answers_py/answer_47.py)
+> - C++ >> [answers_cpp/answer_47.cpp](answers_cpp/answer_47.cpp)
 
-## Q.48. 形态学处理：腐蚀（Erode）
+## 问题四十八：腐蚀（Erode）
 
 将`imori.jpg`大津二值化之后，进行两次形态学腐蚀处理。
 
@@ -194,13 +214,16 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 
 例えば、[[0,1,0], [1,0,1], [0,1,0]] のフィルタを掛けた和が255*4未満なら収縮である、と考える。
 
-| 输入 (imori.jpg) | 大津の二値化(answers/answer_4.jpg) | 输出 (answers/answer_48.jpg) |
-| :--------------: | :--------------------------------: | :--------------------------: |
-|  ![](imori.jpg)  |     ![](answers/answer_4.jpg)      |  ![](answers/answer_48.jpg)  |
+| 输入 (imori.jpg) | 大津の二値化(answers/answer_4.jpg) |   输出 (answers/answer_48.jpg)   |
+| :--------------: | :--------------------------------: | :------------------------------: |
+|  ![](imori.jpg)  |  ![](answers_image/answer_4.jpg)   | ![](answers_image/answer_48.jpg) |
 
-答案 >> [answers/answer_48.py](answers/answer_48.py)
+> 答案 
+>
+> - Python >> [answers_py/answer_48.py](answers_py/answer_48.py)
+> - C++ >> [answers_cpp/answer_48.cpp](answers_cpp/answer_48.cpp)
 
-## Q.49. 开运算（Opening Operation）
+## 问题四十九：开运算（Opening Operation）
 
 大津二值化之后，进行开运算（N=1）吧。
 
@@ -208,13 +231,16 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 
 开运算可以用来去除仅存的小块像素。
 
-| 输入 (imori.jpg) | 大津の二値化(answers/answer_4.jpg) | 输出 (answers/answer_49.jpg) |
-| :--------------: | :--------------------------------: | :--------------------------: |
-|  ![](imori.jpg)  |     ![](answers/answer_4.jpg)      |  ![](answers/answer_49.jpg)  |
+| 输入 (imori.jpg) | 大津の二値化(answers/answer_4.jpg) |   输出 (answers/answer_49.jpg)   |
+| :--------------: | :--------------------------------: | :------------------------------: |
+|  ![](imori.jpg)  |  ![](answers_image/answer_4.jpg)   | ![](answers_image/answer_49.jpg) |
 
-答案 >> [answers/answer_49.py](answers/answer_49.py)
+> 答案 
+>
+> - Python >> [answers_py/answer_49.py](answers_py/answer_49.py)
+> - C++ >> [answers_cpp/answer_49.cpp](answers_cpp/answer_49.cpp)
 
-## Q.50. 闭运算（Closing Operation）
+## 问题五十：闭运算（Closing Operation）
 
 Canny边缘检测之后，进行$N=1$的闭处理吧。
 
@@ -224,8 +250,11 @@ Canny边缘检测之后，进行$N=1$的闭处理吧。
 
 闭运算能够将中断的像素连接起来。
 
-| 输入 (imori.jpg) | Canny(answers/answer_43.jpg) | 输出 (answers/answer_50.jpg) |
-| :--------------: | :--------------------------: | :--------------------------: |
-|  ![](imori.jpg)  |  ![](answers/answer_43.jpg)  |  ![](answers/answer_50.jpg)  |
+| 输入 (imori.jpg) |   Canny(answers/answer_43.jpg)   |   输出 (answers/answer_50.jpg)   |
+| :--------------: | :------------------------------: | :------------------------------: |
+|  ![](imori.jpg)  | ![](answers_image/answer_43.jpg) | ![](answers_image/answer_50.jpg) |
 
-答案 >> [answers/answer_50.py](answers/answer_50.py)
+> 答案 
+>
+> - Python >> [answers_py/answer_50.py](answers_py/answer_50.py)
+> - C++ >> [answers_cpp/answer_50.cpp](answers_cpp/answer_50.cpp)

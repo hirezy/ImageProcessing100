@@ -1,6 +1,6 @@
-# Q. 51 - 60
+# 问题五十一至六十
 
-## Q.51. 形态学梯度（Morphology Gradient）
+## 问题五十一：形态学梯度（Morphology Gradient）
 
 在进行大津二值化之后，计算图像的形态学梯度吧。
 
