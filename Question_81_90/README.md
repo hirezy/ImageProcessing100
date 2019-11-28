@@ -2,7 +2,7 @@
 
 ## Q.81. Hessian 角点检测
 
-对`thorino.jpg`进行Hessian 角点检测吧！
+对`thorino.jpg`进行Hessian角点检测吧！
 
 角点检测是检测边缘上的角点。
 
@@ -136,11 +136,9 @@ test_madara_2.jpg is similar >> train_akahara_2.jpg  Pred >> akahara
 在这里对图像识别的结果做评估。
 
 正确率（Accuracy, Precision）用来表示多大程度上分类正确，在图像识别任务上是一般性的评价指标。正确率通过下式计算。要はテストにおける得点率である。当得到的值有小数时，也可以用百分比表示。
-
-```bash
-Accuracy = (正解した画像数) / (テストした画像の総数)
-```
-
+$$
+\text{Accuracy}=\frac{\text{被正确识别的图像个数}}{\text{图像总数}}
+$$
 按照上面的方法，求出问题85中的正确率吧！答案如下：
 
 ```bash

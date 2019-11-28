@@ -58,20 +58,20 @@
   \right]
   $$
 
-| 输入 (imori.jpg) | 输出 (1) (answers_image/answer_31_1.jpg) | 输出 (2) (answers_image/answer_31_2.jpg) |           输出 (3) (answers_image/answer_31_3.jpg)           |
-| :--------------: | :--------------------------------------: | :--------------------------------------: | :----------------------------------------------------------: |
-|  ![](imori.jpg)  |    ![](answers_image/answer_31_1.jpg)    |    ![](answers_image/answer_31_2.jpg)    | ![](C:\Users\guozr\Dropbox\Code\ImageProcessing100Wen\Question_31_40\README.assets\answer_31_3.jpg) |
+| 输入 (imori.jpg) | 输出 (1) (answers_image/answer_31_1.jpg) | 输出 (2) (answers_image/answer_31_2.jpg) | 输出 (3) (answers_image/answer_31_3.jpg) |
+| :--------------: | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |
+|  ![](imori.jpg)  |    ![](answers_image/answer_31_1.jpg)    |    ![](answers_image/answer_31_2.jpg)    |    ![](answers_image/answer_31_3.jpg)    |
 
 > 答案 
 >
 > - Python >> [answers_py/answer_31.py](answers_py/answer_31.py)
 > - C++ >> [answers_cpp/answer_31.cpp](answers_cpp/answer_31.cpp)
 
-## 问题三十二：Fourier Transform）
+## 问题三十二：傅立叶变换（Fourier Transform）
 
 使用离散二维傅立叶变换（Discrete Fourier Transformation），将灰度化的`imori.jpg`表示为频谱图。然后用二维离散傅立叶逆变换将图像复原。
 
-二维离散傅立叶变换是傅立叶变换在图像处理上的应用方法。通常傅立叶变换用于分离模拟信号或音频等连续一维信号的频率。但是，数字图像使用[0,255]范围内的离散值表示，并且图像使用HxW的二维矩阵表示，所以在这里使用二维离散傅立叶变换。
+二维离散傅立叶变换是傅立叶变换在图像处理上的应用方法。通常傅立叶变换用于分离模拟信号或音频等连续一维信号的频率。但是，数字图像使用$[0,255]$范围内的离散值表示，并且图像使用$H\times W$的二维矩阵表示，所以在这里使用二维离散傅立叶变换。
 
 二维离散傅立叶变换使用下式计算，其中$I$表示输入图像：
 $$
@@ -79,20 +79,22 @@ G(k,l)=\frac{1}{H\cdot W}\ \sum\limits_{y=0}^{H-1}\ \sum\limits_{x=0}^{W-1}\ I(x
 $$
 在这里让图像灰度化后，再进行离散二维傅立叶变换。
 
-频谱图为了能表示复数G，所以图上所画长度为G的绝对值。这回的图像表示时，请将频谱图缩放至[0,255]范围。
+频谱图为了能表示复数$G$，所以图上所画长度为$G$的绝对值。这回的图像表示时，请将频谱图缩放至$[0,255]$范围。
 
-二维离散傅立叶逆变换从频率分量G按照下式复原图像：
+二维离散傅立叶逆变换从频率分量$G$按照下式复原图像：
 $$
 I(x,y)=\frac{1}{H\cdot W}\ \sum\limits_{l=0}^{H-1}\ \sum\limits_{k=0}^{W-1}\ G(l,k)\ e^{2\cdot \pi\cdot j\cdot(\frac{k\cdot x}{W}+\frac{l\cdot y}{H})}
 $$
 
 上が定義式ですがexp(j)は複素数の値をとってしまうので、実際にコードにするときはぜ下式のように絶対値を使います。
 
+上式中$\exp(j)$是个复数，实际编程的时候请务必使用下式中的绝对值形态：
+
 > 这里应该有个公式的，但是它不知道去哪儿了。
 >
 > ——gzr
 
-シンプルに全部for文で回すと128^4の計算になるので、時間がかかってしまいます。numpyをうまく活用すれば計算コストを減らすことができます。（解答は128^2まで減らしました。）
+如果只是简单地使用`for`语句的话，计算量达到$128^4$，十分耗时。如果善用`NumPy`的化，则可以减少计算量（答案中已经减少到$128^2$）。
 
 | 输入 (imori.jpg) | 灰度化 (imori_gray.jpg) | 输出 (answers_image/answer_32.jpg) | 频谱图 (answers_image/answer_32_ps.py) |
 | :--------------: | :---------------------: | :--------------------------------: | :------------------------------------: |
@@ -119,7 +121,7 @@ $$
 >
 > ——gzr
 
-在图像中，高频成分指的是颜色改变的地方（噪声或者轮廓等），低频成分指的是颜色不怎么改变的部分（比如落日的渐变）。在这里，使用去除高频成分，保留低频成分的低通滤波器吧！
+在图像中，高频成分指的是颜色改变的地方（噪声或者轮廓等），低频成分指的是颜色不怎么改变的部分（比如落日的渐变）。在这里，使用去除高频成分，保留低频成分的**低通滤波器**吧！
 
 在这里，假设从低频的中心到高频的距离为$r$，我们保留$0.5\cdot r$​的低频分量。
 
@@ -127,31 +129,40 @@ $$
 | :--------------: | :-------------------------------: |
 |  ![](imori.jpg)  | ![](answers_image/answer_33.jpg)  |
 
-答案 >> [answers/answer_33.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_33.py)
+> 答案
+>
+> - Python >> [answers_py/answer_33.py](answers_py/answer_33.py)
+> - C++ >> [answers_cpp/answer_33.cpp](answers_cpp/answer_33.cpp)
 
 ## 问题三十四：傅立叶变换——高通滤波
 
 将`imori.jpg`灰度化之后进行傅立叶变换并进行高通滤波，之后再用傅立叶逆变换复原吧！
 
-在这里，我们使用可以去除低频部分，只保留高频部分的高通滤波器。假设从低频的中心到高频的距离为r，我们保留0.2r​的低频分量。
+在这里，我们使用可以去除低频部分，只保留高频部分的**高通滤波器**。假设从低频的中心到高频的距离为$r$，我们保留$0.2\cdot r$​的低频分量。
 
 | 输入 (imori.jpg) | 输出(answers_image/answer_34.jpg) |
 | :--------------: | :-------------------------------: |
 |  ![](imori.jpg)  | ![](answers_image/answer_34.jpg)  |
 
-答案 >> [answers/answer_34.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_34.py)
+> 答案
+>
+> - Python >> [answers_py/answer_34.py](answers_py/answer_34.py)
+> - C++ >> [answers_cpp/answer_34.cpp](answers_cpp/answer_34.cpp)
 
 ## 问题三十五：傅立叶变换——带通滤波
 
 将`imori.jpg`灰度化之后进行傅立叶变换并进行带通滤波，之后再用傅立叶逆变换复原吧！
 
-在这里，我们使用可以保留介于低频成分和高频成分之间的分量的带通滤波器。在这里，我们使用可以去除低频部分，只保留高频部分的高通滤波器。假设从低频的中心到高频的距离为r，我们保留0.1r至0.5r的分量。  
+在这里，我们使用可以保留介于低频成分和高频成分之间的分量的**带通滤波器**。在这里，我们使用可以去除低频部分，只保留高频部分的高通滤波器。假设从低频的中心到高频的距离为$r$，我们保留$0.1\cdot r$至$0.5\cdot r$的分量。  
 
 | 输入 (imori.jpg) | 输出(answers_image/answer_34.jpg) |
 | :--------------: | :-------------------------------: |
 |  ![](imori.jpg)  | ![](answers_image/answer_34.jpg)  |
 
-答案 >> [answers/answer_35.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_35.py)
+> 答案
+>
+> - Python >> [answers_py/answer_35.py](answers_py/answer_35.py)
+> - C++ >> [answers_cpp/answer_35.cpp](answers_cpp/answer_35.cpp)
 
 ## 问题三十六：JPEG 压缩——第一步：离散余弦变换（Discrete Cosine Transformation）
 
@@ -167,7 +178,9 @@ C(u)=
 1&(\text{else})
 \end{cases}
 $$
-离散余弦逆变换（Inverse Discrete Cosine Transformation）是离散余弦变换的逆变换，使用下式定义。ここでいう K は復元時にどれだけ解像度を良くするかを決定するパラメータである。K = Tの時は、DCT係数を全部使うのでIDCT後の解像度は最大になるが、Kが１や２などの時は復元に使う情報量（DCT係数）が減るので解像度が下がる。これを適度に設定することで、画像の容量を減らすことができる。
+离散余弦逆变换（Inverse Discrete Cosine Transformation）是离散余弦变换的逆变换，使用下式定义。
+
+在这里，$K$是决定图像复原时分辨率高低的参数。$K=T$时，DCT的系数全被保留，因此IDCT时分辨率最大。$K=1$或$K=2$时，图像复原时的信息量（DCT系数）减少，分辨率降低。如果适当地设定$K$，可以减小文件大小。
 $$
 1\leq K\leq T\\
 f(x,y)=\frac{2}{T}\ \sum\limits_{u=0}^{K-1}\sum\limits_{v=0}^{K-1}\ C(u)\ C(v)\ F(u,v)\ \cos(\frac{(2\cdot x+1)\cdot u\cdot \pi}{2\cdot T})\ \cos(\frac{(2\cdot y+1)\cdot v\cdot \pi}{2\cdot T})\\
@@ -197,7 +210,7 @@ $$
 
 峰值信噪比（Peak Signal to Noise Ratio）缩写为PSNR，用来表示信号最大可能功率和影响它的表示精度的破坏性噪声功率的比值，可以显示图像画质损失的程度。
 
-峰值信噪比越大，表示画质损失越小。峰值信噪比通过下式定义。MAX表示图像点颜色的最大数值。如果取值范围是[0,255]的话，那么MAX的值就为255。MSE表示均方误差（Mean Squared Error），用来表示两个图像各个像素点之间差值平方和的平均数：
+峰值信噪比越大，表示画质损失越小。峰值信噪比通过下式定义。MAX表示图像点颜色的最大数值。如果取值范围是$[0,255]$的话，那么MAX的值就为255。MSE表示均方误差（Mean Squared Error），用来表示两个图像各个像素点之间差值平方和的平均数：
 $$
 \text{PSNR}=10\cdot \log_{10}\ \frac{{v_{max}}^2}{\text{MSE}}\\
 \text{MSE}=\frac{\sum\limits_{y=0}^{H-1}\ \sum\limits_{x=0}^{W-1}\ [I_1(x,y)-I_2(x,y)]^2}{H\cdot W}
@@ -280,7 +293,13 @@ $$
 
 ## 问题四十：JPEG 压缩——第四步：YCbCr+离散余弦变换+量化
 
-将图像转为 YCbCr 色彩空间之后，进行 离散余弦变换再对 Y 用 Q1 量化矩阵量化，Cb 和 Cr 用 Q2 量化矩阵量化。最后通过离散余弦逆变换对图像复原。还需比较图像的容量。
+将图像转为 YCbCr 色彩空间之后，进行 离散余弦变换再对 Y 用 Q1 量化矩阵量化，Cb 和 Cr 用 Q2 量化矩阵量化。最后通过离散余弦逆变换对图像复原。还需比较图像的容量。算法如下：
+
+1. 将图像从RGB色彩空间变换到YCbCr色彩空间；
+2. 对YCbCr做DCT；
+3. DCT之后做量化；
+4. 量化之后应用IDCT；
+5. IDCT之后从YCbCr色彩空间变换到RGB色彩空间。
 
 这是实际生活中使用的减少 JPEG 数据量的方法，Q1 和 Q2 根据 JPEG 规范由以下等式定义：
 

@@ -8,7 +8,7 @@
 
 算法如下：
 
-1. 从图像中随机选取 K 个 RGB 分量（这我们称作类别）。
+1. 从图像中随机选取$K$个$\text{RGB}$分量（这我们称作类别）。
 
 2. 将图像中的像素分别分到颜色距离最短的那个类别的索引中去，色彩距离按照下面的方法计算：
    $$
@@ -20,7 +20,7 @@
 5. 将原图像的各个像素分配到色彩距离最小的那个类别中去。
 
 在这里完成步骤1和步骤2。
-- 类别数K=5；
+- 类别数$K=5$；
 - 在这里使用`reshape((HW, 3))`来改变图像大小之后图像将更容易处理；
 - 步骤1中，对于`np.random.seed(0)`，使用`np.random.choice(np.arrange(图像的HW), 5, replace=False)`；
 - 现在先不考虑步骤3到步骤5的循环。
@@ -44,7 +44,7 @@
 
 答案 >> [answers/answer_91.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_91.py)
 
-## Q.92. 利用 k-平均聚类算法进行减色处理第二步----减色处理
+## 问题九十二：利用 k-平均聚类算法进行减色处理第二步----减色处理
 
 在这里实现算法的第3到5步。
 
@@ -57,9 +57,9 @@
  [121.8759613   88.4736557   96.99688721]]
 ```
 
-减色处理可以将图像处理成手绘风格。如果k=10，则可以在保持一些颜色的同时将图片处理成手绘风格。
+减色处理可以将图像处理成手绘风格。如果$k=10$，则可以在保持一些颜色的同时将图片处理成手绘风格。
 
-现在，k=5的情况下试着将`madara.jpg`进行减色处理。
+现在，$k=5$的情况下试着将`madara.jpg`进行减色处理。
 
 | 输入 (imori.jpg) | 输出(answers/answer_92.jpg) | k=10(answers/answer_92_k10.jpg) | 输入2 (madara.jpg) | 输出(answers/answer_92_m.jpg) |
 | :--------------: | :-------------------------: | :-----------------------------: | :----------------: | :---------------------------: |
@@ -68,7 +68,7 @@
 答案 >> [answers/answer_92.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_92.py)
 
 
-## Q.93. 准备机器学习的训练数据第一步----计算 IoU
+## 问题九十三：准备机器学习的训练数据第一步----计算 IoU
 
 从这里开始我们准备机器学习用的训练数据。
 
@@ -86,7 +86,7 @@ IoU = |Rol| / |R1 + R2 - Rol|
 在这里计算以下两个矩形的 IoU 吧！
 
 ```python
-# [x1, y1, x2, y2] x1,y1...矩形の左上のx,y  x2,y2...矩形の右下のx,y
+# [x1, y1, x2, y2] x1,y1...矩形左上的坐标  x2,y2...矩形右下的坐标
 a = np.array((50, 50, 150, 150), dtype=np.float32)
 
 b = np.array((60, 60, 170, 160), dtype=np.float32)
@@ -99,11 +99,11 @@ b = np.array((60, 60, 170, 160), dtype=np.float32)
 ```
 答案 >> [answers/answer_93.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_93.py)
 
-## Q.94. 准备机器学习的训练数据第二步----随机裁剪（Random Cropping）
+## 问题九十四：的训练数据第二步----随机裁剪（Random Cropping）
 
 下面，通过从`imori1.jpg`中随机裁剪图像制作训练数据。
 
-这里，从图像中随机切出200个60 x 60的矩形。
+这里，从图像中随机切出200个$60\times60$的矩形。
 
 并且，满足下面的条件：
 
@@ -118,7 +118,7 @@ b = np.array((60, 60, 170, 160), dtype=np.float32)
 
 答案 >> [answers/answer_94.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_94.py)
 
-## Q.95. 神经网络（Neural Network）第一步----深度学习（Deep Learning）
+## 问题九十五：神经网络（Neural Network）第一步----深度学习（Deep Learning）
 
 在这里将神经网络作为分类器，这就是现在流行的深度学习。
 
@@ -193,7 +193,7 @@ in: [1. 1.] pred: [0.03937037]
 
 答案 >> [answers/answer_95.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_95.py)
 
-## Q.96. 神经网络（Neural Network）第二步----训练
+## 问题九十六：神经网络（Neural Network）第二步----训练
 
 在这里，将问题94中准备的200 个训练数据的 HOG 特征值输入到问题94​中的神经网络中进行学习。
 
@@ -209,7 +209,7 @@ Accuracy >> 1.0 (200.0 / 200)
 
 答案 >> [answers/answer_96.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_96.py)
 
-## Q.97. 简单物体检测第一步----滑动窗口（Sliding Window）+HOG
+## 问题九十七：简单物体检测第一步----滑动窗口（Sliding Window）+HOG
 
 从这里开始进行物体检测吧！
 
@@ -240,7 +240,7 @@ recs = np.array(((42, 42), (56, 56), (70, 70)), dtype=np.float32)
 
 答案 >> [answers/answer_97.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_97.py)
 
-## Q.98. 简单物体检测第二步----滑动窗口（Sliding Window）+ NN
+## 问题九十八：简单物体检测第二步----滑动窗口（Sliding Window）+ NN
 
 对于`imorimany.jpg`，在这里将问题97中求得的各个矩形的 HOG 特征值输入问题96中训练好的神经网络中进行蝾螈头部识别。
 
@@ -286,7 +286,7 @@ recs = np.array(((42, 42), (56, 56), (70, 70)), dtype=np.float32)
 
 解答 >> [answers/answer_98.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_98.py)
 
-## Q.99. 简单物体检测第三步----非极大值抑制（Non-Maximum Suppression）
+## 问题九十九：简单物体检测第三步----非极大值抑制（Non-Maximum Suppression）
 
 虽然使用问题97中的方法可以粗略地检测出目标，但是 Bounding-box 的数量过多，这对于后面的处理流程是十分不便的。因此，使用非极大值抑制（（Non-Maximum Suppression））减少矩形的数量。
 
@@ -308,8 +308,7 @@ NMS 是一种留下高分 Bounding-box 的方法，算法如下：
 
 解答 >> [answers/answer_99.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_99.py)
 
-
-## Q.100. 简单物体检测第三步----评估 Precision, Recall, F-score, mAP
+## 问题一百：第三步----评估 Precision, Recall, F-score, mAP
 
 最后是第100个问题！ ！ ！
 

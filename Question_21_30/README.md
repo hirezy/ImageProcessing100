@@ -31,7 +31,10 @@ $$
 | :-------------------: | :--------------------------------: | :-----------------------------------: |
 |  ![](imori_dark.jpg)  | ![](answers_image/answer_21_1.jpg) |  ![](answers_image/answer_21_2.png)   |
 
-答案 >> [answers/answer_21.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_21.py)
+> 答案 
+>
+> - Python >> [answers_py/answer_21.py](answers_py/answer_21.py)
+> - C++ >> [answers_cpp/answer_21.cpp](answers_cpp/answer_21.cpp)
 
 ## 问题二十二：直方图操作
 
@@ -96,15 +99,15 @@ $$
 | :--------------------: | :--------------------: |
 | ![](question_24_1.jpg) | ![](question_24_2.jpg) |
 
-| 输入 (imori_gamma.jpg) |   输出 (answers/answer_24.jpg)   |
-| :--------------------: | :------------------------------: |
-|  ![](imori_gamma.jpg)  | ![](answers_image/answer_24.jpg) |
+| 输入 (imori_gamma.jpg) | 输出 (answers_image/answer_24.jpg) |
+| :--------------------: | :--------------------------------: |
+|  ![](imori_gamma.jpg)  |  ![](answers_image/answer_24.jpg)  |
 
 > 答案 
 >
-> Python >> answers_py/answer_24.py
+> * Python >> [answers_py/answer_24.py](answers_py/answer_24.py)
 >
-> C++ >> [answers_cpp/answer_24.cpp](answers_cpp/answer_24.cpp)
+> * C++ >> [answers_cpp/answer_24.cpp](answers_cpp/answer_24.cpp)
 
 
 ## 问题二十五：最邻近插值（ Nearest-neighbor Interpolation ）

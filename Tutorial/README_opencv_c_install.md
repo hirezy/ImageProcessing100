@@ -1,8 +1,8 @@
 # C++ Tutorial
 
-## C++ 上OpenCV的安装
+## C++上OpenCV的安装
 
-> 想使用 Python 的人请点[这里](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README.md)。
+> 想使用 Python 的人请点[这里](README.md)。
 
 假定使用 Ubuntu-16.04（18.04 也可以）。我认为使用 Docker 很方便。
 
