@@ -1,6 +1,8 @@
 import cv2
 
 # function: BGR -> RGB
+
+
 def BGR2RGB(img):
     b = img[:, :, 0].copy()
     g = img[:, :, 1].copy()
@@ -13,8 +15,9 @@ def BGR2RGB(img):
 
     return img
 
+
 # Read image
-img = cv2.imread("imori.jpg")
+img = cv2.imread("../imori.jpg")
 
 # BGR -> RGB
 img = BGR2RGB(img)
