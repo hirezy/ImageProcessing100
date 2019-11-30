@@ -97,7 +97,7 @@ $ git clone https://github.com/yoyoyo-yo/Gasyori100knock.git
 
 然后，选择你喜欢的 Python 或者 C++，阅读下一部分——Tutorial！
 
-## [Tutorial](Tutorial)
+## [Tutorial](Tutorial/README.md)
 
 |       |      内容      |         Python          |                   C++                   |
 | :---: | :------------: | :---------------------: | :-------------------------------------: |
@@ -122,7 +122,7 @@ python answers/answer_@@.py
 - 为了简化答案，所以没有编写`main()`函数。
 - 虽然我们的答案以`numpy`为基础，但是还请你自己查找`numpy`的基本使用方法。
 
-### [問題1 - 10](Question_01_10)
+### [問題1 - 10](Question_1_10/README.md)
 
 | 序号 |                          问题                           |                  Python                  |                      C++                      | 一校 |
 | :--: | :-----------------------------------------------------: | :--------------------------------------: | :-------------------------------------------: | :--: |
@@ -137,7 +137,7 @@ python answers/answer_@@.py
 |  9   | [高斯滤波（Gaussian Filter）](Question_01_10/README.md) | [✓](Question_01_10/answers/answer_9.py)  | [✓](Question_01_10/answers_cpp/answer_9.cpp)  |      |
 |  10  |  [中值滤波（Median filter）](Question_01_10/README.md)  | [✓](Question_01_10/answers/answer_10.py) | [✓](Question_01_10/answers_cpp/answer_10.cpp) |      |
 
-### [问题11 - 20](Question11_20)
+### [问题11 - 20](Question_11_20/README.md)
 
 | 序号 |                     内容                      | Python                                   | C++                                          | 一校 |
 | :--: | :-------------------------------------------: | ---------------------------------------- | -------------------------------------------- | :--: |
@@ -152,7 +152,7 @@ python answers/answer_@@.py
 |  19  |     [LoG 滤波](Question_11_20/README.md)      | [✓](Question_11_20/answers/answer_9.py)  | [✓](Question_11_20/answers_cpp/answer_9.cpp) |      |
 |  20  | [直方图](Question_01_10/answers/answer_10.py) | [✓](Question_11_20/answers/answer_10.py) |                                              |      |
 
-### [问题21-30](Question21_30)
+### [问题21-30](Question_21_30/README.md)
 
 | 序号 |                             内容                             | Python                                   | C++                                           | 一校 |
 | :--: | :----------------------------------------------------------: | ---------------------------------------- | --------------------------------------------- | :--: |
@@ -167,7 +167,7 @@ python answers/answer_@@.py
 |  29  | [仿射变换（Afine Transformations）——放大缩小](Question_21_30/README.md) | [✓](Question_21_30/answers/answer_9.py)  | [✓](Question_21_30/answers_cpp/answer_9.cpp)  |      |
 |  30  | [仿射变换（ Afine Transformations ）——旋转](Question_21_30/README.md) | [✓](Question_21_30/answers/answer_10.py) | [✓](Question_21_30/answers_cpp/answer_10.cpp) |      |
 
-### [问题31-40](Question31_40)
+### [问题31-40](Question_31_40/README.md)
 | 序号 |                             内容                             | Python                                   | C++                                           | 一校 |
 | :--: | :----------------------------------------------------------: | ---------------------------------------- | --------------------------------------------- | ---- |
 |  31  | [仿射变换（Afine Transformations）——倾斜](Question_31_40/README.md) | [✓](Question_31-40/answers/answer_1.py)  | [✓](Question_31-40/answers_cpp/answer_1.cpp)  |      |
@@ -181,7 +181,7 @@ python answers/answer_@@.py
 |  39  | [JPEG 压缩——第三步：YCbCr 色彩空间](Question_31_40/README.md) | [✓](Question_31-40/answers/answer_9.py)  | [✓](Question_31-40/answers_cpp/answer_9.cpp)  |      |
 |  40  | [JPEG 压缩——第四步：YCbCr+DCT+量化](Question_31_40/README.md) | [✓](Question_31-40/answers/answer_10.py) | [✓](Question_31-40/answers_cpp/answer_10.cpp) |      |
 
-### [问题41-50](Question41_50)
+### [问题41-50](Question_41_50/README.md)
 
 | 序号 |                             内容                             | Python                                   | C++                                           | 一校 |
 | :--: | :----------------------------------------------------------: | ---------------------------------------- | --------------------------------------------- | ---- |
@@ -196,7 +196,7 @@ python answers/answer_@@.py
 |  49  |   [开运算（Opening Operation）](Question_41_50/README.md)    | [✓](Question_41-50/answers/answer_9.py)  | [✓](Question_41-50/answers_cpp/answer_9.cpp)  |      |
 |  50  |   [闭运算（Closing Operation）](Question_41_50/README.md)    | [✓](Question_41-50/answers/answer_10.py) | [✓](Question_41-50/answers_cpp/answer_10.cpp) |      |
 
-### [问题51-60](Question51_60)
+### [问题51-60](Question_51_60/README.md)
 
 | 序号 |                             内容                             | Python                                   | C++  | 一校 |
 | :--: | :----------------------------------------------------------: | ---------------------------------------- | ---- | ---- |
@@ -211,7 +211,7 @@ python answers/answer_@@.py
 |  59  |         [8-邻接连通域标记](Question_51_60/README.md)         | [✓](Question_51-60/answers/answer_9.py)  |      |      |
 |  60  |    [透明混合（Alpha Blending）](Question_51_60/README.md)    | [✓](Question_51-60/answers/answer_10.py) |      |      |
 
-### [问题61-70](Question61_70)
+### [问题61-70](Question_61_70/README.md)
 
 | 序号 |                             内容                             | Python                                   | C++  | 一校 |
 | :--: | :----------------------------------------------------------: | ---------------------------------------- | ---- | ---- |
@@ -225,7 +225,7 @@ python answers/answer_@@.py
 |  68  | [方向梯度直方图（HOG）第三步：直方图归一化](Question_61_70/README.md) | [✓](Question_61-70/answers/answer_8.py)  |      |      |
 |  69  | [方向梯度直方图（HOG）第四步：可视化特征量](Question_61_70/README.md) | [✓](Question_61-70/answers/answer_9.py)  |      |      |
 |  70  |    [色彩追踪（Color Tracking）](Question_61_70/README.md)    | [✓](Question_61-70/answers/answer_10.py) |      |      |
-### [问题71-80](Question71_80)
+### [问题71-80](Question_71_80/README.md)
 
 | 序号 |                             内容                             | Python                                   | C++  | 一校 |
 | :--: | :----------------------------------------------------------: | ---------------------------------------- | ---- | ---- |
@@ -240,7 +240,7 @@ python answers/answer_@@.py
 |  79  |  [使用 Gabor 滤波器进行边缘检测](Question_71_80/README.md)   | [✓](Question_71-80/answers/answer_9.py)  |      |      |
 |  80  |  [使用 Gabor 滤波器进行特征提取](Question_71_80/README.md)   | [✓](Question_71-80/answers/answer_10.py) |      |      |
 
-### [问题81-90](Question81_90)
+### [问题81-90](Question_81_90/README.md)
 
 | 序号 |                             内容                             | Python                                   | C++  | 一校 |
 | :--: | :----------------------------------------------------------: | ---------------------------------------- | ---- | ---- |
@@ -255,7 +255,7 @@ python answers/answer_@@.py
 |  89  | [k-平均聚类算法（k -means Clustering）第二步：聚类](Question_81_90/README.md) | [✓](Question_81-90/answers/answer_9.py)  |      |      |
 |  90  | [k-平均聚类算法（k -means Clustering）第三步：调整初期类别](Question_81_90/README.md) | [✓](Question_81-90/answers/answer_10.py) |      |      |
 
-### [问题91-100](Question91_100)
+### [问题91-100](Question_91_100/README.md)
 
 | 序号 |                             内容                             |                  Python                   | C++  | 一校 |
 | :--: | :----------------------------------------------------------: | :---------------------------------------: | ---- | ---- |
