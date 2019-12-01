@@ -350,7 +350,7 @@ $$
 
 **F-Score——是查全率（Recall）和查准率（Precision）的调和平均。可以表示两者的平均，取值范围为$[0,1]$：**
 $$
-\text{F-Score}=\frac{2\cdot \text{Recall}\cdot \text{Precision}}{\text{Recall}+\text{Precision}}
+\text{F-Score}=\frac{2\  \text{Recall}\  \text{Precision}}{\text{Recall}+\text{Precision}}
 $$
 在文字检测任务中，通常使用Recall、Precision和F-Score等指标进行评估。
 

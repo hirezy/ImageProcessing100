@@ -30,7 +30,7 @@ red = img[:, :, 2].copy()
 
 灰度是一种图像亮度的表示方法，通过下式计算：
 $$
-Y = 0.2126\cdot R + 0.7152\cdot G + 0.0722\cdot B
+Y = 0.2126\  R + 0.7152\  G + 0.0722\  B
 $$
 
 | 输入（imori.jpg) | 输出(answers_image/answer_2.jpg) |
@@ -82,8 +82,8 @@ $$
 
 即：
 
-* 类内方差：${S_w}^2=w_0\cdot{S_0}^2+w_1\cdot {S_1}^2$
-* 类间方差：${S_b}^2 = w_0 \cdot (M_0 - M_t)^2 + w_1\cdot(M_1 - M_t)^2 = w_0\cdot w_1\cdot (M_0 - M_1) ^2$
+* 类内方差：${S_w}^2=w_0\ {S_0}^2+w_1\  {S_1}^2$
+* 类间方差：${S_b}^2 = w_0 \  (M_0 - M_t)^2 + w_1\ (M_1 - M_t)^2 = w_0\  w_1\  (M_0 - M_1) ^2$
 * 图像所有像素的方差：${S_t}^2 = {S_w}^2 + {S_b}^2 = \text{常数}$
 
 根据以上的式子，我们用以下的式子计算分离度$X$：[^1]
@@ -98,11 +98,11 @@ $$
 $$
 \arg\max\limits_{t}\ X=\arg\max\limits_{t}\ {S_b}^2
 $$
-换言之，如果使${S_b}^2={w_0}\cdot{w_1}\cdot(M_0 - M_1)^2$最大，就可以得到最好的二值化阈值$t$。
+换言之，如果使${S_b}^2={w_0}\ {w_1}\ (M_0 - M_1)^2$最大，就可以得到最好的二值化阈值$t$。
 
 | 输入（imori.jpg) | 输出 ($\text{th} = 127$​) (answers_image/answer_4.jpg) |
-| :--------------: | :-------------------------------------: |
-|  ![](imori.jpg)  |     ![](answers_image/answer_4.jpg)     |
+| :--------------: | :----------------------------------------------------: |
+|  ![](imori.jpg)  |            ![](answers_image/answer_4.jpg)             |
 
 > 答案
 > Python >> [answers/answer_4.py](answers/answer_4.py)
@@ -134,9 +134,9 @@ $$
 $$
 H=\begin{cases}
 0&(\text{if}\ \text{Min}=\text{Max})\\
-60\cdot \frac{G-R}{\text{Max}-\text{Min}}+60&(\text{if}\ \text{Min}=B)\\
-60\cdot \frac{B-G}{\text{Max}-\text{Min}}+180&(\text{if}\ \text{Min}=R)\\
-60\cdot \frac{R-B}{\text{Max}-\text{Min}}+300&(\text{if}\ \text{Min}=G)
+60\  \frac{G-R}{\text{Max}-\text{Min}}+60&(\text{if}\ \text{Min}=B)\\
+60\  \frac{B-G}{\text{Max}-\text{Min}}+180&(\text{if}\ \text{Min}=R)\\
+60\  \frac{R-B}{\text{Max}-\text{Min}}+300&(\text{if}\ \text{Min}=G)
 \end{cases}
 $$
 饱和度：
@@ -151,8 +151,8 @@ $$
 $$
 C = S\\
 H' = \frac{H}{60}\\
-X = C\cdot (1 - |H' \mod 2 - 1|)\\
-(R,G,B)=(V-C)\cdot(1,1,1)+\begin{cases}
+X = C\  (1 - |H' \mod 2 - 1|)\\
+(R,G,B)=(V-C)\ (1,1,1)+\begin{cases}
 (0, 0, 0)&  (\text{if H is undefined})\\
 (C, X, 0)&  (\text{if}\quad 0 \leq H' < 1)\\
 (X, C, 0)&  (\text{if}\quad 1 \leq H' < 2)\\
@@ -205,7 +205,7 @@ $$
 
 池化操作是**卷积神经网络（Convolutional Neural Network）**中重要的图像处理方式。平均池化按照下式定义：
 $$
-v=\frac{1}{|R|}\cdot \sum\limits_{i=1}^R\ v_i
+v=\frac{1}{|R|}\  \sum\limits_{i=1}^R\ v_i
 $$
 请把大小为$128\times128$的`imori.jpg`使用$8\times8$的网格做平均池化。
 
@@ -242,12 +242,12 @@ $$
 
 按下面的高斯分布公式计算权值：
 $$
-g(x,y,\sigma)=\frac{1}{2\cdot \pi\cdot\sigma^2}\cdot e^{-\frac{x^2+y^2}{2\cdot \sigma^2}}
+g(x,y,\sigma)=\frac{1}{2\  \pi\ \sigma^2}\  e^{-\frac{x^2+y^2}{2\  \sigma^2}}
 $$
 
 标准差$\sigma=1.3$的$8-$近邻高斯滤波器如下：
 $$
-K=\frac{1}{16}\cdot \left[
+K=\frac{1}{16}\  \left[
  \begin{matrix}
    1 & 2 & 1 \\
    2 & 4 & 2 \\

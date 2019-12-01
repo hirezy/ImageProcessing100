@@ -101,9 +101,9 @@ Gabor 滤波器是一种结合了高斯分布和频率变换的滤波器，用�
 
 滤波器由以下式子定义：
 $$
-G(y, x) = e^{-\frac{{x'}^2 + \gamma^2\ {y'}^2}{2\cdot \sigma^2}} \cdot \cos(\frac{2\ \pi\ x'}{\lambda} + p)\\
-x'=\cos(A)\cdot x+\sin(A)\cdot y\\
-y'=-\sin(A)\cdot x+\cos(A)\cdot y
+G(y, x) = e^{-\frac{{x'}^2 + \gamma^2\ {y'}^2}{2\  \sigma^2}} \  \cos(\frac{2\ \pi\ x'}{\lambda} + p)\\
+x'=\cos(A)\  x+\sin(A)\  y\\
+y'=-\sin(A)\  x+\cos(A)\  y
 $$
 其中：
 

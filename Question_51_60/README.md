@@ -98,7 +98,7 @@ $$
 
 归一化交叉相关（Normalization Cross Correlation）求出两个图像的相似度，匹配S**最大**处的图像：
 $$
-S=\frac{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ |I(i+x,j+y)\cdot T(x,y)|}{\sqrt{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ I(i+x,j+y)^2}\cdot \sqrt{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ T(i,j)^2}}
+S=\frac{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ |I(i+x,j+y)\  T(x,y)|}{\sqrt{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ I(i+x,j+y)^2}\  \sqrt{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ T(i,j)^2}}
 $$
 $S$最后的范围在$-1\leq S<=1$。`NCC`对变化十分敏感。
 
@@ -120,7 +120,7 @@ $S$最后的范围在$-1\leq S<=1$。`NCC`对变化十分敏感。
 
 图像$I$的平均值记为$m_i$，图像$T$的平均值记为$m_t$。使用下式计算$S$：
 $$
-S=\frac{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ |[I(i+x,j+y)-m_i]\cdot [T(x,y)-m_t]}{\sqrt{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ [I(i+x,j+y)-m_i]^2}\cdot \sqrt{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ [T(x,y)-m_t]^2}}
+S=\frac{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ |[I(i+x,j+y)-m_i]\  [T(x,y)-m_t]}{\sqrt{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ [I(i+x,j+y)-m_i]^2}\  \sqrt{\sum\limits_{x=0}^w\ \sum\limits_{y=0}^h\ [T(x,y)-m_t]^2}}
 $$
 S最后的范围在$-1\leq S\leq 1$。零均值归一化积相关去掉平均值的话就是归一化交叉相关，据说这比归一化交叉相关对变换更加敏感。
 

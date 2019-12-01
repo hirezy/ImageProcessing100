@@ -188,12 +188,12 @@ $$
 =& \frac{I_x(x,y) - I_x(x-1,y)}{(x+1)-x} \\
 =& I_x(x,y) - I_x(x-1,y)\\
          =&[I(x+1, y) - I(x,y)] - [I(x, y) - I(x-1,y)]\\
-         =& I(x+1,y) - 2\cdot I(x,y) + I(x-1,y)
+         =& I(x+1,y) - 2\  I(x,y) + I(x-1,y)
 \end{align*}
 $$
 同理：
 $$
-I_{yy}(x,y)=I(x,y+1)-2\cdot I(x,y)+I(x,y-1)
+I_{yy}(x,y)=I(x,y+1)-2\  I(x,y)+I(x,y-1)
 $$
 特此，Laplacian 表达式如下：
 $$
@@ -259,7 +259,7 @@ $$
 
  LoG  滤波器使用以下式子定义：
 $$
-\text{LoG}(x,y)=\frac{x^2 + y^2 - s^2}{2 \cdot \pi \cdot s^6} \cdot e^{-\frac{x^2+y^2}{2\cdot s^2}}
+\text{LoG}(x,y)=\frac{x^2 + y^2 - s^2}{2 \  \pi \  s^6} \  e^{-\frac{x^2+y^2}{2\  s^2}}
 $$
 
 | 输入 (imori_noise.jpg) | 输出(answers_image/answer_19.jpg) |

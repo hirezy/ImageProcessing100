@@ -13,7 +13,7 @@
 
 来归一化直方图吧。
 
-有时直方图会存在偏差。
+有时直方图会偏向一边。
 
 比如说，数据集中在$0$处（左侧）的图像全体会偏暗，数据集中在$255$处（右侧）的图像会偏亮。
 
@@ -26,7 +26,7 @@ $$
 x_{out}=
 \begin{cases}
 a& (\text{if}\quad x_{in}<c)\\
-\frac{b-a}{d-c}\cdot(x_{in}-c)+a&(\text{else if}\quad c\leq x_{in}<d)\\
+\frac{b-a}{d-c}\ (x_{in}-c)+a&(\text{else if}\quad c\leq x_{in}<d)\\
 b&(\text{else})
 \end{cases}
 $$
@@ -48,7 +48,7 @@ $$
 
 可以使用下式将平均值为$m$标准差为$s$的直方图变成平均值为$m_0$标准差为$s_0$的直方图：
 $$
-x_{out}=\frac{s_0}{s}\cdot (x_{in}-m)+m_0
+x_{out}=\frac{s_0}{s}\  (x_{in}-m)+m_0
 $$
 
 | 输入 (imori_dark.jpg) | 输出 (answers_image/answer_22_1.jpg) | 直方图(answers_image//answer_22_2.png) |
@@ -68,7 +68,7 @@ $$
 
 均衡化操作由以下式子定义。$S$是总的像素数；$Z_{max}$是像素点的最大取值（在这里是$255$）；$h(z)$表示取值为$z$的累积分布函数：
 $$
-Z' = \frac{Z_{max}}{S} \cdot \sum\limits_{i=0}^z\ h(i)
+Z' = \frac{Z_{max}}{S} \  \sum\limits_{i=0}^z\ h(i)
 $$
 
 | 输入 (imori.jpg) |   输出 (answers/answer_23_1.jpg)   | 直方图(answers_image/answer_23_2.png) |
@@ -91,11 +91,11 @@ $$
 
 由于下式引起非线性变换，在该式中，$x$被归一化，限定在$[0,1]$范围内。$c$是常数，$g$为伽马变量（通常取$2.2$）：
 $$
-x' = c\cdot {I_{in}}^ g
+x' = c\  {I_{in}}^ g
 $$
 因此，使用下面的式子进行伽马校正：
 $$
-I_{out} ={\frac{1}{c}\cdot I_{in}} ^ {\frac{1}{g}}
+I_{out} ={\frac{1}{c}\  I_{in}} ^ {\frac{1}{g}}
 $$
 |   显示屏上的图像显示   |     $\gamma$修正值     |
 | :--------------------: | :--------------------: |
@@ -118,7 +118,7 @@ $$
 
 最近邻插值在图像放大时补充的像素取最临近的像素的值。由于方法简单，所以处理速度很快，但是放大图像画质劣化明显。
 
-使用下面的公式放大图像吧！$I'$为放大后图像，$I$为放大前图像，$a$为放大率，方括号是四舍五入取证操作：
+使用下面的公式放大图像吧！$I'$为放大后图像，$I$为放大前图像，$a$为放大率，方括号是四舍五入取整操作：
 
 <img src="assets/nni_fig.png">
 $$
@@ -150,9 +150,9 @@ $$
 
 4. 根据下式求得放大后图像$(x',y')$处的像素值：
 $$
-  d_x = \frac{x'}{a} - x\\
+d_x = \frac{x'}{a} - x\\
   d_y = \frac{y'}{a} - y\\
-  I'(x',y') = (1-d_x)\cdot (1-d_y)\cdot I(x,y) + d_x\cdot (1-d_y)\cdot I(x+1,y) + (1-d_x)\cdot d_y\cdot I(x,y+1) + d_x\cdot d_y\cdot I(x+1,y+1)
+  I'(x',y') = (1-d_x)\  (1-d_y)\  I(x,y) + d_x\  (1-d_y)\  I(x+1,y) + (1-d_x)\  d_y\  I(x,y+1) + d_x\  d_y\  I(x+1,y+1)
 $$
 | 输入 (imori.jpg) | 输出(answers_image/answer_26.jpg) |
 | :--------------: | :-------------------------------: |
@@ -174,22 +174,22 @@ $$
 各自像素间的距离由下式决定：
 $$
 \begin{align*}
-d_{x_1} = |\frac{x'}{a\cdot x} - (x-1)|\quad 
-d_{x_2} = |\frac{x'}{a\cdot x}- x| \quad 
-d_{x_3} = |\frac{x'}{a\cdot x}- (x+1)|\quad 
-d_{x_4} = |\frac{x'}{a\cdot x} - (x+2)|\\
-d_{y_1} = |\frac{x'}{a\cdot y} - (y-1)|\quad 
-d_{y_2} = |\frac{x'}{a\cdot y} - y| \quad 
-d_{y_3} = |\frac{x'}{a\cdot y} - (y+1)| \quad 
-d_{y_4} = |\frac{x'}{a\cdot y} - (y+2)|
+d_{x_1} = |\frac{x'}{a\  x} - (x-1)|\quad 
+d_{x_2} = |\frac{x'}{a\  x}- x| \quad 
+d_{x_3} = |\frac{x'}{a\  x}- (x+1)|\quad 
+d_{x_4} = |\frac{x'}{a\  x} - (x+2)|\\
+d_{y_1} = |\frac{x'}{a\  y} - (y-1)|\quad 
+d_{y_2} = |\frac{x'}{a\  y} - y| \quad 
+d_{y_3} = |\frac{x'}{a\  y} - (y+1)| \quad 
+d_{y_4} = |\frac{x'}{a\  y} - (y+2)|
 \end{align*}
 $$
 权重由基于距离的函数取得。$a$在大部分时候取$-1$。大体上说，图中蓝色像素的距离$|t|\leq 1$，绿色像素的距离$1<|t|\leq 2$：
 $$
 h(t)=
 \begin{cases}
-(a+2)\cdot|t|^3 - (a+3)\cdot|t|^2 + 1 &\text{when}\quad |t|\leq 1  \\
-a\cdot|t|^3 - 5\cdot a\cdot|t|^2 + 8\cdot a\cdot |t| - 4\cdot a&\text{when}\quad 1<|t|\leq 2\\
+(a+2)\ |t|^3 - (a+3)\ |t|^2 + 1 &\text{when}\quad |t|\leq 1  \\
+a\ |t|^3 - 5\  a\ |t|^2 + 8\  a\  |t| - 4\  a&\text{when}\quad 1<|t|\leq 2\\
 0&\text{else}
 \end{cases}
 $$
@@ -230,7 +230,7 @@ y'
 a&b\\
 c&d
 \end{matrix}
-\right)\cdot
+\right)\ 
 \left(
 \begin{matrix}
 x\\
@@ -254,8 +254,8 @@ y
 \right)+
 \left(
 \begin{matrix}
-tx\\
-ty
+t_x\\
+t_y
 \end{matrix}
 \right)
 $$
@@ -270,11 +270,11 @@ y'\\
 \right)=
 \left(
 \begin{matrix}
-a&b&tx\\
-c&d&ty\\
+a&b&t_x\\
+c&d&t_y\\
 0&0&1
 \end{matrix}
-\right)\cdot
+\right)\ 
 \left(
 \begin{matrix}
 x\\
@@ -295,13 +295,13 @@ x\\
 y
 \end{matrix}
 \right)=
-\frac{1}{a\cdot d-b\cdot c}\cdot
+\frac{1}{a\  d-b\  c}\ 
 \left(
 \begin{matrix}
 d&-b\\
 -c&a
 \end{matrix}
-\right)\cdot 
+\right)\  
 \left(
 \begin{matrix}
 x'\\
@@ -310,8 +310,8 @@ y'
 \right)-
 \left(
 \begin{matrix}
-tx\\
-ty
+t_x\\
+t_y
 \end{matrix}
 \right)
 $$
@@ -330,7 +330,7 @@ y'\\
 0&1&t_y\\
 0&0&1
 \end{matrix}
-\right)\cdot 
+\right)\  
 \left(
 \begin{matrix}
 x\\
@@ -366,7 +366,7 @@ $$
 ## 问题三十：仿射变换（ Afine Transformations ）——旋转
 
 1. 使用仿射变换，逆时针旋转$30$度。
-2. 使用仿射变换，逆时针旋转30度并且能让全部图像显现（也就是说，单纯地做仿射变换会让图片边缘丢失，这一步中要让图像的边缘不丢失，需要耗费一些工夫）。
+2. 使用仿射变换，逆时针旋转$30$度并且能让全部图像显现（也就是说，单纯地做仿射变换会让图片边缘丢失，这一步中要让图像的边缘不丢失，需要耗费一些工夫）。
 
 使用下面的式子进行逆时针方向旋转$A$度的仿射变换：
 $$
@@ -379,11 +379,11 @@ y'\\
 \right)=
 \left(
 \begin{matrix}
-\cos(A)&-\sin(A)&tx\\
-\sin(A)&\cos(A)&ty\\
+\cos(A)&-\sin(A)&t_x\\
+\sin(A)&\cos(A)&t_y\\
 0&0&1
 \end{matrix}
-\right)\cdot
+\right)\ 
 \left(
 \begin{matrix}
 x\\
