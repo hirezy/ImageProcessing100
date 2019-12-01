@@ -1,10 +1,10 @@
 # 问题九十一至一百
 
-## 问题九十一：均聚类算法进行减色处理第一步----按颜色距离分类
+## 问题九十一：$k-$平均聚类算法进行减色处理第一步----按颜色距离分类
 
-对`imori.jpg`利用 k-平均聚类算法进行减色处理。
+对`imori.jpg`利用 $k-$平均聚类算法进行减色处理。
 
-在问题六中涉及到了减色处理，但是问题六中事先确定了要减少的颜色。这里，k-平均聚类算法用于动态确定要减少的颜色。
+在问题六中涉及到了减色处理，但是在问题六中事先确定了要减少的颜色。这里，$k-$平均聚类算法用于动态确定要减少的颜色。
 
 算法如下：
 
@@ -19,9 +19,9 @@
 4. 如果原来的类别和新的类别完全一样的话，算法结束。如果不一样的话，重复步骤2和步骤3；
 5. 将原图像的各个像素分配到色彩距离最小的那个类别中去。
 
-在这里完成步骤1和步骤2。
+完成步骤1和步骤2。
 - 类别数$K=5$；
-- 在这里使用`reshape((HW, 3))`来改变图像大小之后图像将更容易处理；
+- 使用`reshape((HW, 3))`来改变图像大小之后图像将更容易处理；
 - 步骤1中，对于`np.random.seed(0)`，使用`np.random.choice(np.arrange(图像的HW), 5, replace=False)`；
 - 现在先不考虑步骤3到步骤5的循环。
 
@@ -42,11 +42,11 @@
 | :--------------: | :-------------------------: |
 |  ![](imori.jpg)  | ![](answers/answer_91.jpg)  |
 
-答案 >> [answers/answer_91.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_91.py)
+答案 >> [answers/answer_91.py](answers/answer_91.py)
 
-## 问题九十二：利用 k-平均聚类算法进行减色处理第二步----减色处理
+## 问题九十二：利用 $k-$平均聚类算法进行减色处理第二步----减色处理
 
-在这里实现算法的第3到5步。
+实现算法的第3到5步。
 
 ```bash
 # 选择的颜色
@@ -65,30 +65,32 @@
 | :--------------: | :-------------------------: | :-----------------------------: | :----------------: | :---------------------------: |
 |  ![](imori.jpg)  | ![](answers/answer_92.jpg)  | ![](answers/answer_92_k10.jpg)  |  ![](madara.jpg)   | ![](answers/answer_92_m.jpg)  |
 
-答案 >> [answers/answer_92.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_92.py)
+答案 >> [answers/answer_92.py](answers/answer_92.py)
 
 
-## 问题九十三：准备机器学习的训练数据第一步----计算 IoU
+## 问题九十三：准备机器学习的训练数据第一步——计算$\text{IoU}$
 
 从这里开始我们准备机器学习用的训练数据。
 
-最终，我想创建一个能够判断图像是否是蝾螈的脸的判别器。为此，我们需要蝾螈的脸部图像和非蝾螈脸部的图像是。それらを用意するためのprogramを作成する。
+我的最终目标是创建一个能够判断图像是否是蝾螈的脸的判别器。因此，我们需要蝾螈的脸部图像和非蝾螈脸部的图像。我们需要编写程序来准备这样的图像。
 
-为此，有必要从单个图像中用矩形框出蝾螈头部（即 Ground-truth），如果随机切割的矩形与 Ground-truth在一定程度上重合，那么这个矩形框处就是蝾螈的头。
+为此，有必要从单个图像中用矩形框出蝾螈头部（即Ground-truth），如果随机切割的矩形与Ground-truth在一定程度上重合，那么这个矩形框处就是蝾螈的头。
 
-重合程度通过检测评价函数（Intersection over Union）来判断。通过下式进行计算：
+重合程度通过检测评价函数$\text{IoU}$（Intersection over Union）来判断。通过下式进行计算：
+$$
+\text{IoU}=\frac{|\text{Rol}|}{|R_1 + R_2 - \text{Rol}|}
+$$
+其中：
 
-```bash
-R1...Ground-truth的范围 , R2...随机框出来的矩形 , Rol...为R1和R2重合的范围
-IoU = |Rol| / |R1 + R2 - Rol|
-```
+* $R_1$：Ground-truth的范围；
+* $R_2$：随机框出来的矩形的范围；
+* $\text{Rol}$：$R_1$和$R_2$重合的范围。
 
-在这里计算以下两个矩形的 IoU 吧！
+计算以下两个矩形的$\text{IoU}$吧！
 
 ```python
 # [x1, y1, x2, y2] x1,y1...矩形左上的坐标  x2,y2...矩形右下的坐标
 a = np.array((50, 50, 150, 150), dtype=np.float32)
-
 b = np.array((60, 60, 170, 160), dtype=np.float32)
 ```
 
@@ -97,9 +99,9 @@ b = np.array((60, 60, 170, 160), dtype=np.float32)
 ```bash
 0.627907
 ```
-答案 >> [answers/answer_93.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_93.py)
+答案 >> [answers/answer_93.py](answers/answer_93.py)
 
-## 问题九十四：的训练数据第二步----随机裁剪（Random Cropping）
+## 问题九十四：准备机器学习的训练数据第二步——随机裁剪（Random Cropping）
 
 下面，通过从`imori1.jpg`中随机裁剪图像制作训练数据。
 
@@ -108,19 +110,19 @@ b = np.array((60, 60, 170, 160), dtype=np.float32)
 并且，满足下面的条件：
 
 1. 使用`np.random.seed(0)`，求出裁剪的矩形的左上角座标`x1 = np.random.randint(W-60)`和`y1=np.random.randint(H-60)`；
-2. 如果和 Ground-truth （`gt = np.array((47, 41, 129, 103), dtype=np.float32)`）的 IoU 大于 0.5，那么就打上标注 1，小于 0.5 就打上标注 0。
+2. 如果和 Ground-truth （`gt = np.array((47, 41, 129, 103), dtype=np.float32)`）的$\text{IoU}$大于$0.5$，那么就打上标注$1$，小于$0.5$就打上标注$0$。
 
-答案中，标注 1 的矩形用红色画出，标注 0 的矩形用蓝色的线画出，Ground-truth 用绿色的线画出。在这里我们简单地准备蝾螈头部和头部以外的图像。
+答案中，标注$1$的矩形用红色画出，标注$0$的矩形用蓝色的线画出，Ground-truth用绿色的线画出。我们简单地准备蝾螈头部和不是头部的图像。
 
 | 输入 (imori_1.jpg) | 输出(answers/answer_94.jpg) |
 | :----------------: | :-------------------------: |
 |  ![](imori_1.jpg)  | ![](answers/answer_94.jpg)  |
 
-答案 >> [answers/answer_94.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_94.py)
+答案 >> [answers/answer_94.py](answers/answer_94.py)
 
-## 问题九十五：神经网络（Neural Network）第一步----深度学习（Deep Learning）
+## 问题九十五：神经网络（Neural Network）第一步——深度学习（Deep Learning）
 
-在这里将神经网络作为分类器，这就是现在流行的深度学习。
+将神经网络作为识别器，这就是现在流行的深度学习。
 
 下面的代码是包含输入层、中间层（Unit 数：64）、输出层（1）的网络。这是实现异或逻辑的网络。网络代码参照了[这里](https://towardsdatascience.com/how-to-build-your-own-neural-network-from-scratch-in-python-68998a08e4f6)：
 
@@ -180,7 +182,7 @@ for j in range(4):
     print("in:", x, "pred:", nn.forward(x))
 ```
 
-在这里，我们可以再增加一层中间层进行学习和测试。
+，我们可以再增加一层中间层进行学习和测试。
 
 答案：
 
@@ -191,62 +193,62 @@ in: [1. 0.] pred: [0.9641076]
 in: [1. 1.] pred: [0.03937037]
 ```
 
-答案 >> [answers/answer_95.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_95.py)
+答案 >> [answers/answer_95.py](answers/answer_95.py)
 
-## 问题九十六：神经网络（Neural Network）第二步----训练
+## 问题九十六：神经网络（Neural Network）第二步——训练
 
-在这里，将问题94中准备的200 个训练数据的 HOG 特征值输入到问题94​中的神经网络中进行学习。
+，将问题九十四中准备的200个训练数据的HOG特征值输入到问题九十五中的神经网络中进行学习。
 
-在这里，对于输出大于 0.5 的打上标注 1，小于 0.5 的打上标注 0，对训练数据计算准确率。训练参数如下：
+，对于输出大于 0.5 的打上标注 1，小于 0.5 的打上标注 0，对训练数据计算准确率。训练参数如下：
 
-- 学习率：lr=0.01；
-- epoch=10000​；
-- 将裁剪的图像调整为32 x 32，并计算 HOG 特征量（HOG 中1个 cell 的大小为8 x 8）。
+- $\text{learning rate}=0.01$；
+- $\text{epoch}=10000$​；
+- 将裁剪的图像调整为$32\times32$，并计算 HOG 特征量（HOG 中1个cell的大小为$8\times8$）。
 
 ```bash
 Accuracy >> 1.0 (200.0 / 200)
 ```
 
-答案 >> [answers/answer_96.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_96.py)
+答案 >> [answers/answer_96.py](answers/answer_96.py)
 
 ## 问题九十七：简单物体检测第一步----滑动窗口（Sliding Window）+HOG
 
 从这里开始进行物体检测吧！
 
-物体检测是检测图像中到底有什么东西的任务。例如，图像在[x1, y1, x2, y2]处有一只狗。像这样把物体圈出来的矩形我们称之为 Bounding-box。
+物体检测是检测图像中到底有什么东西的任务。例如，图像在$[x_1, y_1, x_2, y_2]$处有一只狗。像这样把物体圈出来的矩形我们称之为Bounding-box。
 
 下面实现简单物体检测算法：
 
 1. 从图像左上角开始进行滑动窗口扫描；
-2. 对于每个图像位置，以目标位置为中心准备多个矩形；
-3. 裁剪出每个矩形对应的图像，并对图像提取特征（HOG，SIFT等）；
+2. 在滑动的过程中，会依次圈出很多矩形区域；
+3. 裁剪出每个矩形区域对应的图像，并对裁剪出的图像提取特征（HOG，SIFT等）；
 4. 使用分类器（CNN，SVM等）以确定每个矩形是否包含目标。
 
-これである程度の物体と矩形の座標が得られる。目前，物体检测主要通过深度学习（Faster R-CNN、YOLO、SSD等）进行，但是这种滑动窗口方法在深度学习开始流行之前已成为主流。为了学习检测的基础知识我们使用滑动窗口来进行检测。
+这样做的话，会得到一些裁剪过的图像和其对应的矩形的坐标。目前，物体检测主要通过深度学习（Faster R-CNN、YOLO、SSD等）进行，但是这种滑动窗口方法在深度学习开始流行之前已成为主流。为了学习检测的基础知识我们使用滑动窗口来进行检测。
 
-在这里我们实现步骤1至步骤3。
+我们实现步骤1至步骤3。
 
 在`imorimany.jpg`上检测蝾螈的头吧！条件如下：
 
-- 矩形使用以下方法表示
+- 矩形使用以下方法表示：
 ```python
 # [h, w]
 recs = np.array(((42, 42), (56, 56), (70, 70)), dtype=np.float32)
 ```
 - 滑动步长为4个像素（每次滑动一个像素固然是好的，但这样需要大量计算，处理时间会变长）；
 - 如果矩形超过图像边界，改变矩形的形状使其不超过图像的边界；
-- 将裁剪出的矩形部分大小调整为32 x 32；
-- 计算 HOG 特征值时 cell 大小取8 x 8。
+- 将裁剪出的矩形部分大小调整为$32\times32$；
+- 计算HOG特征值时 cell 大小取$8\times8$。
 
-答案 >> [answers/answer_97.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_97.py)
+答案 >> [answers/answer_97.py](answers/answer_97.py)
 
-## 问题九十八：简单物体检测第二步----滑动窗口（Sliding Window）+ NN
+## 问题九十八：简单物体检测第二步——滑动窗口（Sliding Window）+ NN
 
-对于`imorimany.jpg`，在这里将问题97中求得的各个矩形的 HOG 特征值输入问题96中训练好的神经网络中进行蝾螈头部识别。
+对于`imorimany.jpg`，将问题九十七中求得的各个矩形的HOG特征值输入问题九十六中训练好的神经网络中进行蝾螈头部识别。
 
-在此，绘制预测概率大于0.7的矩形。
+在此，绘制$\text{Score}$（即预测是否是蝾螈头部图像的概率）大于$0.7$的矩形。
 
-下面的答案内容为检测矩形的[x1, y1, x2, y2, score]：
+下面的答案内容为检测矩形的$[x1, y1, x2, y2, \text{Score}]$：
 
 ```bash
 [[ 27.           0.          69.          21.           0.74268049]
@@ -284,21 +286,21 @@ recs = np.array(((42, 42), (56, 56), (70, 70)), dtype=np.float32)
 | :-------------------: | :-------------------------: |
 |  ![](imori_many.jpg)  | ![](answers/answer_98.jpg)  |
 
-解答 >> [answers/answer_98.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_98.py)
+解答 >> [answers/answer_98.py](answers/answer_98.py)
 
-## 问题九十九：简单物体检测第三步----非极大值抑制（Non-Maximum Suppression）
+## 问题九十九：简单物体检测第三步——非极大值抑制（Non-Maximum Suppression）
 
-虽然使用问题97中的方法可以粗略地检测出目标，但是 Bounding-box 的数量过多，这对于后面的处理流程是十分不便的。因此，使用非极大值抑制（（Non-Maximum Suppression））减少矩形的数量。
+虽然使用问题九十七中的方法可以粗略地检测出目标，但是 Bounding-box 的数量过多，这对于后面的处理流程是十分不便的。因此，使用非极大值抑制（Non-Maximum Suppression）减少矩形的数量。
 
-NMS 是一种留下高分 Bounding-box 的方法，算法如下：
+NMS是一种留下高分Bounding-box的方法，算法如下：
 
-1. 将 Bounding-box 的集合 B 按照分数从高到低排序；
-2. 分数最高的记为 b0；
-3. 计算 b0和其它 Bounding-box 的 IoU。从 B 中删除高于 IoU 阈值 t的 Bounding-box。将 B0 添加到输出集合 R 中，并从 B 中删除。
-4. 重复步骤 2 和步骤 3 直到 B 中没有任何元素；
-5. 输出 R。
+1. 将Bounding-box的集合$B$按照$\text{Score}$从高到低排序；
+2. $\text{Score}$最高的记为$b_0$；
+3. 计算$b_0$和其它Bounding-box的$\text{IoU}$。从$B$中删除高于$\text{IoU}$阈值$t$的Bounding-box。将$b_0$添加到输出集合$R$中，并从$B$中删除。
+4. 重复步骤2和步骤3直到$B$中没有任何元素；
+5. 输出$R$。
 
-在问题98的基础上增加 NMS（阈值 t=0.25），并输出图像。请在答案中 Bounding-box 的左上角附上分数。
+在问题九十八的基础上增加NMS（阈值$t=0.25$），并输出图像。请在答案中Bounding-box的左上角附上$\text{Score}$。
 
 不管准确度如何，这样就完成了图像检测的一系列流程。通过增加神经网络，可以进一步提高检测精度。
 
@@ -306,50 +308,64 @@ NMS 是一种留下高分 Bounding-box 的方法，算法如下：
 | :-------------------: | :--------------------------: | :--------------------------: |
 |  ![](imori_many.jpg)  |  ![](answers/answer_98.jpg)  |  ![](answers/answer_99.jpg)  |
 
-解答 >> [answers/answer_99.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_99.py)
+解答 >> [answers/answer_99.py](answers/answer_99.py)
 
-## 问题一百：第三步----评估 Precision, Recall, F-score, mAP
+## 问题一百：简单物体检测第四步——评估（Evaluation）：Precision、Recall、F-Score、mAP
 
 最后是第100个问题！ ！ ！
 
-在这里我们对检测效果作出评估。
+我们对检测效果作出评估。
 
-如果 Bounding-box 和其类别不匹配，则无法评估检测的准确性。对于检测效果，我们有Recal、Precision、F-score、mAP等评价指标。
+検出はBounding-boxとそのクラスの２つが一致していないと、精度の評価ができない。对于检测效果，我们有Recall、Precision、F-Score、mAP等评价指标。
 
-### 召回率（Recall） ... 在多大程度上检测出了正解？显示出检出的正解占真实正解的比值。取值范围为[0,1]。
+> 下面是相关术语中日英对照表：
+>
+> |     中文      |  English  | 日本語 |
+> | :-----------: | :-------: | :----: |
+> |    准确率     | Accuracy  | 正確度 |
+> |  精度/查准率  | Precision | 適合率 |
+> | 召回率/查全率 |  Recall   | 再現率 |
+>
+> 我个人认为“查准率&查全率”比“精度&召回率”更准确，所以下面按照“查准率&查全率”翻译。
+>
+> ——gzr
 
-```bash
-G' ... Ground-truthの中で検出のどれかとIoUが閾値t以上となったGround-truthの数。
-G ... Ground-truth中矩形的数量。
-Recall = G' / G
-```
-### 精度（Precision） ... 検出がどれだけ正確に行われたかを示す。取值范围为[0,1]。
+**查全率（Recall）——在多大程度上检测到了正确的矩形？用来表示涵盖了多少正确答案。取值范围为$[0,1]$：**
+$$
+\text{Recall}=\frac{G'}{G}
+$$
+其中：
 
-```bash
-D' ... 検出の中で、Ground-truthのどれかとIoUが閾値t以上となった検出の数。
-D ... 検出の数。
-Precision = D' / D
-```
+* $G'$——Ground-truthの中で検出のどれかとIoUが閾値t以上となったGround-truthの数；
+* $G$——Ground-truthの矩形の数。
 
-### F-score ... 是召回率（Recall）和精度（Precision）的调和平均。可以表示两者的平均，取值范围为[0,1]。
+**查准率（Precision）——表示结果在多大程度上是正确的。取值范围为$[0,1]$：**
+$$
+\text{Precision}=\frac{D'}{D}
+$$
+其中：
 
-```bash
-F-scoer = 2 * Recall * Precision / (Recall + Precision)
-```
+* $D‘$——検出の中で、Ground-truthのどれかとIoUが閾値t以上となった検出の数；
+* $D$——検出の数。
 
-文字を検出する文字検出はRecall, Precision, F-scoreで精度を測ることが多い。
+**F-Score——是查全率（Recall）和查准率（Precision）的调和平均。可以表示两者的平均，取值范围为$[0,1]$：**
+$$
+\text{F-Score}=\frac{2\cdot \text{Recall}\cdot \text{Precision}}{\text{Recall}+\text{Precision}}
+$$
+在文字检测任务中，通常使用Recall、Precision和F-Score等指标进行评估。
 
-### mAP ... Mean Average Precision。物体を検出する物体検出では、mAPで測ることが多い。mAPの計算方法は少し複雑である。
+**mAP——Mean Average Precision。在物体检测任务中，常常使用mAP进行效果评价。mAP的计算方法稍稍有点复杂：**
 
-1. 各検出に関してGround-truthとのIoUが閾値t以上かどうかを判断して、表を作成する。
-```bash
-   Detect | judge
-------------------
-  detect1 |   1   (1はGround-truthとのIoU>=tとなったもの)
-  detect2 |   0   (0はGround-truthとのIoU<tとなったもの)
-  detect3 |   1
-```
+1. 各検出に関してGround-truthとの$\text{IoU}$が閾値t以上かどうかを判断して、表を作成する。
+
+   | Detect  |                        judge                         |
+   | :-----: | :--------------------------------------------------: |
+   | detect1 | 1   (1はGround-truthとの$\text{IoU}$>=tとなったもの) |
+   | detect2 | 0   (0はGround-truthとの$\text{IoU}$<tとなったもの)  |
+   | detect3 |                          1                           |
+
 2. mAP = 0として、上から順に見て、judgeが1の時は、見ているものの上すべてに関して、Precisionを計算し、mAPに加算する。
+
 3. 上から順に2を行い、全て行ったら、加算回数でmAPを割る。
 
 上面就是求mAP的方法了。对于上面的例子来说：
@@ -359,21 +375,22 @@ F-scoer = 2 * Recall * Precision / (Recall + Precision)
 4. mAPに加算したのは計2回なので、mAP = 1.67 / 2 = 0.835
 となる。
 
+令阈值$t=0.5$，计算查全率、查准率、F-Score和mAP吧。
 
-ここでは、閾値t=0.5として、Recall, Precision, F-score, mAPを算出せよ。
-Ground-truthは次とする。
+设下面的矩形为Ground-truth：
+
 ```python
 # [x1, y1, x2, y2]
 GT = np.array(((27, 48, 95, 110), (101, 75, 171, 138)), dtype=np.float32)
 ```
 
-ここでは、GTとのIoUが0.5以上の検出を赤、それ以外を青にして描画せよ。
+请将与Ground-truth的$\text{IoU}$为$0.5$以上的矩形用红线表示，其他的用蓝线表示。
 
 解答
 ```bash
 Recall >> 1.00 (2.0 / 2)
 Precision >> 0.25 (2.0 / 8)
-F-score >>  0.4
+F-Score >>  0.4
 mAP >> 0.0625
 ```
 
@@ -381,4 +398,4 @@ mAP >> 0.0625
 | :-------------------: | :----------------------------: | :--------------------------: |
 |  ![](imori_many.jpg)  | ![](answers/answer_100_gt.jpg) | ![](answers/answer_100.jpg)  |
 
-解答 >> [answers/answer_100.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_100.py)
+解答 >> [answers/answer_100.py](answers/answer_100.py)

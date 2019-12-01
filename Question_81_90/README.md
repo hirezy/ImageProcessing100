@@ -1,27 +1,25 @@
 # 问题八十一至九十
 
-## Q.81. Hessian 角点检测
+## 问题八十一：Hessian角点检测
 
 对`thorino.jpg`进行Hessian角点检测吧！
 
 角点检测是检测边缘上的角点。
 
 角点是曲率变大的点，下式定义了高斯曲率：
+$$
+K=\frac{\det(H)}{(1+{I_x}^2+{I_y}^2)^2}
+$$
 
-```bash
-ガウス曲率 K = det(H) / (1 + Ix^2 + Iy^2)^2
+其中：
 
-det(H) = Ixx Iyy - IxIy^2
-H ... ヘシアン行列。画像の二次微分(グレースケール画像などに対して、Sobelフィルタを掛けて求められる)。画像上の一点に対して、次式で定義される。
-Ix ... x方向のsobelフィルタを掛けたもの。 Iy ... y方向のsobelフィルタ
-H = [ Ix^2  IxIy]
-      IxIy  Iy^2
-```
+* $\det(H)=I_{xx}\ I_{yy}-{I_{xy}}^2$；
+* $H$表示Hessian矩阵。图像的二次微分（通过将Sobel滤波器应用于灰度图像计算得来）。对于图像上的一点，按照下式定义：
+  * $I_x$：应用$x$方向上的Sobel滤波器；
+  * $I_y$：应用$y$方向上的Sobel滤波器；
+  * $H=\left[\begin{matrix}{I_x}^2&I_xI_y\\I_xI_y&{I_y}^2\end{matrix}\right]$
 
-ヘシアンのコーナー検出では、det(H)が極大点をコーナーとみなす。
-極大点は注目画素と8近傍を比較して、注目画素の値が最大であれば極大点として扱う。
-
-解答ではdet(H)が極大点かつ、max(H)*0.1以上である点をコーナーとしている。
+Hessian角点检测中，将$\det(H)$中极大点视为焦点。极大点指的是，某一像素较其$8-$近邻像素，该像素的值是最大的。==解答ではdet(H)が極大点かつ、max(H)*0.1以上である点をコーナーとしている。==
 
 | 输入 (thorino.jpg) | 输出(answers/answer_81.jpg) |
 | :----------------: | :-------------------------: |
@@ -29,18 +27,18 @@ H = [ Ix^2  IxIy]
 
 答案 >> [answers/answer_81.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_81.py)
 
-## Q.82. Harris 角点检测第一步：Sobel + Gausian
+## 问题八十二：Harris 角点检测第一步：Sobel + Gausian
 
-问题82和问题83对`thorino.jpg`进行 Harris 角点检测吧！
+问题八十二和问题八十三对`thorino.jpg`进行 Harris 角点检测吧！
 
 Harris 角点检测算法如下：
 
 1. 对图像进行灰度化处理；
-2. 利用 Sobel 滤波器求出海森矩阵（Hessian matrix）：
-```bash
-H = [ Ix^2  IxIy]
-      IxIy  Iy^2
-```
+
+2. 利用Sobel滤波器求出海森矩阵（Hessian matrix）：
+   $$
+   H=\left[\begin{matrix}{I_x}^2&I_xI_y\\I_xI_y&{I_y}^2\end{matrix}\right]
+   $$
 3. Ix^2, Iy^2, IxIyにそれぞれガウシアンフィルターをかける。
 4. 计算每个像素的 R = det(H) - k (trace(H))^2。通常K取 [0.04,0.16].
 5. 满足 R >= max(R) * th  的像素点即为角点（th 多取 0.1）。
@@ -58,7 +56,7 @@ H = [ Ix^2  IxIy]
 
 答案 >> [answers/answer_82.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_82.py)
 
-## Q.83. Harris 角点检测第二步：角点检测
+## 问题八十三：Harris 角点检测第二步：角点检测
 
 在这里进行算法的步骤4​和步骤5​吧！
 
@@ -70,7 +68,7 @@ H = [ Ix^2  IxIy]
 
 答案 >> [answers/answer_83.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_83.py)
 
-## Q.84. 简单图像识别第一步：减色化+直方图
+## 问题八十四：简单图像识别第一步：减色化+直方图
 
 这里我们进行简单的图像识别。
 
@@ -115,7 +113,7 @@ H = [ Ix^2  IxIy]
 [ 5638  6580  3916   250  5041  4185  6286   872  5226  4930  5552   676  1]]
 ```
 
-## Q.85. 简单图像识别第二步：判别类别
+## 问题八十五：简单图像识别第二步：判别类别
 
 在这里我们完成算法的4至5步。
 
@@ -131,7 +129,7 @@ test_madara_2.jpg is similar >> train_akahara_2.jpg  Pred >> akahara
 ```
 答案 >> [answers/answer_85.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_85.py)
 
-## Q.86. 简单图像识别第三步：评估
+## 问题八十六：简单图像识别第三步：评估
 
 在这里对图像识别的结果做评估。
 
@@ -146,13 +144,13 @@ Accuracy >> 0.75 (3/4)
 ```
 答案 >> [answers/answer_86.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_86.py)
 
-## Q.87. 简单图像识别第四步：k-NN
+## 问题八十七：简单图像识别第四步：k-NN
 
 问题85中虽然我们预测了颜色最接近的图像，但实际上和`testmadara2.jpg`最接近的是`trainakahara2.jpg`。
 
-|   test_marada_2.jpg    |   train_akahara_2.jpg    |
-| :--------------------: | :----------------------: |
-| ![](test_madara_2.jpg) | ![](train_akahara_2.jpg) |
+|       test_marada_2.jpg        |       train_akahara_2.jpg        |
+| :----------------------------: | :------------------------------: |
+| ![](dataset/test_madara_2.jpg) | ![](dataset/train_akahara_2.jpg) |
 
 如果比较这两个图像，它们绿色和黑色比例看起来差不多，因此整个图像颜色看起来相同。これは認識時のサンプルを一つにしたことによって、例外的な画像が選ばれてしまったためである。因此，训练数据集的特征不能很好地分离，并且有时包括偏离特征分布的样本。
 
@@ -172,7 +170,7 @@ Accuracy >> 1.0 (4/4)
 
 答案 >> [answers/answer_87.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_87.py)
 
-## Q.88. k-平均聚类算法（k -means Clustering）第一步：生成质心
+## 问题八十八：k-平均聚类算法（k -means Clustering）第一步：生成质心
 
 问题84至问题87的图像识别任务是需要预期输出的简单监督学习（supervised-training）中的一种简单情况。在这里我们通过不需要预期输出的无监督学习（unsupervised-training）来进行图像分类。
 
@@ -214,7 +212,7 @@ Grabity
 
 答案 >> [answers/answer_88.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_88.py)
 
-## Q.89. k-平均聚类算法（k -means Clustering）第二步：聚类（Clustering）
+## 问题八十九：k-平均聚类算法（k -means Clustering）第二步：聚类（Clustering）
 
 在这里完成算法的步骤4和步骤5，进行聚类吧！
 
@@ -235,7 +233,7 @@ test_madara_2.jpg  Pred: 0
 
 答案 >> [answers/answer_89.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_89.py)
 
-## Q.90. k-平均聚类算法（k -means Clustering）第三步：调整初期类别
+## 问题九十：k-平均聚类算法（k -means Clustering）第三步：调整初期类别
 
 使用k-平均聚类算法将8张`train@@@.jpg`完美地聚类吧！
 
