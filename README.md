@@ -5,7 +5,7 @@
 > * 关于$\LaTeX$公式渲染问题：
 >   * 在线阅读建议安装[MathJax Plugin for Github](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima)插件获得~~其实不太~~良好的公式阅读体验；
 >   * 离线阅读建议使用可以渲染$\LaTeX$公式的Markdown编辑器/阅读器，如[Typora](https://www.typora.io/)（我是用这个编写和转换PDF的）和[MWeb](https://zh.mweb.im/)。VSCode使用者建议安装[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)插件渲染$\LaTeX$公式；
->   * 各个README文件在完成基本校对之后会转为PDF文件。PDF文件阅读效果最佳。当前进度：⣿⣿⣿⣿⣿⣿⣿⣀⣀⣀ 70%。
+>   * 各个README文件在完成基本校对之后会转为PDF文件。PDF文件阅读效果最佳。当前进度：⣿⣿⣿⣿⣿⣿⣿⣿⣀⣀ 80%。
 >
 > * 译注我会留下签名戳`——gzr`。译注可能会打扰大家阅读，请各位谅解。
 >
@@ -207,16 +207,16 @@ python answers/answer_@@.py
 |  55  | [使用绝对值差和（Sum of Absolute Differences）进行模式匹配](Question_51_60/README.md) | [✓](Question_51-60/answers/answer_5.py)  |      |      |
 |  56  | [使用归一化交叉相关（Normalization Cross Correlation）进行模式匹配](Question_51_60/README.md) | [✓](Question_51-60/answers/answer_6.py)  |      |      |
 |  57  | [使用零均值归一化交叉相关（Zero-mean Normalization Cross Correlation）进行模式匹配](Question_51_60/README.md) | [✓](Question_51-60/answers/answer_7.py)  |      |      |
-|  58  |         [4-邻接连通域标记](Question_51_60/README.md)         | [✓](Question_51-60/answers/answer_8.py)  |      |      |
-|  59  |         [8-邻接连通域标记](Question_51_60/README.md)         | [✓](Question_51-60/answers/answer_9.py)  |      |      |
+|  58  |        [$4-$邻域连通域标记](Question_51_60/README.md)        | [✓](Question_51-60/answers/answer_8.py)  |      |      |
+|  59  |        [$8-$邻域连通域标记](Question_51_60/README.md)        | [✓](Question_51-60/answers/answer_9.py)  |      |      |
 |  60  |    [透明混合（Alpha Blending）](Question_51_60/README.md)    | [✓](Question_51-60/answers/answer_10.py) |      |      |
 
 ### [问题61-70](Question_61_70/README.md)
 
 | 序号 |                             内容                             | Python                                   | C++  | 一校 |
 | :--: | :----------------------------------------------------------: | ---------------------------------------- | ---- | ---- |
-|  61  |          [4-邻接的连接数](Question_61_70/README.md)          | [✓](Question_61-70/answers/answer_1.py)  |      |      |
-|  62  |          [8-邻接的连接数](Question_61_70/README.md)          | [✓](Question_61-70/answers/answer_2.py)  |      |      |
+|  61  |            [$4-$连接数](Question_61_70/README.md)            | [✓](Question_61-70/answers/answer_1.py)  |      |      |
+|  62  |            [$8-$连接数](Question_61_70/README.md)            | [✓](Question_61-70/answers/answer_2.py)  |      |      |
 |  63  |             [细化处理](Question_61_70/README.md)             | [✓](Question_61-70/answers/answer_3.py)  |      |      |
 |  64  |        [Hilditch 细化算法](Question_61_70/README.md)         |                                          |      |      |
 |  65  |       [Zhang-Suen 细化算法](Question_61_70/README.md)        | [✓](Question_61-70/answers/answer_5.py)  |      |      |
