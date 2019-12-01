@@ -122,35 +122,35 @@ python answers/answer_@@.py
 - 为了简化答案，所以没有编写`main()`函数。
 - 虽然我们的答案以`numpy`为基础，但是还请你自己查找`numpy`的基本使用方法。
 
-### [問題1 - 10](./Question_01_10/README.md)
+### [问题1 - 10](Question_01_10/README.md)
 
-| 序号 |                          问题                           |                  Python                  |                      C++                      | 一校 |
-| :--: | :-----------------------------------------------------: | :--------------------------------------: | :-------------------------------------------: | :--: |
-|  1   |          [通道替换](Question_01_10/README.md)           | [✓](Question_01_10/answers/answer_1.py)  | [✓](Question_01_10/answers_cpp/answer_1.cpp)  |      |
-|  2   |     [灰度化（Grayscale）](Question_01_10/README.md)     | [✓](Question_01_10/answers/answer_2.py)  | [✓](Question_01_10/answers_cpp/answer_2.cpp)  |      |
-|  3   |   [二值化（Thresholding）](Question_01_10/README.md)    | [✓](Question_01_10/answers/answer_3.py)  | [✓](Question_01_10/answers_cpp/answer_3.cpp)  |      |
-|  4   |          [大津算法](Question_01_10/README.md)           | [✓](Question_01_10/answers/answer_4.py)  | [✓](Question_01_10/answers_cpp/answer_4.cpp)  |      |
-|  5   |          [HSV 变换](Question_01_10/README.md)           | [✓](Question_01_10/answers/answer_5.py)  | [✓](Question_01_10/answers_cpp/answer_5.cpp)  |      |
-|  6   |          [减色处理](Question_01_10/README.md)           | [✓](Question_01_10/answers/answer_6.py)  | [✓](Question_01_10/answers_cpp/answer_6.cpp)  |      |
-|  7   | [平均池化（Average Pooling）](Question_01_10/README.md) | [✓](Question_01_10/answers/answer_7.py)  | [✓](Question_01_10/answers_cpp/answer_7.cpp)  |      |
-|  8   |   [最大池化（Max Pooling）](Question_01_10/README.md)   | [✓](Question_01_10/answers/answer_8.py)  | [✓](Question_01_10/answers_cpp/answer_8.cpp)  |      |
-|  9   | [高斯滤波（Gaussian Filter）](Question_01_10/README.md) | [✓](Question_01_10/answers/answer_9.py)  | [✓](Question_01_10/answers_cpp/answer_9.cpp)  |      |
-|  10  |  [中值滤波（Median filter）](Question_01_10/README.md)  | [✓](Question_01_10/answers/answer_10.py) | [✓](Question_01_10/answers_cpp/answer_10.cpp) |      |
+| 序号 |                            问题                             |                  Python                  |                      C++                      | 一校 |
+| :--: | :---------------------------------------------------------: | :--------------------------------------: | :-------------------------------------------: | :--: |
+|  1   |            [通道替换](Question_01_10/README.md)             | [✓](Question_01_10/answers/answer_1.py)  | [✓](Question_01_10/answers_cpp/answer_1.cpp)  |  ✓   |
+|  2   |       [灰度化（Grayscale）](Question_01_10/README.md)       | [✓](Question_01_10/answers/answer_2.py)  | [✓](Question_01_10/answers_cpp/answer_2.cpp)  |  ✓   |
+|  3   |     [二值化（Thresholding）](Question_01_10/README.md)      | [✓](Question_01_10/answers/answer_3.py)  | [✓](Question_01_10/answers_cpp/answer_3.cpp)  |  ✓   |
+|  4   | [大津二值化算法（Otsu's Method）](Question_01_10/README.md) | [✓](Question_01_10/answers/answer_4.py)  | [✓](Question_01_10/answers_cpp/answer_4.cpp)  |  ✓   |
+|  5   |        [$\text{HSV}$变换](Question_01_10/README.md)         | [✓](Question_01_10/answers/answer_5.py)  | [✓](Question_01_10/answers_cpp/answer_5.cpp)  |  ✓   |
+|  6   |            [减色处理](Question_01_10/README.md)             | [✓](Question_01_10/answers/answer_6.py)  | [✓](Question_01_10/answers_cpp/answer_6.cpp)  |  ✓   |
+|  7   |   [平均池化（Average Pooling）](Question_01_10/README.md)   | [✓](Question_01_10/answers/answer_7.py)  | [✓](Question_01_10/answers_cpp/answer_7.cpp)  |  ✓   |
+|  8   |     [最大池化（Max Pooling）](Question_01_10/README.md)     | [✓](Question_01_10/answers/answer_8.py)  | [✓](Question_01_10/answers_cpp/answer_8.cpp)  |  ✓   |
+|  9   |   [高斯滤波（Gaussian Filter）](Question_01_10/README.md)   | [✓](Question_01_10/answers/answer_9.py)  | [✓](Question_01_10/answers_cpp/answer_9.cpp)  |  ✓   |
+|  10  |    [中值滤波（Median Filter）](Question_01_10/README.md)    | [✓](Question_01_10/answers/answer_10.py) | [✓](Question_01_10/answers_cpp/answer_10.cpp) |  ✓   |
 
 ### [问题11 - 20](Question_11_20/README.md)
 
-| 序号 |                     内容                      | Python                                   | C++                                          | 一校 |
-| :--: | :-------------------------------------------: | ---------------------------------------- | -------------------------------------------- | :--: |
-|  11  |     [均值滤波](Question_11_20/README.md)      | [✓](Question_11_20/answers/answer_1.py)  | [✓](Question_11_20/answers_cpp/answer_1.cpp) |      |
-|  12  |   [Motion Filter](Question_11_20/README.md)   | [✓](Question_11_20/answers/answer_2.py)  | [✓](Question_11_20/answers_cpp/answer_2.cpp) |      |
-|  13  |   [MAX-MIN 滤波](Question_11_20/README.md)    | [✓](Question_11_20/answers/answer_3.py)  | [✓](Question_11_20/answers_cpp/answer_3.cpp) |      |
-|  14  |     [微分滤波](Question_11_20/README.md)      | [✓](Question_11_20/answers/answer_4.py)  | [✓](Question_11_20/answers_cpp/answer_4.cpp) |      |
-|  15  |    [Sobel 滤波](Question_11_20/README.md)     | [✓](Question_11_20/answers/answer_5.py)  | [✓](Question_11_20/answers_cpp/answer_5.cpp) |      |
-|  16  |   [Prewitt 滤波](Question_11_20/README.md)    | [✓](Question_11_20/answers/answer_6.py)  | [✓](Question_11_20/answers_cpp/answer_6.cpp) |      |
-|  17  |  [Laplacian 滤波](Question_11_20/README.md)   | [✓](Question_11_20/answers/answer_7.py)  | [✓](Question_11_20/answers_cpp/answer_7.cpp) |      |
-|  18  |    [Emboss 滤波](Question_11_20/README.md)    | [✓](Question_11_20/answers/answer_8.py)  | [✓](Question_11_20/answers_cpp/answer_8.cpp) |      |
-|  19  |     [LoG 滤波](Question_11_20/README.md)      | [✓](Question_11_20/answers/answer_9.py)  | [✓](Question_11_20/answers_cpp/answer_9.cpp) |      |
-|  20  | [直方图](Question_01_10/answers/answer_10.py) | [✓](Question_11_20/answers/answer_10.py) |                                              |      |
+| 序号 |                             内容                             | Python                                   | C++                                          | 一校 |
+| :--: | :----------------------------------------------------------: | ---------------------------------------- | -------------------------------------------- | :--: |
+|  11  |            [均值滤波器](Question_11_20/README.md)            | [✓](Question_11_20/answers/answer_1.py)  | [✓](Question_11_20/answers_cpp/answer_1.cpp) |  ✓   |
+|  12  |          [Motion Filter](Question_11_20/README.md)           | [✓](Question_11_20/answers/answer_2.py)  | [✓](Question_11_20/answers_cpp/answer_2.cpp) |  ✓   |
+|  13  |          [MAX-MIN滤波器](Question_11_20/README.md)           | [✓](Question_11_20/answers/answer_3.py)  | [✓](Question_11_20/answers_cpp/answer_3.cpp) |  ✓   |
+|  14  | [差分滤波器（Differential Filter）](Question_11_20/README.md) | [✓](Question_11_20/answers/answer_4.py)  | [✓](Question_11_20/answers_cpp/answer_4.cpp) |  ✓   |
+|  15  |           [Sobel滤波器](Question_11_20/README.md)            | [✓](Question_11_20/answers/answer_5.py)  | [✓](Question_11_20/answers_cpp/answer_5.cpp) |  ✓   |
+|  16  |          [Prewitt滤波器](Question_11_20/README.md)           | [✓](Question_11_20/answers/answer_6.py)  | [✓](Question_11_20/answers_cpp/answer_6.cpp) |  ✓   |
+|  17  |         [Laplacian滤波器](Question_11_20/README.md)          | [✓](Question_11_20/answers/answer_7.py)  | [✓](Question_11_20/answers_cpp/answer_7.cpp) |  ✓   |
+|  18  |           [Emboss滤波器](Question_11_20/README.md)           | [✓](Question_11_20/answers/answer_8.py)  | [✓](Question_11_20/answers_cpp/answer_8.cpp) |  ✓   |
+|  19  |            [LoG滤波器](Question_11_20/README.md)             | [✓](Question_11_20/answers/answer_9.py)  | [✓](Question_11_20/answers_cpp/answer_9.cpp) |  ✓   |
+|  20  |        [直方图](Question_01_10/answers/answer_10.py)         | [✓](Question_11_20/answers/answer_10.py) |                                              |  ✓   |
 
 ### [问题21-30](Question_21_30/README.md)
 
