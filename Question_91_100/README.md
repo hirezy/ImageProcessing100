@@ -328,6 +328,185 @@ NMS是一种留下高分Bounding-box的方法，算法如下：
 >
 > 我个人认为“查准率&查全率”比“精度&召回率”更准确，所以下面按照“查准率&查全率”翻译。
 >
+> 另补混淆矩阵（Confusion Matrix）：
+>
+> <table class="wikitable" align="center" style="text-align:center; border:none; background:transparent;"width="75%" >
+>     <tbody>
+>         <tr>
+>             <td style="border:none;" colspan="2">
+>             </td>
+>             <td style="background:#eeeebb;" colspan="2"><b>True condition</b>
+>             </td>
+>         </tr>
+>         <tr>
+>             <td style="border:none;">
+>             </td>
+>             <td style="background:#dddddd;"><a href="/wiki/Statistical_population" title="Statistical population">Total
+>                     population</a>
+>             </td>
+>             <td style="background:#ffffcc;">Condition positive
+>             </td>
+>             <td style="background:#ddddaa;">Condition negative
+>             </td>
+>             <td style="background:#eeeecc;font-size:90%;"><a href="/wiki/Prevalence" title="Prevalence">Prevalence</a>
+>                 <span style="font-size:118%;white-space:nowrap;">= <span role="math" class="sfrac nowrap tion"
+>                         style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+>                             class="num" style="display:block; line-height:1em; margin:0 0.1em;">Σ&nbsp;Condition
+>                             positive</span><span class="slash visualhide"></span><span class="den"
+>                             style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;">Σ&nbsp;Total
+>                             population</span></span></span>
+>             </td>
+>             <td style="background:#cceecc;border-left:double silver;font-size:90%;" colspan="2"><a
+>                     href="/wiki/Accuracy_and_precision" title="Accuracy and precision">Accuracy</a> (ACC) = <span
+>                     style="font-size:118%;"><span role="math" class="sfrac nowrap tion"
+>                         style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+>                             class="num" style="display:block; line-height:1em; margin:0 0.1em;">Σ&nbsp;True positive + Σ
+>                             True negative</span><span class="slash visualhide"></span><span class="den"
+>                             style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;">Σ&nbsp;Total
+>                             population</span></span></span>
+>             </td>
+>         </tr>
+>         <tr>
+>             <td style="background:#bbeeee;" rowspan="2"><b>Predicted<br>condition</b>
+>             </td>
+>             <td style="background:#ccffff;">Predicted condition<br>positive
+>             </td>
+>             <td style="background:#ccffcc;"><span style="color:#006600;"><b><a href="/wiki/True_positive"
+>                             class="mw-redirect" title="True positive">True positive</a></b></span>
+>             </td>
+>             <td style="background:#eedddd;"><span style="color:#cc0000;"><b><a href="/wiki/False_positive"
+>                             class="mw-redirect" title="False positive">False positive</a></b>,<br><a
+>                         href="/wiki/Type_I_error" class="mw-redirect" title="Type I error">Type I error</a></span>
+>             </td>
+>             <td style="background:#ccffee;border-top:double silver;font-size:90%;"><a
+>                     href="/wiki/Positive_predictive_value" class="mw-redirect"
+>                     title="Positive predictive value">Positive predictive value</a> (PPV), <a
+>                     href="/wiki/Precision_(information_retrieval)" class="mw-redirect"
+>                     title="Precision (information retrieval)">Precision</a> = <span
+>                     style="font-size:118%;white-space:nowrap;"><span role="math" class="sfrac nowrap tion"
+>                         style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+>                             class="num" style="display:block; line-height:1em; margin:0 0.1em;">Σ True
+>                             positive</span><span class="slash visualhide"></span><span class="den"
+>                             style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;">Σ&nbsp;Predicted&nbsp;condition&nbsp;positive</span></span></span>
+>             </td>
+>             <td style="background:#cceeff;border-top:double silver;font-size:90%;" colspan="2"><a
+>                     href="/wiki/False_discovery_rate" title="False discovery rate">False discovery rate</a> (FDR) =
+>                 <span style="font-size:118%;white-space:nowrap;"><span role="math" class="sfrac nowrap tion"
+>                         style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+>                             class="num" style="display:block; line-height:1em; margin:0 0.1em;">Σ False
+>                             positive</span><span class="slash visualhide"></span><span class="den"
+>                             style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;">Σ&nbsp;Predicted&nbsp;condition&nbsp;positive</span></span></span>
+>             </td>
+>         </tr>
+>         <tr>
+>             <td style="background:#aadddd;">Predicted condition<br>negative
+>             </td>
+>             <td style="background:#ffdddd;"><span style="color:#cc0000;"><b><a href="/wiki/False_negative"
+>                             class="mw-redirect" title="False negative">False negative</a></b>,<br><a
+>                         href="/wiki/Type_II_error" class="mw-redirect" title="Type II error">Type II error</a></span>
+>             </td>
+>             <td style="background:#bbeebb;"><span style="color:#006600;"><b><a href="/wiki/True_negative"
+>                             class="mw-redirect" title="True negative">True negative</a></b></span>
+>             </td>
+>             <td style="background:#eeddee;border-bottom:double silver;font-size:90%;"><a
+>                     href="/wiki/False_omission_rate" class="mw-redirect" title="False omission rate">False omission
+>                     rate</a> (FOR) = <span style="font-size:118%;white-space:nowrap;"><span role="math"
+>                         class="sfrac nowrap tion"
+>                         style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+>                             class="num" style="display:block; line-height:1em; margin:0 0.1em;">Σ False
+>                             negative</span><span class="slash visualhide"></span><span class="den"
+>                             style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;">Σ&nbsp;Predicted&nbsp;condition&nbsp;negative</span></span></span>
+>             </td>
+>             <td style="background:#aaddcc;border-bottom:double silver;font-size:90%;" colspan="2"><a
+>                     href="/wiki/Negative_predictive_value" class="mw-redirect"
+>                     title="Negative predictive value">Negative predictive value</a> (NPV) = <span
+>                     style="font-size:118%;white-space:nowrap;"><span role="math" class="sfrac nowrap tion"
+>                         style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+>                             class="num" style="display:block; line-height:1em; margin:0 0.1em;">Σ True
+>                             negative</span><span class="slash visualhide"></span><span class="den"
+>                             style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;">Σ&nbsp;Predicted&nbsp;condition&nbsp;negative</span></span></span>
+>             </td>
+>         </tr>
+>         <tr style="font-size:90%;">
+>             <td style="border:none;vertical-align:bottom;padding:0 2px 0 0;color:#999999;" colspan="2" rowspan="2">
+>             </td>
+>             <td style="background:#eeffcc;"><a href="/wiki/True_positive_rate" class="mw-redirect"
+>                     title="True positive rate">True positive rate</a> (TPR), <a
+>                     href="/wiki/Recall_(information_retrieval)" class="mw-redirect"
+>                     title="Recall (information retrieval)">Recall</a>, <a href="/wiki/Sensitivity_(tests)"
+>                     class="mw-redirect" title="Sensitivity (tests)">Sensitivity</a>, probability&nbsp;of&nbsp;detection,
+>                 <a href="/wiki/Statistical_power" class="mw-redirect" title="Statistical power">Power</a> <span
+>                     style="font-size:118%;white-space:nowrap;">= <span role="math" class="sfrac nowrap tion"
+>                         style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+>                             class="num" style="display:block; line-height:1em; margin:0 0.1em;">Σ True
+>                             positive</span><span class="slash visualhide"></span><span class="den"
+>                             style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;">Σ&nbsp;Condition&nbsp;positive</span></span></span>
+>             </td>
+>             <td style="background:#eeddbb;"><a href="/wiki/False_positive_rate" title="False positive rate">False
+>                     positive rate</a> (FPR), <a href="/wiki/Information_retrieval" title="Information retrieval"><span
+>                         class="nowrap">Fall-out</span></a>, probability&nbsp;of&nbsp;false&nbsp;alarm <span
+>                     style="font-size:118%;white-space:nowrap;">= <span role="math" class="sfrac nowrap tion"
+>                         style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+>                             class="num" style="display:block; line-height:1em; margin:0 0.1em;">Σ False
+>                             positive</span><span class="slash visualhide"></span><span class="den"
+>                             style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;">Σ&nbsp;Condition&nbsp;negative</span></span></span>
+>             </td>
+>             <td style="background:#eeeeee;"><a href="/wiki/Positive_likelihood_ratio" class="mw-redirect"
+>                     title="Positive likelihood ratio">Positive likelihood ratio</a> <span class="nowrap">(LR+)</span>
+>                 <span style="font-size:118%;white-space:nowrap;">= <span role="math" class="sfrac nowrap tion"
+>                         style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+>                             class="num" style="display:block; line-height:1em; margin:0 0.1em;">TPR</span><span
+>                             class="slash visualhide"></span><span class="den"
+>                             style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;">FPR</span></span></span>
+>             </td>
+>             <td style="background:#dddddd;" rowspan="2"><a href="/wiki/Diagnostic_odds_ratio"
+>                     title="Diagnostic odds ratio">Diagnostic odds ratio</a> (DOR) <span
+>                     style="font-size:118%;white-space:nowrap;">= <span role="math" class="sfrac nowrap tion"
+>                         style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+>                             class="num" style="display:block; line-height:1em; margin:0 0.1em;">LR+</span><span
+>                             class="slash visualhide"></span><span class="den"
+>                             style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;">LR−</span></span></span>
+>             </td>
+>             <td style="background:#ddffdd;border-left:double silver;line-height:2;" rowspan="2"><a href="/wiki/F1_score"
+>                     title="F1 score">F<sub>1</sub> score</a> = <span style="font-size:118%;white-space:nowrap;">2 ·
+>                     <span role="math" class="sfrac nowrap tion"
+>                         style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+>                             class="num" style="display:block; line-height:1em; margin:0 0.1em;">Precision ·
+>                             Recall</span><span class="slash visualhide"></span><span class="den"
+>                             style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;">Precision +
+>                             Recall</span></span></span>
+>             </td>
+>         </tr>
+>         <tr style="font-size:90%;">
+>             <td style="background:#ffeecc;"><a href="/wiki/False_negative_rate" class="mw-redirect"
+>                     title="False negative rate">False negative rate</a> (FNR), Miss&nbsp;rate <span
+>                     style="font-size:118%;white-space:nowrap;">= <span role="math" class="sfrac nowrap tion"
+>                         style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+>                             class="num" style="display:block; line-height:1em; margin:0 0.1em;">Σ False
+>                             negative</span><span class="slash visualhide"></span><span class="den"
+>                             style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;">Σ&nbsp;Condition&nbsp;positive</span></span></span>
+>             </td>
+>             <td style="background:#ddeebb;"><a href="/wiki/Specificity_(tests)" class="mw-redirect"
+>                     title="Specificity (tests)">Specificity</a> (SPC), Selectivity, <a href="/wiki/True_negative_rate"
+>                     class="mw-redirect" title="True negative rate">True negative rate</a> (TNR) <span
+>                     style="font-size:118%;white-space:nowrap;">= <span role="math" class="sfrac nowrap tion"
+>                         style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+>                             class="num" style="display:block; line-height:1em; margin:0 0.1em;">Σ True
+>                             negative</span><span class="slash visualhide"></span><span class="den"
+>                             style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;">Σ&nbsp;Condition&nbsp;negative</span></span></span>
+>             </td>
+>             <td style="background:#cccccc;"><a href="/wiki/Negative_likelihood_ratio" class="mw-redirect"
+>                     title="Negative likelihood ratio">Negative likelihood ratio</a> <span class="nowrap">(LR−)</span>
+>                 <span style="font-size:118%;white-space:nowrap;">= <span role="math" class="sfrac nowrap tion"
+>                         style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+>                             class="num" style="display:block; line-height:1em; margin:0 0.1em;">FNR</span><span
+>                             class="slash visualhide"></span><span class="den"
+>                             style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;">TNR</span></span></span>
+>             </td>
+>         </tr>
+>     </tbody>
+> </table>
+>
 > ——gzr
 
 **查全率（Recall）——在多大程度上检测到了正确的矩形？用来表示涵盖了多少正确答案。取值范围为$[0,1]$：**
@@ -336,8 +515,8 @@ $$
 $$
 其中：
 
-* $G'$——Ground-truthの中で検出のどれかとIoUが閾値t以上となったGround-truthの数；
-* $G$——Ground-truthの矩形の数。
+* $G'$——预测输出中阈值大于$t$，Ground-truth中阈值也大于$t$的矩形的数量；
+* $G$——Ground-truth中阈值大于$t$的矩形的数量。
 
 **查准率（Precision）——表示结果在多大程度上是正确的。取值范围为$[0,1]$：**
 $$
@@ -345,8 +524,8 @@ $$
 $$
 其中：
 
-* $D‘$——検出の中で、Ground-truthのどれかとIoUが閾値t以上となった検出の数；
-* $D$——検出の数。
+* $D‘$——预测输出中阈值大于$t$，Ground-truth中阈值也大于$t$的矩形的数量；
+* $D$——预测输出中阈值大于$t$的矩形的数量。
 
 **F-Score——是查全率（Recall）和查准率（Precision）的调和平均。可以表示两者的平均，取值范围为$[0,1]$：**
 $$
@@ -354,26 +533,27 @@ $$
 $$
 在文字检测任务中，通常使用Recall、Precision和F-Score等指标进行评估。
 
-**mAP——Mean Average Precision。在物体检测任务中，常常使用mAP进行效果评价。mAP的计算方法稍稍有点复杂：**
+**mAP——Mean Average Precision[^3]。在物体检测任务中，常常使用mAP进行效果评价。mAP的计算方法稍稍有点复杂：**
 
-1. 各検出に関してGround-truthとの$\text{IoU}$が閾値t以上かどうかを判断して、表を作成する。
+[^3]: 中文较好的讲解见[这里](https://blog.csdn.net/u014203453/article/details/77598997)。
 
-   | Detect  |                        judge                         |
-   | :-----: | :--------------------------------------------------: |
-   | detect1 | 1   (1はGround-truthとの$\text{IoU}$>=tとなったもの) |
-   | detect2 | 0   (0はGround-truthとの$\text{IoU}$<tとなったもの)  |
-   | detect3 |                          1                           |
+1. 判断检测出的矩形与Ground-truth的$\text{IoU}$是否大于阈值$t$，然后创建一个表。
 
-2. mAP = 0として、上から順に見て、judgeが1の時は、見ているものの上すべてに関して、Precisionを計算し、mAPに加算する。
+   | Detect  |                      judge                       |
+   | :-----: | :----------------------------------------------: |
+   | detect1 | 1（当与Ground-truth的$\text{IoU}\geq t$时为$1$） |
+   | detect2 |  0 （当与Ground-truth的$\text{IoU}< t$时为$0$）  |
+   | detect3 |                        1                         |
 
-3. 上から順に2を行い、全て行ったら、加算回数でmAPを割る。
+2. 初始$\text{mAP} = 0$，上表按从上到下的顺序，judge为1的时候，按在此之上被检测出的矩形，计算$\text{Precision}$，并加到$\text{mAP}$中去。
+
+3. 从表的顶部开始按顺序执行步骤2，完成所有操作后，将$\text{mAP}$除以相加的次数。
 
 上面就是求mAP的方法了。对于上面的例子来说：
-1. detect1 が1なので、Precisionを求める。Precision = 1/1 = 1なので、mAP = 1
-2. detect2 が0なので、無視。
-3. detect3 が1なので、Precisionを求める。Precision = 2/3 = 0.67 なので、 mAP = 1 + 0.67 = 1.67
-4. mAPに加算したのは計2回なので、mAP = 1.67 / 2 = 0.835
-となる。
+1. detect1 为$1$，计算$\text{Precision}$。$\text{Precision} = \frac{1}{1} = 1$，$\text{mAP} = 1$；
+2. detect2 为$0$，无视；
+3. detect3 为$1$，计算$\text{Precision}$。$\text{Precision} = \frac{2}{3} = 0.67$，$\text{mAP} = 1+0.67=1.67$。
+4. 由于$\text{mAP}$进行了两次加法，因此$\text{mAP} = 1.67 \div 2 = 0.835$。
 
 令阈值$t=0.5$，计算查全率、查准率、F-Score和mAP吧。
 
