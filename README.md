@@ -5,9 +5,9 @@
 > * 关于$\LaTeX$公式渲染问题：
 >   * 在线阅读建议安装[MathJax Plugin for Github](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima)插件获得~~其实不太~~良好的公式阅读体验；
 >   * 离线阅读建议使用可以渲染$\LaTeX$公式的Markdown编辑器/阅读器，如[Typora](https://www.typora.io/)（我是用这个编写和转换PDF的）和[MWeb](https://zh.mweb.im/)。VSCode使用者建议安装[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)插件渲染$\LaTeX$公式；
->   * 各个README文件在完成基本校对之后会转为PDF文件。PDF文件阅读效果最佳。当前进度：⣿⣿⣿⣿⣿⣿⣿⣿⣀⣀ 80%。
+>   * 各个README文件在完成基本校对之后会转为PDF文件。PDF文件阅读效果最佳。
 >
-> * 译注我会留下签名戳`——gzr`。译注可能会打扰大家阅读，请各位谅解。
+> * 有签名戳`——gzr`的引用部分和脚注都是译注。译注可能会打扰大家阅读，请各位谅解。
 >
 > 感谢！
 >
